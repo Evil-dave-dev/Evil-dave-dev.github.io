@@ -1,0 +1,24 @@
+#bloc{margin-top: 130px;}
+.titre{
+	display: inline-block;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	background: #FFFFFF;
+	z-index: 1;
+}
+.sidebar{
+	display: inline-block;
+	vertical-align: top;
+	width: 360px;
+	background: #2d373d;
+	color: #FFFFFF;
+	padding-bottom: 24px;
+}
+.content{
+	display: inline-block;
+	vertical-align: top;
+	width: 750px;
+	padding: 0 0 20px 70px;
+	margin-left: 20px;
+}

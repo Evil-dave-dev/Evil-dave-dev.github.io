@@ -1,0 +1,96 @@
+/* général */
+
+body{
+	margin: 0;
+	font-family: Tahoma, Geneva, sans-serif;
+}
+#conteneur{
+	width: 1200px;
+	margin: 0 auto;
+}
+.ombre{box-shadow: 0 0 10px #999;}
+p, pre{font-size: 15px;}
+h1{font-size: 70px; font-family: 'Kaushan Script', cursive; text-align: center; color: #2d373d;}
+h2{font-size: 35px; font-family: 'Kaushan Script', cursive;}
+h3{font-size: 20px; color: #2d373d;}
+
+/* aside */
+
+.sidebar p{margin: 0 20px;}
+.sidebar address{margin: 0 20px 20px 20px;}
+.sidebar h3{margin: 20px 20px 10px 20px;color: #81cdd1;font-family: 'Kaushan Script', cursive;}
+#identity h2{text-align: center;margin: 0 0 10px 0;}
+#identity p{text-align: center;}
+#identity{
+	background: #81cdd1;
+	position: relative;
+	height: 350px;
+}
+#identity img{
+	position: absolute;
+	top: 20px;
+	left: 80px;
+	border: 2px solid #FFFFFF;
+}
+#david{position: absolute;bottom: 10px; width: 360px;}
+#comp{position: relative;}
+#comp p{margin:10px 20px;padding: 10px 0 0 0;}
+.lvlmax{
+	position: absolute;
+	width: 300px;
+	height: 5px;
+	background: #1c2225;
+	margin: 0 0 0 20px;
+}
+.lvlph{
+	position: absolute;
+	width: 280px;
+	height: 5px;
+	background: #2d8beb;
+	margin: 0 0 0 20px;
+}
+.lvlil{
+	position: absolute;
+	width: 250px;
+	height: 5px;
+	background: #dec72a;
+	margin: 0 0 0 20px;
+}
+.lvlhtml{
+	position: absolute;
+	width: 260px;
+	height: 5px;
+	background: #0eed48;
+	margin: 0 0 0 20px;
+}
+.lvlcss{
+	position: absolute;
+	width: 260px;
+	height: 5px;
+	background: #e50eed;
+	margin: 0 0 0 20px;
+}
+
+/* header */
+
+.titre h1{margin: 0 0 20px 0;}
+
+/* contenu */
+
+.content h2{margin: 20px 0 0 0; color: #2d373d;}
+.content h3{margin: 30px 0 10px 0;}
+.content p{margin: 3px 0;}
+.calendrier{
+	display: inline-block;
+	width: 300px;
+	margin-right: 70px;
+}
+.separation{
+	width: 600px;
+	height: 1px;
+	background: #2d373d;
+	margin: 25px 0;
+}
+
+/* footer */
+

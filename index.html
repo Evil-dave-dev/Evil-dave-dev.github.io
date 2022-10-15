@@ -1,385 +1,164 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dave</title>
-    <!-- STYLESHEETS -->
-    <!-- STYLESHEETS -->
-    <!-- 1 BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <!-- 2 LIGHTBOX -->
-    <link rel="stylesheet" href="styles/lightbox.min.css">
-    <!-- 3 SWIPER -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <!-- 4 TIPPY -->
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css">
-    <!-- 5 FONT AWESOME -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <!-- 6 CSS STYLE -->
-    <link rel="stylesheet" href="styles/style.css">
+	<title>CV David Stevenoot</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css" media="screen and (min-width:769px")>
+	<link rel="stylesheet" href="colonne.css" media="screen and (min-width:769px")>
+	<link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	<link rel="stylesheet" href="tablette.css" media="screen and (max-width:768px")>
+	<link rel="stylesheet" href="portable.css" media="screen and (max-width:481px")>
 </head>
-
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-        <div class="container-fluid">
-            <div class="navbar-brand toggle-container">
-                <input type="checkbox" id="darkMode" name="theme" /><label for="darkMode" class="toggle-darkMode"></label>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarToggle">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link" aria-current="page" href="#cards">Sports de glisse</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#carroussel">Swiper 1</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-                <div class="gap-2 d-lg-flex justify-content-lg-end langWrap">
-                    <a class="btn btn-light btn-sm active" role="button" language="french">FR</a>
-                    <a class="btn btn-light btn-sm" role="button" language="english">EN</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+		<!-- En-tête -->
 
-    <!-- SLIDER 1 -->
-    <div class="swiper-container swiper1 d-lg-block">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image: url(img/slider01.jpg);">
-                <a href="https://www.instagram.com/justinewdm/?hl=fr" target="_blank">Chat</a>
-                <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                     <path id="svg_5" d="m-379.09,16.00542l0.38197,0l0.11803,-0.54067l0.11803,0.54067l0.38197,0l-0.30902,0.33415l0.11804,0.54067l-0.30902,-0.33416l-0.30902,0.33416l0.11804,-0.54067l-0.30902,-0.33415z" stroke-width="0" stroke="#ffffff" fill="#000000"/>
-                     <path fill-opacity="0.7" id="svg_33" d="m399.99999,16.66666c0,9.20475 -89.54306,16.66667 -200.00003,16.66667m200.00003,-16.66667l0,0c0,9.20475 -89.54306,16.66667 -200.00003,16.66667c-110.45693,0 -199.99996,-7.46191 -199.99996,-16.66667m0,0l0,0c0,-9.20474 89.54303,-16.66666 199.99996,-16.66666c110.45697,0 200.00003,7.46193 200.00003,16.66666l0,66.6667c0,9.20474 -89.54306,16.66664 -200.00003,16.66664c-110.45693,0 -199.99996,-7.4619 -199.99996,-16.66664l0,-66.6667z" stroke-width="0" fill="#ffffff"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="swiper-slide" style="background-image: url(img/slider02.jpg);">
-                <a href="https://www.instagram.com/luna_the_pantera/?hl=fr" target="_blank">Gros chat</a>
-                <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                     <path id="svg_5" d="m-379.09,16.00542l0.38197,0l0.11803,-0.54067l0.11803,0.54067l0.38197,0l-0.30902,0.33415l0.11804,0.54067l-0.30902,-0.33416l-0.30902,0.33416l0.11804,-0.54067l-0.30902,-0.33415z" stroke-width="0" stroke="#ffffff" fill="#000000"/>
-                     <path fill-opacity="0.7" id="svg_33" d="m399.99999,16.66666c0,9.20475 -89.54306,16.66667 -200.00003,16.66667m200.00003,-16.66667l0,0c0,9.20475 -89.54306,16.66667 -200.00003,16.66667c-110.45693,0 -199.99996,-7.46191 -199.99996,-16.66667m0,0l0,0c0,-9.20474 89.54303,-16.66666 199.99996,-16.66666c110.45697,0 200.00003,7.46193 200.00003,16.66666l0,66.6667c0,9.20474 -89.54306,16.66664 -200.00003,16.66664c-110.45693,0 -199.99996,-7.4619 -199.99996,-16.66664l0,-66.6667z" stroke-width="0" fill="#ffffff"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="swiper-slide" style="background-image: url(img/slider03.jpg);">
-                <a href="https://www.instagram.com/somewherewithestelle/?hl=fr" target="_blank">Chien</a>
-                <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                     <path id="svg_5" d="m-379.09,16.00542l0.38197,0l0.11803,-0.54067l0.11803,0.54067l0.38197,0l-0.30902,0.33415l0.11804,0.54067l-0.30902,-0.33416l-0.30902,0.33416l0.11804,-0.54067l-0.30902,-0.33415z" stroke-width="0" stroke="#ffffff" fill="#000000"/>
-                     <path fill-opacity="0.7" id="svg_33" d="m399.99999,16.66666c0,9.20475 -89.54306,16.66667 -200.00003,16.66667m200.00003,-16.66667l0,0c0,9.20475 -89.54306,16.66667 -200.00003,16.66667c-110.45693,0 -199.99996,-7.46191 -199.99996,-16.66667m0,0l0,0c0,-9.20474 89.54303,-16.66666 199.99996,-16.66666c110.45697,0 200.00003,7.46193 200.00003,16.66666l0,66.6667c0,9.20474 -89.54306,16.66664 -200.00003,16.66664c-110.45693,0 -199.99996,-7.4619 -199.99996,-16.66664l0,-66.6667z" stroke-width="0" fill="#ffffff"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="swiper-slide" style="background-image: url(img/slider04.jpg);">
-                <a href="https://www.instagram.com/ottercorner/?hl=fr" target="_blank">Loutre</a>
-                <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                     <path id="svg_5" d="m-379.09,16.00542l0.38197,0l0.11803,-0.54067l0.11803,0.54067l0.38197,0l-0.30902,0.33415l0.11804,0.54067l-0.30902,-0.33416l-0.30902,0.33416l0.11804,-0.54067l-0.30902,-0.33415z" stroke-width="0" stroke="#ffffff" fill="#000000"/>
-                     <path fill-opacity="0.7" id="svg_33" d="m399.99999,16.66666c0,9.20475 -89.54306,16.66667 -200.00003,16.66667m200.00003,-16.66667l0,0c0,9.20475 -89.54306,16.66667 -200.00003,16.66667c-110.45693,0 -199.99996,-7.46191 -199.99996,-16.66667m0,0l0,0c0,-9.20474 89.54303,-16.66666 199.99996,-16.66666c110.45697,0 200.00003,7.46193 200.00003,16.66666l0,66.6667c0,9.20474 -89.54306,16.66664 -200.00003,16.66664c-110.45693,0 -199.99996,-7.4619 -199.99996,-16.66664l0,-66.6667z" stroke-width="0" fill="#ffffff"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="swiper-slide" style="background-image: url(img/slider05.jpg);">
-                <a href="https://www.instagram.com/_redpandas/?hl=fr" target="_blank">Panda roux</a>
-                <svg width="400" height="100" xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                     <path id="svg_5" d="m-379.09,16.00542l0.38197,0l0.11803,-0.54067l0.11803,0.54067l0.38197,0l-0.30902,0.33415l0.11804,0.54067l-0.30902,-0.33416l-0.30902,0.33416l0.11804,-0.54067l-0.30902,-0.33415z" stroke-width="0" stroke="#ffffff" fill="#000000"/>
-                     <path fill-opacity="0.7" id="svg_33" d="m399.99999,16.66666c0,9.20475 -89.54306,16.66667 -200.00003,16.66667m200.00003,-16.66667l0,0c0,9.20475 -89.54306,16.66667 -200.00003,16.66667c-110.45693,0 -199.99996,-7.46191 -199.99996,-16.66667m0,0l0,0c0,-9.20474 89.54303,-16.66666 199.99996,-16.66666c110.45697,0 200.00003,7.46193 200.00003,16.66666l0,66.6667c0,9.20474 -89.54306,16.66664 -200.00003,16.66664c-110.45693,0 -199.99996,-7.4619 -199.99996,-16.66664l0,-66.6667z" stroke-width="0" fill="#ffffff"/>
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-    </div>
-    
-    <div class="container">
-        <!-- CARDS -->
-        <div class="row" id="cards">
-            <div class="col-12">
-                <h1>Hobbies</h1>
-            </div>
-            <div class="col-12 col-lg-4 mb-3 mb-lg-0">
-                <div class="card border-0 shadow" data-tippy-content="Rien de tel qu'une bonne poudreuse">
-                    <img src="img/01.jpg" alt="Snowboard" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Snowboard</h5>
-                        <p class="card-text"><a href="https://fr.wikipedia.org/wiki/Snowboard" target="_blank" class="stretched-link">Sport d'hiver, vivement les vacances pour se retrouver dans les Alpes à rider comme un déglingo</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4 mb-3 mb-lg-0">
-                <div class="card border-0 shadow" data-tippy-content="pretending i'm a superman">
-                    <img src="img/02.jpg" alt="Skateboard" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Skateboard</h5>
-                        <p class="card-text"><a href="https://fr.wikipedia.org/wiki/Skateboard" target="_blank" class="stretched-link">Sport urbain, en attendant de pouvoir rider dans la poudreuse ou sur l'eau</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-lg-4 mb-3 mb-lg-0">
-                <div class="card border-0 shadow" data-tippy-content="Les seigneurs de Dogtown">
-                    <img src="img/03.jpg" alt="Surf" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">Surf</h5>
-                        <p class="card-text"><a href="https://fr.wikipedia.org/wiki/Wakeboard" target="_blank" class="stretched-link">Normalement du wakeboard, mais cette image était plus stylée</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+		<section class="titre">
+			<h1>
+				Web Designer
+			</h1>
+		</section>
+		
+	<div id="conteneur">
 
-        <!-- SWIPER -->
-        <div class="row mt-5" id="carroussel">
-            <div class="col-12">
-              <h1>Swiper 1</h1>
-            </div>
-            <div class="col">
-                <div class="swiper-container swiper2">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="testimonialBox">
-                                <svg class="quote" x="0px" y="0px" viewBox="0 0 24 30"><g><path d="M14.498,20.973c-0.339,0-0.656-0.068-0.918-0.245c-0.272-0.183-0.593-0.559-0.58-1.307   c0.019-1.035,0.867-1.493,1.487-1.828l0.197-0.108c0.812-0.454,1.432-0.868,1.951-1.302c1.034-0.867,1.525-1.63,1.469-1.825l0,0   c-0.001,0-0.031-0.034-0.141-0.072c-0.158-0.054-0.356-0.069-0.565-0.085c-0.173-0.013-0.344-0.026-0.508-0.058   c-2.403-0.452-3.896-2.229-3.896-4.64C12.994,6.469,15.463,4,18.497,4C21.583,4,24,6.417,24,9.503c0,3.607-1.836,8.591-7.01,10.761   l-0.125,0.054C16.273,20.568,15.321,20.973,14.498,20.973z M18.497,5c-2.483,0-4.503,2.02-4.503,4.503   c0,1.956,1.123,3.289,3.081,3.657c0.128,0.023,0.263,0.033,0.398,0.043c0.251,0.02,0.535,0.041,0.814,0.137   c0.599,0.205,0.759,0.611,0.8,0.836c0.176,0.945-1.059,2.144-1.811,2.773c-0.568,0.476-1.237,0.923-2.104,1.408l-0.21,0.115   c-0.595,0.32-0.956,0.546-0.963,0.966c-0.004,0.24,0.042,0.396,0.139,0.46c0.296,0.202,1.083,0.03,2.335-0.502l0.13-0.055   C21.325,17.361,23,12.804,23,9.503C23,6.978,21.022,5,18.497,5z"/><path d="M1.499,20.973c-0.339,0-0.657-0.068-0.918-0.245C0.309,20.545-0.013,20.169,0,19.421c0.018-1.036,0.868-1.494,1.489-1.829   l0.196-0.107c0.812-0.454,1.432-0.868,1.95-1.302c1.035-0.866,1.526-1.629,1.47-1.825l0,0c-0.001,0-0.031-0.034-0.141-0.072   c-0.158-0.054-0.356-0.069-0.566-0.085c-0.172-0.013-0.343-0.026-0.508-0.058c-2.404-0.452-3.896-2.229-3.896-4.64   C-0.006,6.469,2.463,4,5.497,4C8.583,4,11,6.417,11,9.503c0,3.607-1.836,8.59-7.01,10.761l-0.125,0.054   C3.273,20.568,2.322,20.973,1.499,20.973z M5.497,5C3.014,5,0.994,7.02,0.994,9.503c0,1.956,1.123,3.289,3.081,3.657   c0.129,0.023,0.264,0.033,0.399,0.043c0.251,0.02,0.536,0.041,0.815,0.137c0.599,0.205,0.758,0.612,0.8,0.836   c0.176,0.946-1.06,2.145-1.812,2.774c-0.567,0.474-1.236,0.921-2.104,1.407l-0.209,0.114C1.37,18.792,1.008,19.018,1,19.438   c-0.004,0.24,0.042,0.396,0.139,0.46c0.442,0.302,1.867-0.304,2.333-0.502l0.13-0.055C8.325,17.36,10,12.804,10,9.503   C10,6.978,8.022,5,5.497,5z"/></g></svg>
-                                <div class="content">
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At quia, commodi quod esse quam dolorum ratione porro distinctio! Sint vero commodi ex aspernatur facilis corporis impedit, odio ipsum quam nisi.</p>
-                                    <div class="details">
-                                        <img src="img/user1.png" alt="user1" class="imgBx">
-                                        <h3>Someone famous<br><span>Creative Designer</span></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonialBox">
-                                <svg class="quote" x="0px" y="0px" viewBox="0 0 24 30"><g><path d="M14.498,20.973c-0.339,0-0.656-0.068-0.918-0.245c-0.272-0.183-0.593-0.559-0.58-1.307   c0.019-1.035,0.867-1.493,1.487-1.828l0.197-0.108c0.812-0.454,1.432-0.868,1.951-1.302c1.034-0.867,1.525-1.63,1.469-1.825l0,0   c-0.001,0-0.031-0.034-0.141-0.072c-0.158-0.054-0.356-0.069-0.565-0.085c-0.173-0.013-0.344-0.026-0.508-0.058   c-2.403-0.452-3.896-2.229-3.896-4.64C12.994,6.469,15.463,4,18.497,4C21.583,4,24,6.417,24,9.503c0,3.607-1.836,8.591-7.01,10.761   l-0.125,0.054C16.273,20.568,15.321,20.973,14.498,20.973z M18.497,5c-2.483,0-4.503,2.02-4.503,4.503   c0,1.956,1.123,3.289,3.081,3.657c0.128,0.023,0.263,0.033,0.398,0.043c0.251,0.02,0.535,0.041,0.814,0.137   c0.599,0.205,0.759,0.611,0.8,0.836c0.176,0.945-1.059,2.144-1.811,2.773c-0.568,0.476-1.237,0.923-2.104,1.408l-0.21,0.115   c-0.595,0.32-0.956,0.546-0.963,0.966c-0.004,0.24,0.042,0.396,0.139,0.46c0.296,0.202,1.083,0.03,2.335-0.502l0.13-0.055   C21.325,17.361,23,12.804,23,9.503C23,6.978,21.022,5,18.497,5z"/><path d="M1.499,20.973c-0.339,0-0.657-0.068-0.918-0.245C0.309,20.545-0.013,20.169,0,19.421c0.018-1.036,0.868-1.494,1.489-1.829   l0.196-0.107c0.812-0.454,1.432-0.868,1.95-1.302c1.035-0.866,1.526-1.629,1.47-1.825l0,0c-0.001,0-0.031-0.034-0.141-0.072   c-0.158-0.054-0.356-0.069-0.566-0.085c-0.172-0.013-0.343-0.026-0.508-0.058c-2.404-0.452-3.896-2.229-3.896-4.64   C-0.006,6.469,2.463,4,5.497,4C8.583,4,11,6.417,11,9.503c0,3.607-1.836,8.59-7.01,10.761l-0.125,0.054   C3.273,20.568,2.322,20.973,1.499,20.973z M5.497,5C3.014,5,0.994,7.02,0.994,9.503c0,1.956,1.123,3.289,3.081,3.657   c0.129,0.023,0.264,0.033,0.399,0.043c0.251,0.02,0.536,0.041,0.815,0.137c0.599,0.205,0.758,0.612,0.8,0.836   c0.176,0.946-1.06,2.145-1.812,2.774c-0.567,0.474-1.236,0.921-2.104,1.407l-0.209,0.114C1.37,18.792,1.008,19.018,1,19.438   c-0.004,0.24,0.042,0.396,0.139,0.46c0.442,0.302,1.867-0.304,2.333-0.502l0.13-0.055C8.325,17.36,10,12.804,10,9.503   C10,6.978,8.022,5,5.497,5z"/></g></svg>
-                                <div class="content">
-                                    <p>Aenean augue est, posuere ac dolor sed, condimentum aliquam nulla. Nullam quis ipsum nulla. Curabitur vitae eros facilisis ex fermentum condimentum. Duis porta efficitur faucibus. Pellentesque ultricies leo non dolor vestibulum laoreet quis non urna. Maecenas eu lorem mattis, consectetur nibh et, ornare nibh.</p>
-                                    <div class="details">
-                                        <img src="img/user2.png" alt="user2" class="imgBx">
-                                        <h3>Someone famous<br><span>Creative Designer</span></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="testimonialBox">
-                                <svg class="quote" x="0px" y="0px" viewBox="0 0 24 30"><g><path d="M14.498,20.973c-0.339,0-0.656-0.068-0.918-0.245c-0.272-0.183-0.593-0.559-0.58-1.307   c0.019-1.035,0.867-1.493,1.487-1.828l0.197-0.108c0.812-0.454,1.432-0.868,1.951-1.302c1.034-0.867,1.525-1.63,1.469-1.825l0,0   c-0.001,0-0.031-0.034-0.141-0.072c-0.158-0.054-0.356-0.069-0.565-0.085c-0.173-0.013-0.344-0.026-0.508-0.058   c-2.403-0.452-3.896-2.229-3.896-4.64C12.994,6.469,15.463,4,18.497,4C21.583,4,24,6.417,24,9.503c0,3.607-1.836,8.591-7.01,10.761   l-0.125,0.054C16.273,20.568,15.321,20.973,14.498,20.973z M18.497,5c-2.483,0-4.503,2.02-4.503,4.503   c0,1.956,1.123,3.289,3.081,3.657c0.128,0.023,0.263,0.033,0.398,0.043c0.251,0.02,0.535,0.041,0.814,0.137   c0.599,0.205,0.759,0.611,0.8,0.836c0.176,0.945-1.059,2.144-1.811,2.773c-0.568,0.476-1.237,0.923-2.104,1.408l-0.21,0.115   c-0.595,0.32-0.956,0.546-0.963,0.966c-0.004,0.24,0.042,0.396,0.139,0.46c0.296,0.202,1.083,0.03,2.335-0.502l0.13-0.055   C21.325,17.361,23,12.804,23,9.503C23,6.978,21.022,5,18.497,5z"/><path d="M1.499,20.973c-0.339,0-0.657-0.068-0.918-0.245C0.309,20.545-0.013,20.169,0,19.421c0.018-1.036,0.868-1.494,1.489-1.829   l0.196-0.107c0.812-0.454,1.432-0.868,1.95-1.302c1.035-0.866,1.526-1.629,1.47-1.825l0,0c-0.001,0-0.031-0.034-0.141-0.072   c-0.158-0.054-0.356-0.069-0.566-0.085c-0.172-0.013-0.343-0.026-0.508-0.058c-2.404-0.452-3.896-2.229-3.896-4.64   C-0.006,6.469,2.463,4,5.497,4C8.583,4,11,6.417,11,9.503c0,3.607-1.836,8.59-7.01,10.761l-0.125,0.054   C3.273,20.568,2.322,20.973,1.499,20.973z M5.497,5C3.014,5,0.994,7.02,0.994,9.503c0,1.956,1.123,3.289,3.081,3.657   c0.129,0.023,0.264,0.033,0.399,0.043c0.251,0.02,0.536,0.041,0.815,0.137c0.599,0.205,0.758,0.612,0.8,0.836   c0.176,0.946-1.06,2.145-1.812,2.774c-0.567,0.474-1.236,0.921-2.104,1.407l-0.209,0.114C1.37,18.792,1.008,19.018,1,19.438   c-0.004,0.24,0.042,0.396,0.139,0.46c0.442,0.302,1.867-0.304,2.333-0.502l0.13-0.055C8.325,17.36,10,12.804,10,9.503   C10,6.978,8.022,5,5.497,5z"/></g></svg>
-                                <div class="content">
-                                    <p>Fusce feugiat quam erat, nec mattis quam tincidunt eu. Mauris tincidunt tortor sem, sit amet auctor ligula pellentesque id. Donec sodales sapien ut ornare lobortis. In a molestie orci. Nullam sagittis sapien purus, porttitor maximus purus tincidunt at. Maecenas sed viverra arcu, id tristique massa.</p>
-                                    <div class="details">
-                                        <img src="img/user3.jpg" alt="user3" class="imgBx">
-                                        <h3>Someone famous<br><span>Creative Designer</span></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div id="bloc">
 
-    <!-- PARALLAX -->
-    <div class="container-fluid mt-5 d-none d-lg-block">
-        <div class="row mt-3" id="parallax01">
-            <div class="parallax img-fluid"></div>
-        </div>
-    </div>
+		<!-- Barre latérale -->
 
-    <!-- SKILLS -->
-    <div class="container mt-5">
-        <div class="row mt-3" id="skills">
-            <div class="mb-3">
-                <h1>Skills</h1>
-            </div>
-            <div class="progressBar row justify-content-center pt-3 pb-3">
-                <div class="transparentCard col-lg-4 col-sm-6">
-                    <div class="content">
-                    <h2>01</h2>
-                    <h3>HTML</h3>
-                    <div class="box">
-                        <div class="percent">
-                        <svg>
-                            <circle cx="100" cy="100" r="100"></circle>
-                            <circle cx="100" cy="100" r="100"></circle>
-                        </svg>
-                        <div class="number">
-                            <h2><span class="percentage">85</span>%</h2>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="transparentCard col-lg-4 col-sm-6">
-                    <div class="content">
-                    <h2>02</h2>
-                    <h3>CSS</h3>
-                    <div class="box">
-                        <div class="percent">
-                        <svg>
-                            <circle cx="100" cy="100" r="100"></circle>
-                            <circle cx="100" cy="100" r="100"></circle>
-                        </svg>
-                        <div class="number">
-                            <h2><span class="percentage">90</span>%</h2>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <div class="transparentCard col-lg-4 col-sm-6">
-                    <div class="content">
-                    <h2>03</h2>
-                    <h3>JS</h3>
-                    <div class="box">
-                        <div class="percent">
-                        <svg>
-                            <circle cx="100" cy="100" r="100"></circle>
-                            <circle cx="100" cy="100" r="100"></circle>
-                        </svg>
-                        <div class="number">
-                            <h2><span class="percentage">50</span>%</h2>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<section class="sidebar">
+				<article id="identity">
+					<a href="https://www.linkedin.com/in/david-stevenoot-363b6411a/" target="_blank"><img src="photo.jpg"></a>
+					<div id="david">
+						<h2>Stevenoot David</h2>
+						<p>02 Juin 1984</p>
+					</div>
+				</article>
+				<article>
+					<h3>A propos</h3>
+					<p>En pleine réorientation, je souhaite mettre en exergue mes talents dans un emploi épanouissant où mes qualités, méticulosité et créativité, seraient un atout non négligeable.</p>
+				</article>
+				<article>
+					<h3>Langues</h3>
+					<p>Moyen</p>
+					<p>Scolaire</p>
+				</article>
+				<article id="comp">
+					<h3>Compétences</h3>
+					<p>Photoshop</p>
+					<div class="lvlmax"></div>
+					<div class="lvlph"></div>
+					<p>Illustrator</p>
+					<div class="lvlmax"></div>
+					<div class="lvlil"></div>
+					<p>HTML5</p>
+					<div class="lvlmax"></div>
+					<div class="lvlhtml"></div>
+					<p>CSS3</p>
+					<div class="lvlmax"></div>
+					<div class="lvlcss"></div>
+				</article>
+				<article>
+					<h3>Centres d'Interêts</h3>
+					<p>Wake-Board, Snow-Board</p>
+					<p>Musique Punk-Rock</p>
+					<p>Cinéma fantastique, action, animation</p>
+				</article>
+				<article>
+					<h3>Contact</h3>
+					<p>30 rue Saint Luc 59800 Lille</p>
+					<p>06.48.64.79.04</p>
+					<address>david.stevenoot@laposte.net</address>
+				</article>
+			</section><section class="content ombre">
 
-    <!-- PARALLAX -->
-    <div class="container-fluid mt-5 d-none d-lg-block">
-        <div class="row mt-3" id="parallax02">
-            <div class="parallax img-fluid"></div>
-        </div>
-    </div>
+				<!-- Contenu -->
 
-    <div class="container mt-5">
-        <!-- PORTFOLIO -->
-        <div class="row mt-3" id="portfolio">
-            <div class="col-12 mb-3">
-                <h1>Portfolio</h1>
-            </div>
-            <div class="col-12">
-                <div class="row">
-                <a href="img/kimple-davids-accessoire1.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids-accessoire1.jpg" class="img-fluid"></a>
-                <a href="img/kimple-davids-accessoire2.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids-accessoire2.jpg" class="img-fluid"></a>
-                <a href="img/kimple-davids-accessoire3.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids-accessoire3.jpg" class="img-fluid"></a>
-                <a href="img/kimple-davids1.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids1.jpg" class="img-fluid"></a>
-                <a href="img/kimple-davids2.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids2.jpg" class="img-fluid"></a>
-                <a href="img/kimple-davids3.jpg" data-lightbox="roadtrip" class="col-lg-4 col-sm-6 gutter-gallery"><img src="img/kimple-davids3.jpg" class="img-fluid"></a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- CONTACT -->
-        <div class="row justify-content-center mt-5 mb-4" id="contact">
-            <div class="col-lg-6">
-                <div class="contact row">
-                    <h1 class="text-center mb-3 contact-title">Contact</h1>
-                    <div class="col-12 col-xl contact-elements">
-                        <h3 class="fs-6 text-center">
-                            <a href="https://goo.gl/maps/tDirB6CzHBj3M79F7" target="_blank"><span class="d-block mb-2"><i class="fs-3 fas fa-map-marker-alt"></i></span>138bis rue Abelard 59000 Lille</a>
-                        </h3>
-                    </div>
-                    <div class="col-12 col-xl contact-elements">
-                        <h3 class="fs-6 text-center">
-                            <a href="tel:0648647904"><span class="d-block mb-2"><i class="fs-3 fas fa-phone"></i></span>06 48 60 79 04</a>
-                        </h3> 
-                    </div>
-                    <div class="col-12 col-xl contact-elements">
-                        <h3 class="fs-6 text-center">
-                            <a href="mailto: evil.dave59@gmail.com"><span class="d-block mb-2"><i class="fs-3 fas fa-envelope"></i></span>evil.dave59@gmail.com</a>
-                        </h3>
-                    </div>
-                </div>
-                <form class="form" id="form">
-                    <div class="col-12 mb-4 form-floating">
-                    <input type="text" name="nom" id="username" class="form-control" placeholder="nom">
-                    <label for="username">nom</label>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>error message</small>
-                    </div>
-                    
-                    <div class="col-12 mb-4 form-floating">
-                        <input type="text" name="email" id="email" class="form-control" placeholder="email">
-                        <label for="email">email</label>
-                        <i class="fas fa-check-circle"></i>
-                        <i class="fas fa-exclamation-circle"></i>
-                        <small>error message</small>
-                    </div>
-    
-                    <div class="col-12 mb-4 form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="commentaires"></textarea>
-                    <label for="commentaires">commentaires</label>
-                    <i class="fas fa-check-circle"></i>
-                    <i class="fas fa-exclamation-circle"></i>
-                    <small>error message</small>
-                    </div>
-                    <div class="col-12 mb-4 d-grid">
-                    <button type="submit" class="btn btn-primary">submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+				<article>
+					<h2>
+						Expériences Professionnelles
+					</h2>
+					<div class="separation"></div>
+					<h3>
+						Ambulancier
+					</h3>
+					<section class="calendrier">
+						<p>Ambulance Damman</p>
+						<p>Ambulance Express</p>
+					</section>
+					<section class="calendrier">
+						<p>Novembre 2014 - Mars 2015</p>
+						<p>Juin 2014 - Octobre 2014</p>
+					</section>
+					<h3>
+						Surveillant de plage
+					</h3>
+					<section class="calendrier">
+						<p>Dunes de Flandres</p>
+					</section>
+					<section class="calendrier">
+						<p>Juin 2008 - Aout 2012</p>						
+					</section>
+					<h3>
+						Employé Caisse d'épargne
+					</h3>
+					<section class="calendrier">
+						<p>Caisse d'épargne Bray-Dunes</p>
+						<p>Caisse d'épargne Rosendaël</p>
+						<p>Caisse d'épargne St-Pol-sur-mer</p>
+					</section>
+					<section class="calendrier">
+						<p>Juillet 2004</p>
+						<p>Décembre 2003</p>
+						<p>Juillet 2003</p>
+					</section></br>
+					</br>
+					<p>
+						Expérience professionnelle en entreprise, chargé de clientèle, conseiller financier</br>
 
-        <!-- SOCIAL MEDIA -->
-        <div class="d-flex justify-content-center mb-5 social_media">
-        <div class="social_media_btn mx-2">
-            <a href="https://www.facebook.com/david.stevenoot.9/" target="_blank">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-        </div>
-        <div class="social_media_btn mx-2">
-            <a href="https://www.instagram.com/evildave59/?hl=fr" target="_blank">
-                <i class="fab fa-instagram"></i>
-            </a>
-        </div>
-        <div class="social_media_btn mx-2">
-            <a href="https://www.pinterest.fr/davidstevenoot4473/_saved/" target="_blank">
-                <i class="fab fa-pinterest"></i>
-            </a>
-        </div>
-        <div class="social_media_btn mx-2">
-            <a href="https://www.behance.net/dave" target="_blank">
-                <i class="fab fa-behance"></i>
-            </a>
-        </div>
-        <div class="social_media_btn mx-2">
-            <a href="https://codepen.io/David_S/pens/public" target="_blank">
-            <i class="fab fa-codepen"></i>
-            </a>
-        </div>
-        </div>
+						Domaine de compétences :</br>
+						- Prise de rendez-vous</br>
+						- Accueil téléphonique</br>
+						- ventes produits
+					</p>
+				</article>
+				<article>
+					<h2>
+						Formations
+					</h2>
+					<div class="separation"></div>
+					<h3>
+						Formation Web Designer
+					</h3>
+					<section class="calendrier">
+						<p>M2I Formation Villeneuve d'Ascq</p>
+					</section>
+					<section class="calendrier">
+						<p>Juin 2017 - Février 2018</p>
+					</section>
+					<h3>
+						Diplôme d'Etat d'ambulancier
+					</h3>
+					<section class="calendrier"><p>CESU Lille</p></section>
+					<section class="calendrier"><p>Juin 2014</p></section>
+					<h3>
+						Formation PAO - DAO
+					</h3>
+					<section class="calendrier"><p>Format Concept Dunkerque</p></section>
+					<section class="calendrier"><p>Juillet - Août 2010</p></section>
+					<h3>
+						Baccalauréat Scientifique
+					</h3>
+					<section class="calendrier"><p>Lycée du Nordoover Grande</p></section>
+					<section class="calendrier"><p>Synthe Juillet 2004</p></section>
+				</article></br>
 
-    </div>
+				<!-- Pied de page -->
 
-    <!-- LIBRARY -->
-    <!-- LIBRARY -->
-    <!-- 1 JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- 2 BOOTSTRAP -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <!-- 3 LIGHTBOX -->
-    <script src="script/lightbox.min.js"></script>
-    <!-- 4 POPPER + TIPPY -->
-    <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@6"></script>
-    <!-- 5 SWIPER -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <!-- 6 VANILLA-TILT -->
-    <script src="script/vanilla-tilt.js"></script>
-    <!-- 7 SCRIPT -->
-    <script src="script/index.js"></script>
-    k
+				<article>
+					<p>Mise à jour CV : <time pubdate="2018-02-21">21 Février 2018</time></p>
+				</article>
+			</section>
+		</div>
+	</div>
 </body>
 </html>
