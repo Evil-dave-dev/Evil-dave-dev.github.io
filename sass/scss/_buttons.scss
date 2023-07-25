@@ -1,0 +1,14 @@
+.btn {
+  background: var(--c-lightseagreen);
+  box-shadow: 0 0 1rem var(--c-lightseagreen);
+  color: #fff;
+  transition: var(--transition);
+  border-radius: var(--br-btn);
+  font-size: var(--fs-btn);
+  padding: var(--m-btn);
+  display: inline-block;
+  font-weight: 600;
+  &:hover {
+    box-shadow: none;
+  }
+}
