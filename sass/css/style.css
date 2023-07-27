@@ -45,6 +45,70 @@
   box-shadow: none;
 }
 
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+  animation: lightboxIn 0.5s;
+  transition: opacity 0.3s;
+  z-index: 3;
+}
+.lightbox.fadeOut {
+  opacity: 0;
+}
+.lightbox__close, .lightbox__next, .lightbox__prev {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  color: #ffffff;
+  font-size: 5rem;
+  background: none;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: var(--transition);
+}
+.lightbox__close:hover, .lightbox__next:hover, .lightbox__prev:hover {
+  opacity: 1;
+}
+.lightbox__next, .lightbox__prev {
+  top: 0;
+  right: 0;
+  width: 10rem;
+  height: 100%;
+}
+.lightbox__prev {
+  right: auto;
+  left: 0;
+}
+.lightbox__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.lightbox__container img {
+  max-width: 100%;
+  height: auto;
+}
+.lightbox__loader {
+  width: 20rem;
+  height: 20rem;
+  opacity: 0.5;
+  background: url(../../imgs/loader.svg) center center no-repeat;
+}
+
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 * {
   margin: 0;
   padding: 0;
