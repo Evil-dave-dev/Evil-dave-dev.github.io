@@ -218,7 +218,7 @@ section {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--c-lightseagreen);
-    transition: var(--transition);
+    transition: var(--transition) ease;
     &:hover {
       background: var(--c-lightseagreen);
       box-shadow: 0 0 1rem var(--c-lightseagreen);
@@ -287,7 +287,7 @@ section {
   border-radius: var(--br-box);
   text-align: center;
   border: 0.2rem solid var(--c-jet500);
-  transition: var(--transition);
+  transition: var(--transition) ease;
   .fa-solid {
     font-size: 7rem;
     color: var(--c-lightseagreen);
@@ -302,23 +302,60 @@ section {
 // ------------------- portfolio section
 
 .portfolio {
-  grid-template-rows: auto 1fr;
   background: var(--c-jet400);
-}
-
-.card-image {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  background: #fff;
-  padding: 3px;
-}
-
-.card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 3px solid;
+  &__container {
+    display: grid;
+    grid-gap: var(--m-gutter);
+    grid-template-columns: 1fr;
+    @include breakpoints.x-small {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include breakpoints.medium {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  &__content {
+    @include mixins.flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: var(--m-gutter);
+    padding: var(--m-gutter);
+    position: absolute;
+    inset: 50% 0 0 0;
+    transform: translate(0, 100%);
+    object-fit: contain;
+    transition: 0.4s ease;
+    z-index: 1;
+  }
+  &__box {
+    @include mixins.flex(center, flex-start);
+    position: relative;
+    color: #fff;
+    border-radius: var(--br-box);
+    overflow: hidden;
+    img {
+      height: 115%;
+      transition: transform 0.8s ease;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.6) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 0;
+    }
+    &:hover {
+      .portfolio__content {
+        transform: translate(0, 0);
+      }
+      img {
+        transform: translate(0, -10%);
+      }
+    }
+  }
 }
 
 // ------------------- contact section
@@ -450,7 +487,7 @@ form {
     height: 4rem;
     background: var(--c-lightseagreen);
     border-radius: var(--br-input);
-    transition: var(--transition);
+    transition: var(--transition) ease;
     &:hover {
       box-shadow: 0 0 1rem var(--c-lightseagreen);
     }

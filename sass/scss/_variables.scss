@@ -23,7 +23,8 @@
   --br-input: 0.8rem;
 
   // transition
-  --transition: 0.5s ease;
+  --transition: 0.5s;
+  --transition-card: cubic-bezier(0.19, 1, 0.22, 1);
 
   // font size
   --fs-icon: 4rem;
