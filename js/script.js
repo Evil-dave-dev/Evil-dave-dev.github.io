@@ -30,9 +30,9 @@ window.onscroll = () => {
     }
   });
 
-  /* ===================== sticky navbar ===================== */
-  let header = document.querySelector("header");
-  header.classList.toggle("sticky", window.scrollY > 100);
+  /* ===================== sticky arrowTop ===================== */
+  let arrowTop = document.querySelector(".arrowTop");
+  arrowTop.classList.toggle("visible", window.scrollY > 743);
 
   /* ===================== remove toggle icon and navbar when click navbar link ===================== */
   menuIcon.classList.remove("active");

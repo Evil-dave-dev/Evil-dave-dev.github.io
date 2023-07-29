@@ -18,12 +18,13 @@
   --m-m_gutter: 4rem;
 
   // border radius
-  --br-btn: 4rem;
+  --br-btn: 1rem;
   --br-box: 2rem;
   --br-input: 0.8rem;
 
   // transition
   --transition: 0.5s;
+  --transition-btn: all 150ms ease-out;
   --transition-card: cubic-bezier(0.19, 1, 0.22, 1);
 
   // font size

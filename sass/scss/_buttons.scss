@@ -1,14 +1,23 @@
 .btn {
-  background: var(--c-lightseagreen);
-  box-shadow: 0 0 1rem var(--c-lightseagreen);
+  position: relative;
+  display: block;
+  font-weight: 600;
   color: #fff;
+  background: var(--c-lightseagreen);
   transition: var(--transition);
   border-radius: var(--br-btn);
   font-size: var(--fs-btn);
   padding: var(--m-btn);
-  display: inline-block;
-  font-weight: 600;
-  &:hover {
-    box-shadow: none;
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 0.2rem solid var(--c-lightseagreen);
+    border-radius: 1.4rem;
+    transition: var(--transition-btn);
+    z-index: 1;
+  }
+  &:hover::after {
+    inset: -0.6rem;
   }
 }
