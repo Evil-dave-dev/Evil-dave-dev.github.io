@@ -74,10 +74,11 @@
 .lightbox__close, .lightbox__next, .lightbox__prev {
   position: fixed;
   top: 2rem;
-  right: 2rem;
+  right: 0;
+  width: 10rem;
   color: #ffffff;
-  font-size: 5rem;
   background: none;
+  font-size: 5rem;
   opacity: 0.8;
   cursor: pointer;
   transition: var(--transition);
@@ -88,7 +89,6 @@
 .lightbox__next, .lightbox__prev {
   top: 0;
   right: 0;
-  width: 10rem;
   height: 100%;
 }
 .lightbox__prev {
