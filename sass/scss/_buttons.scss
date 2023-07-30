@@ -1,6 +1,8 @@
 .btn {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   font-weight: 600;
   color: #fff;
   background: var(--c-lightseagreen);
@@ -8,16 +10,19 @@
   border-radius: var(--br-btn);
   font-size: var(--fs-btn);
   padding: var(--m-btn);
+  i {
+    font-size: 3rem;
+  }
   &::after {
     content: "";
     position: absolute;
     inset: 0;
-    border: 0.2rem solid var(--c-lightseagreen);
+    border: 0.4rem solid var(--c-lightseagreen);
     border-radius: 1.4rem;
     transition: var(--transition-btn);
     z-index: 1;
   }
   &:hover::after {
-    inset: -0.6rem;
+    inset: -0.8rem;
   }
 }

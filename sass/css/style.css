@@ -12,7 +12,7 @@
   --m-gutter: 2rem;
   --m-input: 2rem;
   --m-form: 2rem;
-  --m-btn: 1.4rem 3.2rem;
+  --m-btn: 1.8rem 4.2rem;
   --m-m_gutter: 4rem;
   --br-btn: 1rem;
   --br-box: 2rem;
@@ -34,7 +34,9 @@
 
 .btn {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
   font-weight: 600;
   color: #fff;
   background: var(--c-lightseagreen);
@@ -43,17 +45,20 @@
   font-size: var(--fs-btn);
   padding: var(--m-btn);
 }
+.btn i {
+  font-size: 3rem;
+}
 .btn::after {
   content: "";
   position: absolute;
   inset: 0;
-  border: 0.2rem solid var(--c-lightseagreen);
+  border: 0.4rem solid var(--c-lightseagreen);
   border-radius: 1.4rem;
   transition: var(--transition-btn);
   z-index: 1;
 }
 .btn:hover::after {
-  inset: -0.6rem;
+  inset: -0.8rem;
 }
 
 .lightbox {
@@ -126,30 +131,26 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 4rem;
-  height: 4rem;
-  background: transparent;
-  border: 0.2rem solid var(--c-lightseagreen);
+  width: 7rem;
+  height: 7rem;
+  background: var(--c-lightseagreen);
+  border: 0.4rem solid var(--c-lightseagreen);
   border-radius: 50%;
-  font-size: 2rem;
-  color: var(--c-lightseagreen);
+  font-size: 3.4rem;
+  color: #fff;
   transition: var(--transition) ease;
 }
 .social-link::after {
   content: "";
   position: absolute;
   inset: -0.2rem;
-  border: 0.2rem solid var(--c-lightseagreen);
+  border: 0.4rem solid var(--c-lightseagreen);
   border-radius: inherit;
   transition: var(--transition-btn);
   z-index: 1;
 }
-.social-link:hover {
-  background: var(--c-lightseagreen);
-  color: #fff;
-}
 .social-link:hover::after {
-  inset: -0.8rem;
+  inset: -1.2rem;
 }
 
 * {
@@ -193,11 +194,14 @@ section {
 section h1 {
   font-size: 5.6rem;
   font-weight: 700;
-  line-height: 1.3;
 }
 section h2 {
-  font-size: 4.5rem;
-  line-height: 1.2;
+  font-size: 4rem;
+}
+@media screen and (min-width: 992px) {
+  section h2 {
+    font-size: 5.2rem;
+  }
 }
 section h3 {
   font-size: 3.2rem;
@@ -351,7 +355,7 @@ section p {
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .home-img {
@@ -397,7 +401,7 @@ section p {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .services {
@@ -407,12 +411,12 @@ section p {
   text-align: center;
 }
 
-.services-container {
+.services-content {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .services-box {
@@ -440,7 +444,7 @@ section p {
 
 .portfolio {
   background: var(--c-jet400);
-  gap: 12rem;
+  gap: 8rem;
 }
 .portfolio__container {
   display: grid;

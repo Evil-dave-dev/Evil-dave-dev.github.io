@@ -3,28 +3,26 @@
 .social-link {
   @include mixins.flex(center, center);
   position: relative;
-  width: 4rem;
-  height: 4rem;
-  background: transparent;
-  border: 0.2rem solid var(--c-lightseagreen);
+  width: 7rem;
+  height: 7rem;
+  background: var(--c-lightseagreen);
+  border: 0.4rem solid var(--c-lightseagreen);
   border-radius: 50%;
-  font-size: 2rem;
-  color: var(--c-lightseagreen);
+  font-size: 3.4rem;
+  color: #fff;
   transition: var(--transition) ease;
   &::after {
     content: "";
     position: absolute;
     inset: -0.2rem;
-    border: 0.2rem solid var(--c-lightseagreen);
+    border: 0.4rem solid var(--c-lightseagreen);
     border-radius: inherit;
     transition: var(--transition-btn);
     z-index: 1;
   }
   &:hover {
-    background: var(--c-lightseagreen);
-    color: #fff;
     &::after {
-      inset: -0.8rem;
+      inset: -1.2rem;
     }
   }
 }
