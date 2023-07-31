@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="/imgs/favicon.png" />
+    <script src="js/script.js" type="module" defer></script>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
     <link rel="stylesheet" href="sass/css/style.css" />
     <link
       rel="stylesheet"
@@ -36,6 +37,7 @@
         <a href="#home" class="active">home</a>
         <a href="#about">about</a>
         <a href="#services">services</a>
+        <a href="#skills">skills</a>
         <a href="#portfolio">portfolio</a>
         <a href="#contact">contact</a>
       </nav>
@@ -43,7 +45,7 @@
 
     <!-- home section design -->
     <section class="home" id="home">
-      <div class="home-content">
+      <div class="home__content">
         <h3>Hello, I'm</h3>
         <h1>David Stevenoot</h1>
         <h3>And I'm a <span class="coral-color">Frontend Developper</span></h3>
@@ -55,12 +57,12 @@
         </p>
         <div class="social-links">
           <a
-            href="https://www.facebook.com/david.stevenoot.9/"
+            href="https://github.com/Evil-dave-dev"
             target="_blank"
             rel="noopener noreferrer"
             class="social-link"
           >
-            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-github"></i>
           </a>
           <a
             href="https://www.instagram.com/david_stevenoot/?hl=fr"
@@ -79,14 +81,14 @@
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
         </div>
-        <a href="files/CV david stevenoot 2023.pdf" target="_blank" class="btn"
+        <a href="assets/CV david stevenoot 2023.pdf" target="_blank" class="btn"
           ><i class="fa-solid fa-cloud-arrow-down"></i>Download CV</a
         >
       </div>
-      <div class="home-img">
+      <div class="home__img">
         <img
-          src="imgs/david01small.png"
-          srcset="imgs/david01large.png 640w"
+          src="assets/david01small.png"
+          srcset="assets/david01large.png 640w"
           alt="david stevenoot"
         />
       </div>
@@ -94,14 +96,14 @@
 
     <!-- about section design -->
     <section class="about" id="about">
-      <div class="about-img">
+      <div class="about__img">
         <img
-          src="imgs/david02small.png"
-          srcset="imgs/david02large.png 640w"
+          src="assets/david02small.png"
+          srcset="assets/david02large.png 640w"
           alt="david stevenoot"
         />
       </div>
-      <div class="about-content">
+      <div class="about__content">
         <h2 class="heading">About <span class="coral-color">Me</span></h2>
         <h3>Frontend Developper</h3>
         <p>
@@ -117,8 +119,8 @@
     <!-- services section design -->
     <section class="services" id="services">
       <h2 class="heading">Our <span class="coral-color">Services</span></h2>
-      <div class="services-content">
-        <div class="services-box">
+      <div class="services__content">
+        <div class="services__box">
           <div class="services-title">
             <i class="fa-solid fa-code"></i>
             <h3>Web Developement</h3>
@@ -131,7 +133,7 @@
           </p>
           <a href="#" class="btn">Read more</a>
         </div>
-        <div class="services-box">
+        <div class="services__box">
           <div class="services-title">
             <i class="fa-solid fa-brush"></i>
             <h3>Graphic Design</h3>
@@ -147,13 +149,19 @@
       </div>
     </section>
 
+    <!-- skills section design -->
+    <section class="skills" id="skills">
+      <h2 class="heading">My <span class="coral-color">Skills</span></h2>
+      <div class="skills-content"></div>
+    </section>
+
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
       <h2 class="heading">Latest <span class="coral-color">Project</span></h2>
-      <div class="portfolio__container">
-        <a href="imgs/portfolio01large.png" class="portfolio__box">
-          <img src="imgs/portfolio01large.png" alt="portfolio01" />
-          <div class="portfolio__content">
+      <div class="portfolio__content">
+        <a href="assets/portfolio01large.png" class="portfolio__box">
+          <img src="assets/portfolio01large.png" alt="portfolio01" />
+          <div class="portfolio__text">
             <h3>road trip</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -162,9 +170,9 @@
             </p>
           </div></a
         >
-        <a href="imgs/portfolio02large.png" class="portfolio__box"
-          ><img src="imgs/portfolio02large.png" alt="portfolio02" />
-          <div class="portfolio__content">
+        <a href="assets/portfolio02large.png" class="portfolio__box"
+          ><img src="assets/portfolio02large.png" alt="portfolio02" />
+          <div class="portfolio__text">
             <h3>escalade</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -173,9 +181,9 @@
             </p>
           </div></a
         >
-        <a href="imgs/portfolio03large.png" class="portfolio__box"
-          ><img src="imgs/portfolio03large.png" alt="portfolio03" />
-          <div class="portfolio__content">
+        <a href="assets/portfolio03large.png" class="portfolio__box"
+          ><img src="assets/portfolio03large.png" alt="portfolio03" />
+          <div class="portfolio__text">
             <h3>wakeboard</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -184,9 +192,9 @@
             </p>
           </div>
         </a>
-        <a href="imgs/portfolio04large.png" class="portfolio__box"
-          ><img src="imgs/portfolio04large.png" alt="portfolio04" />
-          <div class="portfolio__content">
+        <a href="assets/portfolio04large.png" class="portfolio__box"
+          ><img src="assets/portfolio04large.png" alt="portfolio04" />
+          <div class="portfolio__text">
             <h3>skateboard</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -265,8 +273,5 @@
       </div>
       <a href="#home" class="arrowTop"><i class="fa-solid fa-arrow-up"></i></a>
     </footer>
-
-    <!-- custom js -->
-    <script src="js/script.js" type="module" defer></script>
   </body>
 </html>

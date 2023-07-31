@@ -6,23 +6,11 @@
   width: 7rem;
   height: 7rem;
   background: var(--c-lightseagreen);
-  border: 0.4rem solid var(--c-lightseagreen);
   border-radius: 50%;
-  font-size: 3.4rem;
+  font-size: 4.2rem;
   color: #fff;
   transition: var(--transition) ease;
-  &::after {
-    content: "";
-    position: absolute;
-    inset: -0.2rem;
-    border: 0.4rem solid var(--c-lightseagreen);
-    border-radius: inherit;
-    transition: var(--transition-btn);
-    z-index: 1;
-  }
   &:hover {
-    &::after {
-      inset: -1.2rem;
-    }
+    color: var(--c-jet500);
   }
 }

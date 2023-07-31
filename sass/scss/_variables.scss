@@ -1,14 +1,17 @@
 :root {
-  // couleurs
+  // light mode
   --c-coral: #ff8360;
-  --c-ultrapink: #ff69eb;
-  --c-mustard: #ffdc5e;
+  --c-mindaro: #f3ffb6;
   --c-lightseagreen: #03b5aa;
   --c-jet300: #b7c0ba;
   --c-jet400: #7a827d;
   --c-jet500: #2c302e;
-  --c-success: #12a53c;
-  --c-error: #991e3f;
+  --c-success: #62ad24;
+  --c-error: #ff3a47;
+
+  // dark mode
+  --c-bg: #2c302e;
+  --c-text: #f0f4f0;
 
   // marges
   --m-gutter: 2rem;

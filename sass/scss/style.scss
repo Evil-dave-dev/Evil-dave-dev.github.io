@@ -1,9 +1,9 @@
 @use "variables";
 @use "mixins";
-@use "buttons";
 @use "breakpoints";
 @use "lightbox";
-@use "socialmedia";
+@import "socialmedia";
+@import "buttons";
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 
 // ------------------- reset
@@ -23,6 +23,7 @@
 html {
   font-size: 55%;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
   @include breakpoints.large {
     font-size: 62.5%;
   }
@@ -32,8 +33,7 @@ html {
 // ------------------- general
 
 body {
-  background: var(--c-jet500);
-  color: #ffffff;
+  color: var(--c-jet500);
 }
 
 section {
@@ -65,14 +65,17 @@ section {
   p {
     font-size: 1.6rem;
   }
+  &:nth-child(even) {
+    background: var(--c-mindaro);
+  }
 }
 
 .coral-color {
   color: var(--c-coral);
 }
 
-// ------------------- header section
-// ------------------- header section
+// ------------------- header
+// ------------------- header
 
 .header {
   @include mixins.flex(end, center);
@@ -80,7 +83,7 @@ section {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background-color: var(--c-lightseagreen);
+  background: linear-gradient(0.25turn, var(--c-lightseagreen), #066bc2);
   color: #fff;
   z-index: 2;
   @include breakpoints.medium {
@@ -130,8 +133,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--c-lightseagreen);
-  border-bottom: 1px solid var(--c-jet500);
+  background: linear-gradient(0.95turn, var(--c-lightseagreen), #066bc2);
   font-weight: 600;
   color: #fff;
   font-size: 3rem;
@@ -152,6 +154,7 @@ section {
   background: var(--c-lightseagreen);
   transform: translateY(-100%);
   transition: 0.5s ease all;
+  font-weight: 600;
   z-index: -1;
   &.active {
     transform: translateY(0);
@@ -180,8 +183,8 @@ section {
   }
 }
 
-// ------------------- home section
-// ------------------- home section
+// ------------------- home
+// ------------------- home
 
 .home {
   grid-template-columns: 1fr 35vw;
@@ -189,6 +192,19 @@ section {
   grid-template-areas:
     "home-content home-content"
     "home-img home-img";
+  &__content {
+    grid-area: home-content;
+    @include mixins.flex(center, flex-start);
+    flex-direction: column;
+    gap: 2rem;
+  }
+  &__img {
+    grid-area: home-img;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
   @include breakpoints.small {
     align-items: center;
     grid-template-areas:
@@ -197,28 +213,13 @@ section {
   }
 }
 
-.home-content {
-  grid-area: home-content;
-  @include mixins.flex(center, flex-start);
-  flex-direction: column;
-  gap: 4rem;
-}
-
-.home-img {
-  grid-area: home-img;
-  img {
-    width: 100%;
-    height: 100%;
-  }
-}
-
 .social-links {
   @include mixins.flex(flex-start, center);
   gap: 3rem;
 }
 
-// ------------------- about section
-// ------------------- about section
+// ------------------- about
+// ------------------- about
 
 .about {
   padding: 12rem var(--m-m_gutter) 0 var(--m-m_gutter);
@@ -227,74 +228,65 @@ section {
   grid-template-areas:
     "about-content about-content"
     "about-img about-img";
+  &__img {
+    grid-area: about-img;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+  }
+  &__content {
+    grid-area: about-content;
+    @include mixins.flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 2rem;
+  }
   @include breakpoints.small {
     grid-template-areas:
       "about-img about-content"
       "about-img about-content";
   }
-  background: var(--c-jet400);
 }
 
-.about-img {
-  grid-area: about-img;
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-  }
-}
-
-.about-content {
-  grid-area: about-content;
-  @include mixins.flex(flex-start, flex-start);
-  flex-direction: column;
-  gap: 4rem;
-}
-
-// ------------------- services section
-// ------------------- services section
+// ------------------- services
+// ------------------- services
 
 .services {
   grid-template-rows: auto 1fr;
+  &__content {
+    @include mixins.flex(flex-start, flex-start);
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  &__box {
+    @include mixins.flex(center, flex-start);
+    flex: 1 1 30rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem 4rem;
+    border-radius: var(--br-box);
+    text-align: center;
+    border: 0.2rem solid var(--c-lightseagreen);
+    transition: var(--transition) ease;
+    .fa-solid {
+      font-size: 7rem;
+      color: var(--c-lightseagreen);
+    }
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
   .heading {
     text-align: center;
   }
 }
 
-.services-content {
-  @include mixins.flex(flex-start, flex-start);
-  flex-wrap: wrap;
-  gap: 4rem;
-}
-
-.services-box {
-  @include mixins.flex(center, flex-start);
-  flex: 1 1 30rem;
-  flex-wrap: wrap;
-  gap: 2rem;
-  background: var(--c-jet500);
-  padding: 3rem 2rem 4rem;
-  border-radius: var(--br-box);
-  text-align: center;
-  border: 0.2rem solid var(--c-jet500);
-  transition: var(--transition) ease;
-  .fa-solid {
-    font-size: 7rem;
-    color: var(--c-lightseagreen);
-  }
-  &:hover {
-    border-color: var(--c-lightseagreen);
-    transform: scale(1.02);
-  }
-}
-
-// ------------------- portfolio section
-// ------------------- portfolio section
+// ------------------- portfolio
+// ------------------- portfolio
 
 .portfolio {
-  background: var(--c-jet400);
-  gap: 8rem;
-  &__container {
+  &__content {
     display: grid;
     grid-gap: var(--m-gutter);
     grid-template-columns: 1fr;
@@ -305,7 +297,7 @@ section {
       grid-template-columns: repeat(3, 1fr);
     }
   }
-  &__content {
+  &__text {
     @include mixins.flex(flex-start, flex-start);
     flex-direction: column;
     gap: var(--m-gutter);
@@ -340,7 +332,7 @@ section {
       z-index: 0;
     }
     &:hover {
-      .portfolio__content {
+      .portfolio__text {
         transform: translate(0, 0);
       }
       img {
@@ -350,8 +342,8 @@ section {
   }
 }
 
-// ------------------- contact section
-// ------------------- contact section
+// ------------------- contact
+// ------------------- contact
 
 .contact {
   grid-template-rows: auto 1fr;
@@ -369,7 +361,7 @@ form {
   }
   label {
     font-size: var(--fs-p);
-    color: #fff;
+    color: var(--c-jet500);
     position: absolute;
     top: 0;
     left: 0;
@@ -383,15 +375,11 @@ form {
   textarea {
     padding: 3rem var(--m-input) var(--m-input);
     font-size: var(--fs-p);
-    background: var(--c-jet400);
     border-radius: var(--br-input);
     border: 0.1rem solid var(--c-jet400);
     width: 100%;
-    color: #fff;
+    color: var(--c-jet500);
     resize: none;
-    &::placeholder {
-      color: #fff;
-    }
   }
   input:not(.btn):focus ~ label,
   textarea:focus ~ label,
@@ -451,14 +439,14 @@ form {
   }
 }
 
-// ------------------- footer section
-// ------------------- footer section
+// ------------------- footer
+// ------------------- footer
 
 .footer {
   @include mixins.flex(space-between, center);
   flex-wrap: wrap;
   padding: var(--m-gutter) var(--m-gutter);
-  background: var(--c-jet400);
+  background: linear-gradient(0.25turn, var(--c-lightseagreen), #066bc2);
   @include breakpoints.medium {
     padding: var(--m-gutter) var(--m-m_gutter);
   }
@@ -467,6 +455,7 @@ form {
 .footer-text {
   p {
     font-size: 1.6rem;
+    color: #fff;
   }
 }
 
@@ -481,25 +470,13 @@ form {
   background: var(--c-coral);
   border-radius: var(--br-input);
   transition: var(--transition) ease;
+  color: #fff;
+  font-size: 4rem;
   z-index: 1;
-  &::after {
-    display: block;
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 0.2rem solid var(--c-coral);
-    border-radius: 1.4rem;
-    transition: var(--transition-btn);
-    z-index: 1;
-  }
-  &:hover::after {
-    inset: -0.6rem;
-  }
-  i {
-    font-size: 4rem;
-    color: #fff;
-  }
   &.visible {
     visibility: visible;
+  }
+  &:hover {
+    color: var(--c-jet500);
   }
 }

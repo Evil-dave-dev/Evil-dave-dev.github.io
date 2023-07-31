@@ -13,16 +13,7 @@
   i {
     font-size: 3rem;
   }
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border: 0.4rem solid var(--c-lightseagreen);
-    border-radius: 1.4rem;
-    transition: var(--transition-btn);
-    z-index: 1;
-  }
-  &:hover::after {
-    inset: -0.8rem;
+  &:hover {
+    color: var(--c-jet500);
   }
 }

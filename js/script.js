@@ -1,4 +1,5 @@
 import { enableBodyScroll, disableBodyScroll } from "./body-scroll-lock.js";
+import {} from "./color-mode.js";
 
 /* ===================== toggle icon navbar ===================== */
 let menuIcon = document.querySelector(".menu-icon");
