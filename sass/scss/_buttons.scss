@@ -4,8 +4,8 @@
   align-items: center;
   gap: 2rem;
   font-weight: 600;
-  color: #fff;
-  background: var(--c-lightseagreen);
+  color: var(--c-text2);
+  background: var(--c-btn);
   transition: var(--transition);
   border-radius: var(--br-btn);
   font-size: var(--fs-btn);
@@ -14,6 +14,6 @@
     font-size: 3rem;
   }
   &:hover {
-    color: var(--c-jet500);
+    color: var(--c-text);
   }
 }

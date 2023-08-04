@@ -1,17 +1,15 @@
 :root {
-  // light mode
-  --c-coral: #ff8360;
-  --c-mindaro: #f3ffb6;
-  --c-lightseagreen: #03b5aa;
-  --c-jet300: #b7c0ba;
-  --c-jet400: #7a827d;
-  --c-jet500: #2c302e;
+  // couleurs
+  --c-bg: #fffbff;
+  --c-bg2: #ff6f59;
+  --c-bg3: #4fb286;
+  --c-text: #0b0500;
+  --c-text2: #fffbfe;
+  --c-text3: #ff6f59;
+  --c-btn: #ff6f59;
+
   --c-success: #62ad24;
   --c-error: #ff3a47;
-
-  // dark mode
-  --c-bg: #2c302e;
-  --c-text: #f0f4f0;
 
   // marges
   --m-gutter: 2rem;
@@ -41,4 +39,21 @@
   --fs-h2: 4.5rem;
   --fs-h3: 3.2rem;
   --fs-h4: 3rem;
+
+  // color mode
+  --sun: url(../../assets/sun.svg);
+}
+
+:root.dark-mode {
+  // couleurs
+  --c-bg: #403e40;
+  --c-bg2: #284b63;
+  --c-bg3: #9799ca;
+  --c-text: #fffecb;
+  --c-text2: #3e4240;
+  --c-text3: #7b7dac;
+  --c-btn: #fffecb;
+
+  // color mode
+  --moon: url(../../assets/moon.svg);
 }

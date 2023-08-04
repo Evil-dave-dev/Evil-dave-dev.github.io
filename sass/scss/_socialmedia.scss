@@ -5,12 +5,12 @@
   position: relative;
   width: 7rem;
   height: 7rem;
-  background: var(--c-lightseagreen);
+  background: var(--c-btn);
   border-radius: 50%;
   font-size: 4.2rem;
-  color: #fff;
+  color: var(--c-text2);
   transition: var(--transition) ease;
   &:hover {
-    color: var(--c-jet500);
+    color: var(--c-text);
   }
 }

@@ -34,12 +34,29 @@
         />
       </svg>
       <nav class="navbar">
-        <a href="#home" class="active">home</a>
-        <a href="#about">about</a>
-        <a href="#services">services</a>
-        <a href="#skills">skills</a>
-        <a href="#portfolio">portfolio</a>
-        <a href="#contact">contact</a>
+        <div class="navbar__box">
+          <a href="#home" class="active">home</a>
+        </div>
+        <div class="navbar__box">
+          <a href="#about">about</a>
+        </div>
+        <div class="navbar__box">
+          <a href="#services">services</a>
+        </div>
+        <div class="navbar__box">
+          <a href="#skills">skills</a>
+        </div>
+        <div class="navbar__box">
+          <a href="#portfolio">portfolio</a>
+        </div>
+        <div class="navbar__box">
+          <a href="#contact">contact</a>
+        </div>
+        <div class="navbar__box colorMode">
+          <button id="colorMode">
+            <div id="colorMode__toggle"></div>
+          </button>
+        </div>
       </nav>
     </header>
 
@@ -87,8 +104,8 @@
       </div>
       <div class="home__img">
         <img
+          id="home-img"
           src="assets/david01small.png"
-          srcset="assets/david01large.png 640w"
           alt="david stevenoot"
         />
       </div>
@@ -261,7 +278,14 @@
         </div>
 
         <div class="submit-control">
-          <button type="submit" value="Send message" class="btn">submit</button>
+          <button
+            id="submit__button"
+            type="submit"
+            value="Send message"
+            class="btn"
+          >
+            submit
+          </button>
         </div>
       </form>
     </section>

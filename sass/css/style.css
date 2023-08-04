@@ -1,15 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 :root {
-  --c-coral: #ff8360;
-  --c-mindaro: #f3ffb6;
-  --c-lightseagreen: #03b5aa;
-  --c-jet300: #b7c0ba;
-  --c-jet400: #7a827d;
-  --c-jet500: #2c302e;
+  --c-bg: #fffbff;
+  --c-bg2: #ff6f59;
+  --c-bg3: #4fb286;
+  --c-text: #0b0500;
+  --c-text2: #fffbfe;
+  --c-text3: #ff6f59;
+  --c-btn: #ff6f59;
   --c-success: #62ad24;
   --c-error: #ff3a47;
-  --c-bg: #2c302e;
-  --c-text: #f0f4f0;
   --m-gutter: 2rem;
   --m-input: 2rem;
   --m-form: 2rem;
@@ -31,6 +30,18 @@
   --fs-h2: 4.5rem;
   --fs-h3: 3.2rem;
   --fs-h4: 3rem;
+  --sun: url(../../assets/sun.svg);
+}
+
+:root.dark-mode {
+  --c-bg: #403e40;
+  --c-bg2: #284b63;
+  --c-bg3: #9799ca;
+  --c-text: #fffecb;
+  --c-text2: #3e4240;
+  --c-text3: #7b7dac;
+  --c-btn: #fffecb;
+  --moon: url(../../assets/moon.svg);
 }
 
 .lightbox {
@@ -105,14 +116,14 @@
   position: relative;
   width: 7rem;
   height: 7rem;
-  background: var(--c-lightseagreen);
+  background: var(--c-btn);
   border-radius: 50%;
   font-size: 4.2rem;
-  color: #fff;
+  color: var(--c-text2);
   transition: var(--transition) ease;
 }
 .social-link:hover {
-  color: var(--c-jet500);
+  color: var(--c-text);
 }
 
 .btn {
@@ -121,8 +132,8 @@
   align-items: center;
   gap: 2rem;
   font-weight: 600;
-  color: #fff;
-  background: var(--c-lightseagreen);
+  color: var(--c-text2);
+  background: var(--c-btn);
   transition: var(--transition);
   border-radius: var(--br-btn);
   font-size: var(--fs-btn);
@@ -132,7 +143,7 @@
   font-size: 3rem;
 }
 .btn:hover {
-  color: var(--c-jet500);
+  color: var(--c-text);
 }
 
 * {
@@ -158,7 +169,7 @@ html {
 }
 
 body {
-  color: var(--c-jet500);
+  color: var(--c-text);
 }
 
 section {
@@ -196,11 +207,14 @@ section p {
   font-size: 1.6rem;
 }
 section:nth-child(even) {
-  background: var(--c-mindaro);
+  background: var(--c-bg);
+}
+section:nth-child(odd) {
+  background: var(--c-bg3);
 }
 
 .coral-color {
-  color: var(--c-coral);
+  color: var(--c-text3);
 }
 
 .header {
@@ -211,7 +225,7 @@ section:nth-child(even) {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background: linear-gradient(0.25turn, var(--c-lightseagreen), #066bc2);
+  background: var(--c-bg);
   color: #fff;
   z-index: 2;
 }
@@ -267,9 +281,9 @@ section:nth-child(even) {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0.95turn, var(--c-lightseagreen), #066bc2);
+  background: var(--c-bg3);
   font-weight: 600;
-  color: #fff;
+  color: var(--c-text2);
   font-size: 3rem;
   padding: 0 var(--m-gutter);
 }
@@ -280,39 +294,42 @@ section:nth-child(even) {
 }
 
 .navbar {
-  display: flex;
-  flex-wrap: wrap;
   position: absolute;
   top: 100%;
   left: 0;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  padding: 2rem;
-  background: var(--c-lightseagreen);
+  background: var(--c-bg3);
+  border-radius: 2rem;
   transform: translateY(-100%);
   transition: 0.5s ease all;
-  font-weight: 600;
   z-index: -1;
+}
+.navbar .colorMode, .navbar .navbar__box a, .navbar__box .navbar a {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
 }
 .navbar.active {
   transform: translateY(0);
 }
-.navbar a {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+.navbar__box {
   flex: 1 1 100%;
-  color: #fff;
   font-size: 1.6rem;
-  padding: 2rem 0;
+  font-weight: 500;
 }
-.navbar a:hover, .navbar a.active {
-  color: var(--c-jet500);
+.navbar__box a {
+  height: 100%;
+  color: var(--c-text2);
+}
+.navbar__box a:hover, .navbar__box a.active {
+  color: var(--c-text);
 }
 @media screen and (min-width: 768px) {
   .navbar {
     position: static;
     flex-wrap: nowrap;
-    gap: 2rem;
     width: auto;
     height: 100%;
     padding: 0;
@@ -320,6 +337,39 @@ section:nth-child(even) {
     background: none;
     z-index: 1;
   }
+  .navbar a,
+  .navbar .colorMode {
+    padding: 0;
+  }
+}
+
+#colorMode {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: var(--c-text);
+  width: 4rem;
+  height: 3rem;
+  border-radius: 3rem;
+  padding: 0 0.2rem;
+}
+#colorMode__toggle {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background-image: var(--sun);
+  background-color: var(--c-bg);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.dark-mode #colorMode {
+  justify-content: flex-end;
+}
+
+.dark-mode #colorMode_toggle {
+  background-image: var(--moon);
 }
 
 .home {
@@ -404,12 +454,12 @@ section:nth-child(even) {
   padding: 3rem 2rem 4rem;
   border-radius: var(--br-box);
   text-align: center;
-  border: 0.2rem solid var(--c-lightseagreen);
+  border: 0.2rem solid var(--c-text);
   transition: var(--transition) ease;
 }
 .services__box .fa-solid {
   font-size: 7rem;
-  color: var(--c-lightseagreen);
+  color: var(--c-text);
 }
 .services__box:hover {
   transform: scale(1.02);
@@ -498,7 +548,7 @@ form {
 }
 .input-control label, .textarea-control label {
   font-size: var(--fs-p);
-  color: var(--c-jet500);
+  color: var(--c-text);
   position: absolute;
   top: 0;
   left: 0;
@@ -514,9 +564,10 @@ form {
   padding: 3rem var(--m-input) var(--m-input);
   font-size: var(--fs-p);
   border-radius: var(--br-input);
-  border: 0.1rem solid var(--c-jet400);
+  background: var(--c-b2);
+  border: 0.1rem solid var(--c-text);
+  color: var(--c-text);
   width: 100%;
-  color: var(--c-jet500);
   resize: none;
 }
 .input-control input:not(.btn):focus ~ label, .textarea-control input:not(.btn):focus ~ label,
@@ -587,7 +638,7 @@ form {
   align-items: center;
   flex-wrap: wrap;
   padding: var(--m-gutter) var(--m-gutter);
-  background: linear-gradient(0.25turn, var(--c-lightseagreen), #066bc2);
+  background: var(--c-bg2);
 }
 @media screen and (min-width: 992px) {
   .footer {
@@ -610,7 +661,7 @@ form {
   right: 2rem;
   width: 6rem;
   height: 6rem;
-  background: var(--c-coral);
+  background: var(--c-bg2);
   border-radius: var(--br-input);
   transition: var(--transition) ease;
   color: #fff;
@@ -621,7 +672,7 @@ form {
   visibility: visible;
 }
 .arrowTop:hover {
-  color: var(--c-jet500);
+  color: var(--c-text);
 }
 
 /*# sourceMappingURL=style.css.map */
