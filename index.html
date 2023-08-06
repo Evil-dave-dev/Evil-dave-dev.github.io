@@ -16,7 +16,10 @@
   <body>
     <!-- header section -->
     <header class="header">
-      <a href="#" class="logo">Portfolio</a>
+      <div class="header__content">
+        Portfolio
+        <button id="colorMode"></button>
+      </div>
       <svg
         class="menu-icon menu-icon180"
         viewBox="0 0 100 100"
@@ -52,11 +55,6 @@
         <div class="navbar__box">
           <a href="#contact">contact</a>
         </div>
-        <div class="navbar__box colorMode">
-          <button id="colorMode">
-            <div id="colorMode__toggle"></div>
-          </button>
-        </div>
       </nav>
     </header>
 
@@ -65,7 +63,9 @@
       <div class="home__content">
         <h3>Hello, I'm</h3>
         <h1>David Stevenoot</h1>
-        <h3>And I'm a <span class="coral-color">Frontend Developper</span></h3>
+        <h3>
+          And I'm a <span class="highlight-color">Frontend Developper</span>
+        </h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ullam
           sit consequatur ex, facilis perferendis itaque velit provident numquam
@@ -121,7 +121,7 @@
         />
       </div>
       <div class="about__content">
-        <h2 class="heading">About <span class="coral-color">Me</span></h2>
+        <h2 class="heading">About <span class="highlight-color">Me</span></h2>
         <h3>Frontend Developper</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quis
@@ -135,7 +135,7 @@
 
     <!-- services section design -->
     <section class="services" id="services">
-      <h2 class="heading">Our <span class="coral-color">Services</span></h2>
+      <h2 class="heading">Our <span class="highlight-color">Services</span></h2>
       <div class="services__content">
         <div class="services__box">
           <div class="services-title">
@@ -168,13 +168,15 @@
 
     <!-- skills section design -->
     <section class="skills" id="skills">
-      <h2 class="heading">My <span class="coral-color">Skills</span></h2>
+      <h2 class="heading">My <span class="highlight-color">Skills</span></h2>
       <div class="skills-content"></div>
     </section>
 
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
-      <h2 class="heading">Latest <span class="coral-color">Project</span></h2>
+      <h2 class="heading">
+        Latest <span class="highlight-color">Project</span>
+      </h2>
       <div class="portfolio__content">
         <a href="assets/portfolio01large.png" class="portfolio__box">
           <img src="assets/portfolio01large.png" alt="portfolio01" />
@@ -225,7 +227,7 @@
 
     <!-- contact section design -->
     <section class="contact" id="contact">
-      <h2 class="heading">Contact <span class="coral-color">Me!</span></h2>
+      <h2 class="heading">Contact <span class="highlight-color">Me!</span></h2>
       <form action="#" id="form">
         <div class="input-control">
           <input type="text" name="lastname" id="lastname" />

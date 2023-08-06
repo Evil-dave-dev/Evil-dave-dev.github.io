@@ -1,12 +1,11 @@
 :root {
   // couleurs
-  --c-bg: #fffbff;
-  --c-bg2: #ff6f59;
-  --c-bg3: #4fb286;
-  --c-text: #0b0500;
-  --c-text2: #fffbfe;
-  --c-text3: #ff6f59;
-  --c-btn: #ff6f59;
+  --c-primary: #fef7cb;
+  --c-primary2: #feed98;
+  --c-primary3: #32de8a;
+  --c-secondary: #0b0500;
+  --c-secondary2: #fffbfe;
+  --c-secondary3: #e4572e;
 
   --c-success: #62ad24;
   --c-error: #ff3a47;
@@ -26,7 +25,6 @@
   // transition
   --transition: 0.5s;
   --transition-btn: all 150ms ease-out;
-  --transition-card: cubic-bezier(0.19, 1, 0.22, 1);
 
   // font size
   --fs-icon: 4rem;
@@ -42,18 +40,32 @@
 
   // color mode
   --sun: url(../../assets/sun.svg);
+
+  --c-bg: #e7e7e7;
+  --c-primaryBtn: var(--c-secondary3);
+  --c-secondaryBtn: var(--c-secondary2);
+  --c-secondaryBtnHover: var(--c-secondary);
+  --c-arrowTop: var(--c-secondary3);
+  --c-navbar: #fff;
 }
 
 :root.dark-mode {
   // couleurs
-  --c-bg: #403e40;
-  --c-bg2: #284b63;
-  --c-bg3: #9799ca;
-  --c-text: #fffecb;
-  --c-text2: #3e4240;
-  --c-text3: #7b7dac;
+  --c-primary: #0d1b1e;
+  --c-primary2: #061015;
+  --c-primary3: #02080e;
+  --c-secondary: #fffecb;
+  --c-secondary2: #3e4240;
+  --c-secondary3: #7b7dac;
   --c-btn: #fffecb;
 
   // color mode
   --moon: url(../../assets/moon.svg);
+
+  --c-bg: #181717;
+  --c-primaryBtn: var(--c-secondary3);
+  --c-secondaryBtn: var(--c-secondary);
+  --c-secondaryBtnHover: var(--c-primary3);
+  --c-arrowTop: var(--c-secondary3);
+  --c-navbar: #000000;
 }

@@ -33,7 +33,7 @@ html {
 // ------------------- general
 
 body {
-  color: var(--c-text);
+  color: var(--c-secondary);
 }
 
 section {
@@ -69,12 +69,12 @@ section {
     background: var(--c-bg);
   }
   &:nth-child(odd) {
-    background: var(--c-bg3);
+    background: var(--c-bg);
   }
 }
 
-.coral-color {
-  color: var(--c-text3);
+.highlight-color {
+  color: var(--c-primary3);
 }
 
 // ------------------- header
@@ -86,11 +86,28 @@ section {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background: var(--c-bg);
+  background: var(--c-primary3);
   color: #fff;
   z-index: 2;
   @include breakpoints.medium {
     padding: 0 var(--m-m_gutter);
+  }
+  &__content {
+    @include mixins.flex(flex-start, center);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    background: var(--c-primary3);
+    font-weight: 600;
+    color: var(--c-secondary);
+    font-size: 3rem;
+    padding: 0 var(--m-gutter);
+    @include breakpoints.medium {
+      padding: 0 var(--m-m_gutter);
+    }
   }
 }
 
@@ -129,23 +146,6 @@ section {
   }
 }
 
-.logo {
-  @include mixins.flex(flex-start, center);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--c-bg3);
-  font-weight: 600;
-  color: var(--c-text2);
-  font-size: 3rem;
-  padding: 0 var(--m-gutter);
-  @include breakpoints.medium {
-    padding: 0 var(--m-m_gutter);
-  }
-}
-
 .navbar {
   position: absolute;
   top: 100%;
@@ -153,7 +153,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  background: var(--c-bg3);
+  box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
+  background: var(--c-navbar);
   border-radius: 2rem;
   transform: translateY(-100%);
   transition: 0.5s ease all;
@@ -173,10 +174,10 @@ section {
     a {
       @extend .colorMode;
       height: 100%;
-      color: var(--c-text2);
+      color: var(--c-secondary);
       &:hover,
       &.active {
-        color: var(--c-text);
+        color: var(--c-secondary3);
       }
     }
   }
@@ -186,33 +187,26 @@ section {
     width: auto;
     height: 100%;
     padding: 0;
-    transform: translateY(0);
+    box-shadow: none;
     background: none;
+    transform: translateY(0);
     z-index: 1;
-    a,
-    .colorMode {
-      padding: 0;
-    }
   }
 }
 
 #colorMode {
   @include mixins.flex(flex-start, center);
-  background: var(--c-text);
+  background: var(--c-secondary);
   width: 4rem;
-  height: 3rem;
-  border-radius: 3rem;
+  height: 4rem;
+  border-radius: 50%;
   padding: 0 0.2rem;
-  &__toggle {
-    width: 2.4rem;
-    height: 2.4rem;
-    border-radius: 50%;
-    background-image: var(--sun);
-    background-color: var(--c-bg);
-    background-position: center;
-    background-repeat: no-repeat;
-    cursor: pointer;
-  }
+  border-radius: 50%;
+  background-image: var(--sun);
+  background-color: var(--c-primaryBtn);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 .dark-mode #colorMode {
   justify-content: flex-end;
@@ -305,11 +299,11 @@ section {
     padding: 3rem 2rem 4rem;
     border-radius: var(--br-box);
     text-align: center;
-    border: 0.2rem solid var(--c-text);
+    border: 0.2rem solid var(--c-secondary);
     transition: var(--transition) ease;
     .fa-solid {
       font-size: 7rem;
-      color: var(--c-text);
+      color: var(--c-secondary);
     }
     &:hover {
       transform: scale(1.02);
@@ -399,7 +393,7 @@ form {
   }
   label {
     font-size: var(--fs-p);
-    color: var(--c-text);
+    color: var(--c-secondary);
     position: absolute;
     top: 0;
     left: 0;
@@ -414,9 +408,9 @@ form {
     padding: 3rem var(--m-input) var(--m-input);
     font-size: var(--fs-p);
     border-radius: var(--br-input);
-    background: var(--c-b2);
-    border: 0.1rem solid var(--c-text);
-    color: var(--c-text);
+    background: var(--c-primary);
+    border: 0.1rem solid var(--c-secondary);
+    color: var(--c-secondary);
     width: 100%;
     resize: none;
   }
@@ -485,7 +479,7 @@ form {
   @include mixins.flex(space-between, center);
   flex-wrap: wrap;
   padding: var(--m-gutter) var(--m-gutter);
-  background: var(--c-bg2);
+  background: var(--c-primary3);
   @include breakpoints.medium {
     padding: var(--m-gutter) var(--m-m_gutter);
   }
@@ -506,7 +500,7 @@ form {
   right: 2rem;
   width: 6rem;
   height: 6rem;
-  background: var(--c-bg2);
+  background: var(--c-arrowTop);
   border-radius: var(--br-input);
   transition: var(--transition) ease;
   color: #fff;
@@ -516,6 +510,6 @@ form {
     visibility: visible;
   }
   &:hover {
-    color: var(--c-text);
+    color: var(--c-secondary);
   }
 }

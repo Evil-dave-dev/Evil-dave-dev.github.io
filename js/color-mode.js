@@ -1,5 +1,5 @@
 // define DOM Elements
-const toggleButton = document.querySelector("#colorMode__toggle");
+const toggleButton = document.querySelector("#colorMode");
 const root = document.querySelector(":root");
 const storageKey = "color-mode";
 const defaultMode = "light-mode";
