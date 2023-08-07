@@ -19,6 +19,30 @@
       <div class="header__content">
         Portfolio
         <button id="colorMode"></button>
+        <button id="switchButton">
+          <svg
+            viewBox="0 0 36 36"
+            xmlns="http://www.w3.org/2000/svg"
+            class="flag"
+          >
+            <path
+              fill="#00247D"
+              d="M0 9.059V13h5.628zM4.664 31H13v-5.837zM23 25.164V31h8.335zM0 23v3.941L5.63 23zM31.337 5H23v5.837zM36 26.942V23h-5.631zM36 13V9.059L30.371 13zM13 5H4.664L13 10.837z"
+            ></path>
+            <path
+              fill="#CF1B2B"
+              d="M25.14 23l9.712 6.801a3.977 3.977 0 0 0 .99-1.749L28.627 23H25.14zM13 23h-2.141l-9.711 6.8c.521.53 1.189.909 1.938 1.085L13 23.943V23zm10-10h2.141l9.711-6.8a3.988 3.988 0 0 0-1.937-1.085L23 12.057V13zm-12.141 0L1.148 6.2a3.994 3.994 0 0 0-.991 1.749L7.372 13h3.487z"
+            ></path>
+            <path
+              fill="#EEE"
+              d="M36 21H21v10h2v-5.836L31.335 31H32a3.99 3.99 0 0 0 2.852-1.199L25.14 23h3.487l7.215 5.052c.093-.337.158-.686.158-1.052v-.058L30.369 23H36v-2zM0 21v2h5.63L0 26.941V27c0 1.091.439 2.078 1.148 2.8l9.711-6.8H13v.943l-9.914 6.941c.294.07.598.116.914.116h.664L13 25.163V31h2V21H0zM36 9a3.983 3.983 0 0 0-1.148-2.8L25.141 13H23v-.943l9.915-6.942A4.001 4.001 0 0 0 32 5h-.663L23 10.837V5h-2v10h15v-2h-5.629L36 9.059V9zM13 5v5.837L4.664 5H4a3.985 3.985 0 0 0-2.852 1.2l9.711 6.8H7.372L.157 7.949A3.968 3.968 0 0 0 0 9v.059L5.628 13H0v2h15V5h-2z"
+            ></path>
+            <path
+              fill="#CF1B2B"
+              d="M21 15V5h-6v10H0v6h15v10h6V21h15v-6z"
+            ></path>
+          </svg>
+        </button>
       </div>
       <svg
         class="menu-icon menu-icon180"
@@ -38,22 +62,19 @@
       </svg>
       <nav class="navbar">
         <div class="navbar__box">
-          <a href="#home" class="active">home</a>
+          <a href="#home" class="active" data-translate="navbar1">accueil</a>
         </div>
         <div class="navbar__box">
-          <a href="#about">about</a>
+          <a href="#about" data-translate="navbar2">à propos</a>
         </div>
         <div class="navbar__box">
-          <a href="#services">services</a>
+          <a href="#services" data-translate="navbar3">services</a>
         </div>
         <div class="navbar__box">
-          <a href="#skills">skills</a>
+          <a href="#portfolio" data-translate="navbar5">portfolio</a>
         </div>
         <div class="navbar__box">
-          <a href="#portfolio">portfolio</a>
-        </div>
-        <div class="navbar__box">
-          <a href="#contact">contact</a>
+          <a href="#contact" data-translate="navbar6">contact</a>
         </div>
       </nav>
     </header>
@@ -61,10 +82,11 @@
     <!-- home section design -->
     <section class="home" id="home">
       <div class="home__content">
-        <h3>Hello, I'm</h3>
-        <h1>David Stevenoot</h1>
-        <h3>
-          And I'm a <span class="highlight-color">Frontend Developper</span>
+        <h3 data-translate="home1">Salut, je m'appelle</h3>
+        <h1 class="highlight-color">David Stevenoot</h1>
+        <h3 data-translate="home2">
+          Et je suis
+          <span class="highlight-color">développeur Frontend</span>
         </h3>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo ullam
@@ -98,8 +120,12 @@
             <i class="fa-brands fa-linkedin-in"></i>
           </a>
         </div>
-        <a href="assets/CV david stevenoot 2023.pdf" target="_blank" class="btn"
-          ><i class="fa-solid fa-cloud-arrow-down"></i>Download CV</a
+        <a
+          href="assets/CV david stevenoot 2023.pdf"
+          target="_blank"
+          class="btn"
+          data-translate="download"
+          ><i class="fa-solid fa-cloud-arrow-down"></i>Télécharger CV</a
         >
       </div>
       <div class="home__img">
@@ -121,15 +147,17 @@
         />
       </div>
       <div class="about__content">
-        <h2 class="heading">About <span class="highlight-color">Me</span></h2>
-        <h3>Frontend Developper</h3>
+        <h2 class="heading" data-translate="about1">
+          A propos de <span class="highlight-color">moi</span>
+        </h2>
+        <h3 data-translate="about2">Développeur Frontend</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quis
           porro tenetur voluptatibus repellat eveniet accusantium sit est odio.
           Voluptatum consectetur itaque dolor nostrum magni, quisquam eos
           voluptatibus vitae! Recusandae.
         </p>
-        <a href="#" class="btn">Read more</a>
+        <a href="#" class="btn" data-translate="readMore">Lire plus</a>
       </div>
     </section>
 
@@ -140,7 +168,7 @@
         <div class="services__box">
           <div class="services-title">
             <i class="fa-solid fa-code"></i>
-            <h3>Web Developement</h3>
+            <h3 data-translate="service1">Développement Web</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex impedit
@@ -148,12 +176,12 @@
             veritatis doloremque ipsa eligendi aliquam, autem tempora earum
             quaerat dolor voluptatum at.
           </p>
-          <a href="#" class="btn">Read more</a>
+          <a href="#" class="btn" data-translate="readMore">Lire plus</a>
         </div>
         <div class="services__box">
           <div class="services-title">
             <i class="fa-solid fa-brush"></i>
-            <h3>Graphic Design</h3>
+            <h3 data-translate="service2">Design graphique</h3>
           </div>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex impedit
@@ -161,27 +189,21 @@
             veritatis doloremque ipsa eligendi aliquam, autem tempora earum
             quaerat dolor voluptatum at.
           </p>
-          <a href="#" class="btn">Read more</a>
+          <a href="#" class="btn" data-translate="readMore">Lire plus</a>
         </div>
       </div>
     </section>
 
-    <!-- skills section design -->
-    <section class="skills" id="skills">
-      <h2 class="heading">My <span class="highlight-color">Skills</span></h2>
-      <div class="skills-content"></div>
-    </section>
-
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
-      <h2 class="heading">
-        Latest <span class="highlight-color">Project</span>
+      <h2 class="heading" data-translate="portfolioTitle">
+        Derniers <span class="highlight-color">projets</span>
       </h2>
       <div class="portfolio__content">
         <a href="assets/portfolio01large.png" class="portfolio__box">
           <img src="assets/portfolio01large.png" alt="portfolio01" />
           <div class="portfolio__text">
-            <h3>road trip</h3>
+            <h3 data-translate="projet1">Voyages</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Praesentium numquam quod dolor fuga ipsum voluptas sequi saepe
@@ -192,7 +214,7 @@
         <a href="assets/portfolio02large.png" class="portfolio__box"
           ><img src="assets/portfolio02large.png" alt="portfolio02" />
           <div class="portfolio__text">
-            <h3>escalade</h3>
+            <h3 data-translate="projet2">Escalade</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Praesentium numquam quod dolor fuga ipsum voluptas sequi saepe
@@ -203,7 +225,7 @@
         <a href="assets/portfolio03large.png" class="portfolio__box"
           ><img src="assets/portfolio03large.png" alt="portfolio03" />
           <div class="portfolio__text">
-            <h3>wakeboard</h3>
+            <h3 data-translate="projet3">wakeboard</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Praesentium numquam quod dolor fuga ipsum voluptas sequi saepe
@@ -214,7 +236,7 @@
         <a href="assets/portfolio04large.png" class="portfolio__box"
           ><img src="assets/portfolio04large.png" alt="portfolio04" />
           <div class="portfolio__text">
-            <h3>skateboard</h3>
+            <h3 data-translate="projet4">skateboard</h3>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Praesentium numquam quod dolor fuga ipsum voluptas sequi saepe
@@ -227,11 +249,13 @@
 
     <!-- contact section design -->
     <section class="contact" id="contact">
-      <h2 class="heading">Contact <span class="highlight-color">Me!</span></h2>
+      <h2 class="heading" data-translate="contactTitle">
+        Contactez <span class="highlight-color">moi !</span>
+      </h2>
       <form action="#" id="form">
         <div class="input-control">
           <input type="text" name="lastname" id="lastname" />
-          <label for="lastname">Nom*</label>
+          <label for="lastname" data-translate="lastname">Nom*</label>
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
           <small class="error"></small>
@@ -239,7 +263,7 @@
 
         <div class="input-control">
           <input type="text" name="firstname" id="firstname" />
-          <label for="firstname">Prénom*</label>
+          <label for="firstname" data-translate="firstname">Prénom*</label>
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
           <small class="error"></small>
@@ -247,7 +271,7 @@
 
         <div class="input-control">
           <input type="email" name="email" id="email" />
-          <label for="email">Email*</label>
+          <label for="email" data-translate="email">Email*</label>
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
           <small class="error"></small>
@@ -260,7 +284,9 @@
             id="phoneNumber"
             maxlength="13"
           />
-          <label for="phoneNumber">Numéro mobile*</label>
+          <label for="phoneNumber" data-translate="phoneNumber"
+            >Numéro mobile*</label
+          >
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
           <small class="error"></small>
@@ -273,7 +299,9 @@
             cols="30"
             rows="10"
           ></textarea>
-          <label for="yourMessage">Your message</label>
+          <label for="yourMessage" data-translate="yourMessage"
+            >Your message</label
+          >
           <i class="fas fa-check-circle"></i>
           <i class="fas fa-exclamation-circle"></i>
           <small class="error"></small>
@@ -285,8 +313,9 @@
             type="submit"
             value="Send message"
             class="btn"
+            data-translate="submit"
           >
-            submit
+            envoyez
           </button>
         </div>
       </form>
@@ -295,7 +324,10 @@
     <!-- footer design -->
     <footer class="footer">
       <div class="footer-text">
-        <p>Copyright&#169; 2023 by David Stevenoot | All Rights Reserved.</p>
+        <p data-translate="footer">
+          Copyright&#169; 2023 par David Stevenoot | Tous les droits sont
+          réservés
+        </p>
       </div>
       <a href="#home" class="arrowTop"><i class="fa-solid fa-arrow-up"></i></a>
     </footer>
