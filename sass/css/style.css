@@ -9,15 +9,10 @@
   --c-success: #62ad24;
   --c-error: #ff3a47;
   --m-gutter: 2rem;
-  --m-input: 2rem;
-  --m-form: 2rem;
-  --m-btn: 1.8rem 4.2rem;
   --m-m_gutter: 4rem;
-  --br-btn: 1rem;
+  --margin: 2rem;
   --br-box: 2rem;
-  --br-input: 0.8rem;
   --transition: 0.5s;
-  --transition-btn: all 150ms ease-out;
   --fs-icon: 4rem;
   --fs-formIcon: 3rem;
   --fs-formError: 1.2rem;
@@ -145,9 +140,9 @@
   color: var(--c-secondaryBtn);
   background: var(--c-primaryBtn);
   transition: var(--transition);
-  border-radius: var(--br-btn);
+  border-radius: 1rem;
   font-size: var(--fs-btn);
-  padding: var(--m-btn);
+  padding: 1.8rem 4.2rem;
 }
 .btn i {
   font-size: 3rem;
@@ -214,7 +209,7 @@ section h4 {
   font-size: 3rem;
 }
 section p {
-  font-size: 1.6rem;
+  font-size: var(--fs-p);
 }
 section:nth-child(even) {
   background: var(--c-bg);
@@ -313,24 +308,26 @@ section:nth-child(odd) {
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
   background: var(--c-navbar);
   border-radius: 2rem;
-  transform: translateY(-100%);
+  transform: translateY(-102%);
   transition: 0.5s ease all;
   z-index: -1;
-}
-.navbar .colorMode, .navbar .navbar__box a, .navbar__box .navbar a {
-  padding: 2rem;
-  display: flex;
-  align-items: center;
 }
 .navbar.active {
   transform: translateY(0);
 }
 .navbar__box {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   flex: 1 1 100%;
-  font-size: 1.6rem;
+  font-size: var(--fs-p);
   font-weight: 500;
 }
 .navbar__box a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--margin);
   height: 100%;
   white-space: nowrap;
   color: var(--c-secondary);
@@ -352,6 +349,15 @@ section:nth-child(odd) {
   }
 }
 
+.logo {
+  flex: 0 1 4.6rem;
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 100%;
+}
+
 #colorMode {
   display: flex;
   justify-content: flex-start;
@@ -359,6 +365,7 @@ section:nth-child(odd) {
   background: var(--c-secondary);
   width: 4rem;
   height: 4rem;
+  margin: var(--margin);
   border-radius: 50%;
   padding: 0 0.2rem;
   border-radius: 50%;
@@ -368,24 +375,27 @@ section:nth-child(odd) {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-
-.dark-mode #colorMode {
-  justify-content: flex-end;
+@media screen and (min-width: 768px) {
+  #colorMode {
+    margin: 1rem;
+  }
 }
 
-.dark-mode #colorMode_toggle {
-  background-image: var(--moon);
-}
-
-#switchButton {
+.switchLanguage {
   width: 4rem;
   height: 4rem;
+  margin: var(--margin);
   background: none;
+  cursor: pointer;
 }
-
-.flag {
+.switchLanguage__flag {
   width: 100%;
   height: 100%;
+}
+@media screen and (min-width: 768px) {
+  .switchLanguage {
+    margin: 1rem;
+  }
 }
 
 .home {
@@ -545,73 +555,72 @@ section:nth-child(odd) {
   grid-template-rows: auto 1fr;
 }
 
-form {
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: var(--m-form);
+  gap: var(--margin);
 }
-
-.input-control, .textarea-control {
+.form__input, .form__textarea {
   flex: 1 1 100%;
   position: relative;
 }
 @media screen and (min-width: 768px) {
-  .input-control, .textarea-control {
-    flex: 1 1 calc(50% - var(--m-form));
+  .form__input, .form__textarea {
+    flex: 1 1 calc(50% - var(--margin));
   }
 }
-.input-control label, .textarea-control label {
+.form__input label, .form__textarea label {
   font-size: var(--fs-p);
   color: var(--c-secondary);
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
-  padding: 3rem var(--m-input) var(--m-input);
+  padding: 3rem var(--margin) var(--margin);
   pointer-events: none;
   transform-origin: 0 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
-.input-control input:not(.btn), .textarea-control input:not(.btn),
-.input-control textarea,
-.textarea-control textarea {
-  padding: 3rem var(--m-input) var(--m-input);
+.form__input input:not(.btn), .form__textarea input:not(.btn),
+.form__input textarea,
+.form__textarea textarea {
+  padding: 3rem var(--margin) var(--margin);
   font-size: var(--fs-p);
-  border-radius: var(--br-input);
   background: var(--c-primary);
   border: 0.1rem solid var(--c-secondary);
   color: var(--c-secondary);
+  border-radius: 0.8rem;
   width: 100%;
   resize: none;
 }
-.input-control input:not(.btn):focus ~ label, .textarea-control input:not(.btn):focus ~ label,
-.input-control textarea:focus ~ label,
-.textarea-control textarea:focus ~ label,
-.input-control input:not(.btn):-webkit-autofill ~ label,
-.textarea-control input:not(.btn):-webkit-autofill ~ label,
-.input-control textarea:-webkit-autofill ~ label,
-.textarea-control textarea:-webkit-autofill ~ label,
-.input-control .fill,
-.textarea-control .fill {
+.form__input input:not(.btn):focus ~ label, .form__textarea input:not(.btn):focus ~ label,
+.form__input textarea:focus ~ label,
+.form__textarea textarea:focus ~ label,
+.form__input input:not(.btn):-webkit-autofill ~ label,
+.form__textarea input:not(.btn):-webkit-autofill ~ label,
+.form__input textarea:-webkit-autofill ~ label,
+.form__textarea textarea:-webkit-autofill ~ label,
+.form__input .fill,
+.form__textarea .fill {
   opacity: 0.4;
   transform: scale(0.85) translateY(-1.5rem);
 }
-.input-control i, .textarea-control i {
+.form__input i, .form__textarea i {
   position: absolute;
   top: 2.1rem;
   right: 2.1rem;
   visibility: hidden;
   font-size: var(--fs-formIcon);
 }
-.input-control .fa-check-circle, .textarea-control .fa-check-circle {
+.form__input .fa-check-circle, .form__textarea .fa-check-circle {
   color: var(--c-success);
 }
-.input-control .fa-exclamation-circle, .textarea-control .fa-exclamation-circle {
+.form__input .fa-exclamation-circle, .form__textarea .fa-exclamation-circle {
   color: var(--c-error);
 }
-.input-control .error, .textarea-control .error {
+.form__input .error, .form__textarea .error {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -619,52 +628,34 @@ form {
   font-size: var(--fs-formError);
   color: var(--c-error);
 }
-.input-control.success input, .success.textarea-control input {
+.form__input.success input, .success.form__textarea input {
   border: 0.1rem solid var(--c-success);
 }
-.input-control.success .fa-check-circle, .success.textarea-control .fa-check-circle {
+.form__input.success .fa-check-circle, .success.form__textarea .fa-check-circle {
   visibility: visible;
 }
-.input-control.error input, .error.textarea-control input {
+.form__input.error input, .error.form__textarea input {
   border: 0.1rem solid var(--c-error);
 }
-.input-control.error .fa-exclamation-circle, .error.textarea-control .fa-exclamation-circle {
+.form__input.error .fa-exclamation-circle, .error.form__textarea .fa-exclamation-circle {
   visibility: visible;
 }
-
-.textarea-control {
+.form__textarea {
   flex: 1 1 100%;
-}
-
-.submit-control {
-  flex: 1 1 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-@media screen and (min-width: 768px) {
-  .submit-control {
-    flex: 1 1 calc(50% - var(--m-form));
-  }
 }
 
 .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
   padding: var(--m-gutter) var(--m-gutter);
   background: var(--c-primary3);
+}
+.footer__text {
+  font-size: var(--fs-p);
+  color: #fff;
 }
 @media screen and (min-width: 992px) {
   .footer {
     padding: var(--m-gutter) var(--m-m_gutter);
   }
-}
-
-.footer-text p {
-  font-size: 1.6rem;
-  color: #fff;
 }
 
 .arrowTop {
@@ -678,7 +669,7 @@ form {
   width: 6rem;
   height: 6rem;
   background: var(--c-arrowTop);
-  border-radius: var(--br-input);
+  border-radius: 1rem;
   transition: var(--transition) ease;
   color: #fff;
   font-size: 4rem;

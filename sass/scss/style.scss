@@ -63,7 +63,7 @@ section {
     font-size: 3rem;
   }
   p {
-    font-size: 1.6rem;
+    font-size: var(--fs-p);
   }
   &:nth-child(even) {
     background: var(--c-bg);
@@ -156,23 +156,20 @@ section {
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
   background: var(--c-navbar);
   border-radius: 2rem;
-  transform: translateY(-100%);
+  transform: translateY(-102%);
   transition: 0.5s ease all;
   z-index: -1;
-  .colorMode {
-    padding: 2rem;
-    display: flex;
-    align-items: center;
-  }
   &.active {
     transform: translateY(0);
   }
   &__box {
+    @include mixins.flex(flex-start, center);
     flex: 1 1 100%;
-    font-size: 1.6rem;
+    font-size: var(--fs-p);
     font-weight: 500;
     a {
-      @extend .colorMode;
+      @include mixins.flex(center, center);
+      padding: var(--margin);
       height: 100%;
       white-space: nowrap;
       color: var(--c-secondary);
@@ -195,11 +192,21 @@ section {
   }
 }
 
+.logo {
+  flex: 0 1 4.6rem;
+  display: flex;
+  align-items: center;
+  img {
+    width: 100%;
+  }
+}
+
 #colorMode {
   @include mixins.flex(flex-start, center);
   background: var(--c-secondary);
   width: 4rem;
   height: 4rem;
+  margin: var(--margin);
   border-radius: 50%;
   padding: 0 0.2rem;
   border-radius: 50%;
@@ -208,22 +215,24 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
-}
-.dark-mode #colorMode {
-  justify-content: flex-end;
-}
-.dark-mode #colorMode_toggle {
-  background-image: var(--moon);
+  @include breakpoints.small {
+    margin: 1rem;
+  }
 }
 
-#switchButton {
+.switchLanguage {
   width: 4rem;
   height: 4rem;
+  margin: var(--margin);
   background: none;
-}
-.flag {
-  width: 100%;
-  height: 100%;
+  cursor: pointer;
+  &__flag {
+    width: 100%;
+    height: 100%;
+  }
+  @include breakpoints.small {
+    margin: 1rem;
+  }
 }
 
 // ------------------- home
@@ -391,95 +400,88 @@ section {
 .contact {
   grid-template-rows: auto 1fr;
 }
-form {
+.form {
   @include mixins.flex(center, center);
   flex-wrap: wrap;
-  gap: var(--m-form);
-}
-.input-control {
-  flex: 1 1 100%;
-  position: relative;
-  @include breakpoints.small {
-    flex: 1 1 calc(50% - var(--m-form));
-  }
-  label {
-    font-size: var(--fs-p);
-    color: var(--c-secondary);
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    padding: 3rem var(--m-input) var(--m-input);
-    pointer-events: none;
-    transform-origin: 0 0;
-    transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  }
-  input:not(.btn),
-  textarea {
-    padding: 3rem var(--m-input) var(--m-input);
-    font-size: var(--fs-p);
-    border-radius: var(--br-input);
-    background: var(--c-primary);
-    border: 0.1rem solid var(--c-secondary);
-    color: var(--c-secondary);
-    width: 100%;
-    resize: none;
-  }
-  input:not(.btn):focus ~ label,
-  textarea:focus ~ label,
-  input:not(.btn):-webkit-autofill ~ label,
-  textarea:-webkit-autofill ~ label,
-  .fill {
-    opacity: 0.4;
-    transform: scale(0.85) translateY(-1.5rem);
-  }
-  i {
-    position: absolute;
-    top: 2.1rem;
-    right: 2.1rem;
-    visibility: hidden;
-    font-size: var(--fs-formIcon);
-  }
-  .fa-check-circle {
-    color: var(--c-success);
-  }
-  .fa-exclamation-circle {
-    color: var(--c-error);
-  }
-  .error {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translateY(100%);
-    font-size: var(--fs-formError);
-    color: var(--c-error);
-  }
-  &.success {
-    input {
-      border: 0.1rem solid var(--c-success);
+  gap: var(--margin);
+  &__input {
+    flex: 1 1 100%;
+    position: relative;
+    @include breakpoints.small {
+      flex: 1 1 calc(50% - var(--margin));
+    }
+    label {
+      font-size: var(--fs-p);
+      color: var(--c-secondary);
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      padding: 3rem var(--margin) var(--margin);
+      pointer-events: none;
+      transform-origin: 0 0;
+      transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
+    }
+    input:not(.btn),
+    textarea {
+      padding: 3rem var(--margin) var(--margin);
+      font-size: var(--fs-p);
+      background: var(--c-primary);
+      border: 0.1rem solid var(--c-secondary);
+      color: var(--c-secondary);
+      border-radius: 0.8rem;
+      width: 100%;
+      resize: none;
+    }
+    input:not(.btn):focus ~ label,
+    textarea:focus ~ label,
+    input:not(.btn):-webkit-autofill ~ label,
+    textarea:-webkit-autofill ~ label,
+    .fill {
+      opacity: 0.4;
+      transform: scale(0.85) translateY(-1.5rem);
+    }
+    i {
+      position: absolute;
+      top: 2.1rem;
+      right: 2.1rem;
+      visibility: hidden;
+      font-size: var(--fs-formIcon);
     }
     .fa-check-circle {
-      visibility: visible;
-    }
-  }
-  &.error {
-    input {
-      border: 0.1rem solid var(--c-error);
+      color: var(--c-success);
     }
     .fa-exclamation-circle {
-      visibility: visible;
+      color: var(--c-error);
+    }
+    .error {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      transform: translateY(100%);
+      font-size: var(--fs-formError);
+      color: var(--c-error);
+    }
+    &.success {
+      input {
+        border: 0.1rem solid var(--c-success);
+      }
+      .fa-check-circle {
+        visibility: visible;
+      }
+    }
+    &.error {
+      input {
+        border: 0.1rem solid var(--c-error);
+      }
+      .fa-exclamation-circle {
+        visibility: visible;
+      }
     }
   }
-}
-.textarea-control {
-  @extend .input-control;
-  flex: 1 1 100%;
-}
-.submit-control {
-  flex: 1 1 100%;
-  @include mixins.flex(center, center);
-  @include breakpoints.small {
-    flex: 1 1 calc(50% - var(--m-form));
+  &__textarea {
+    @extend .form__input;
+    flex: 1 1 100%;
   }
 }
 
@@ -487,19 +489,14 @@ form {
 // ------------------- footer
 
 .footer {
-  @include mixins.flex(space-between, center);
-  flex-wrap: wrap;
   padding: var(--m-gutter) var(--m-gutter);
   background: var(--c-primary3);
+  &__text {
+    font-size: var(--fs-p);
+    color: #fff;
+  }
   @include breakpoints.medium {
     padding: var(--m-gutter) var(--m-m_gutter);
-  }
-}
-
-.footer-text {
-  p {
-    font-size: 1.6rem;
-    color: #fff;
   }
 }
 
@@ -512,7 +509,7 @@ form {
   width: 6rem;
   height: 6rem;
   background: var(--c-arrowTop);
-  border-radius: var(--br-input);
+  border-radius: 1rem;
   transition: var(--transition) ease;
   color: #fff;
   font-size: 4rem;
