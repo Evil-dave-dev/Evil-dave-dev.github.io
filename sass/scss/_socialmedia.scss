@@ -5,12 +5,12 @@
   position: relative;
   width: 7rem;
   height: 7rem;
-  background: var(--c-primaryBtn);
+  background: var(--c-tertiary);
   border-radius: 50%;
   font-size: 4.2rem;
-  color: var(--c-secondaryBtn);
+  color: var(--c-text3);
   transition: var(--transition) ease;
   &:hover {
-    color: var(--c-secondaryBtnHover);
+    background: #5d4ecb;
   }
 }

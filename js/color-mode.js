@@ -35,9 +35,7 @@ function updateToggleButton() {
   // some code functionnality to run
   if (root.classList.contains("dark-mode")) {
     toggleButton.style.backgroundImage = "var(--moon)";
-    document.getElementById("home-img").src = "assets/david01largedark.png";
   } else {
     toggleButton.style.backgroundImage = "var(--sun)";
-    document.getElementById("home-img").src = "assets/david01large.png";
   }
 }

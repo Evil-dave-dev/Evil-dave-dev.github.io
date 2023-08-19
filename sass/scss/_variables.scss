@@ -1,18 +1,20 @@
 :root {
   // couleurs
-  --c-primary: #fef7cb;
-  --c-primary2: #feed98;
-  --c-primary3: #32de8a;
-  --c-secondary: #0b0500;
-  --c-secondary2: #fffbfe;
-  --c-secondary3: #e4572e;
+  --c-primary: #f8f7ff;
+  --c-secondary: #b7c1f6;
+  --c-secondary-light: #efedff;
+  --c-tertiary: #7d6bed;
+  --c-text1: #2e3138;
+  --c-text2: #7d6bed;
+  --c-text3: #e7e7e7;
 
+  --c-borderInput: rgba(49, 45, 46, 0.5);
   --c-success: #62ad24;
   --c-error: #ff3a47;
 
   // marges
-  --m-gutter: 2rem;
-  --m-m_gutter: 4rem;
+  --m-gutter: 3.5rem;
+  --m-m_gutter: 7rem;
   --margin: 2rem;
 
   // border radius
@@ -35,32 +37,20 @@
 
   // color mode
   --sun: url(../../assets/sun.svg);
-
-  --c-bg: #e7e7e7;
-  --c-primaryBtn: var(--c-secondary3);
-  --c-secondaryBtn: var(--c-secondary2);
-  --c-secondaryBtnHover: var(--c-secondary);
-  --c-arrowTop: var(--c-secondary3);
-  --c-navbar: #fff;
 }
 
 :root.dark-mode {
   // couleurs
-  --c-primary: #0d1b1e;
-  --c-primary2: #061015;
-  --c-primary3: #02080e;
-  --c-secondary: #fffecb;
-  --c-secondary2: #3e4240;
-  --c-secondary3: #7b7dac;
-  --c-btn: #fffecb;
+  --c-primary: #181717;
+  --c-secondary: #2a2c26;
+  --c-secondary-light: #312d2e;
+  --c-tertiary: #c2e812;
+  --c-text1: #fcfffc;
+  --c-text2: #c2e812;
+  --c-text3: #312d2e;
+
+  --c-borderInput: rgba(252, 255, 252, 0.5);
 
   // color mode
   --moon: url(../../assets/moon.svg);
-
-  --c-bg: #181717;
-  --c-primaryBtn: var(--c-secondary3);
-  --c-secondaryBtn: var(--c-secondary);
-  --c-secondaryBtnHover: var(--c-primary3);
-  --c-arrowTop: var(--c-secondary3);
-  --c-navbar: #000000;
 }

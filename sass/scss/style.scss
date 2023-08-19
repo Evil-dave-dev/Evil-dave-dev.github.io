@@ -33,17 +33,27 @@ html {
 // ------------------- general
 
 body {
-  color: var(--c-secondary);
+  color: var(--c-text1);
+  background: var(--c-secondary);
 }
 
 section {
-  padding: 12rem var(--m-gutter) 6rem;
   display: grid;
   grid-gap: 2rem;
   justify-items: center;
   align-items: start;
+  margin: var(--margin) 0;
+  background: var(--c-primary);
+  padding: 12rem var(--m-gutter) 6rem;
   @include breakpoints.medium {
-    padding: 12rem var(--m-m_gutter) var(--m-m_gutter);
+    padding: 12rem var(--m-m_gutter) 6rem;
+  }
+  &:first-of-type {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
   }
   h1 {
     font-size: 5.6rem;
@@ -65,16 +75,10 @@ section {
   p {
     font-size: var(--fs-p);
   }
-  &:nth-child(even) {
-    background: var(--c-bg);
-  }
-  &:nth-child(odd) {
-    background: var(--c-bg);
-  }
 }
 
 .highlight-color {
-  color: var(--c-primary3);
+  color: var(--c-text2);
 }
 
 // ------------------- header
@@ -86,8 +90,7 @@ section {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background: var(--c-primary3);
-  color: #fff;
+  background: var(--c-tertiary);
   z-index: 2;
   @include breakpoints.medium {
     padding: 0 var(--m-m_gutter);
@@ -100,9 +103,9 @@ section {
     width: 100%;
     height: 100%;
     gap: 2rem;
-    background: var(--c-primary3);
+    background: var(--c-secondary);
     font-weight: 600;
-    color: var(--c-secondary);
+    color: var(--c-text1);
     font-size: 3rem;
     padding: 0 var(--m-gutter);
     @include breakpoints.medium {
@@ -122,7 +125,7 @@ section {
     fill: none;
     transform-origin: top left;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: #fff;
+    stroke: var(--c-text1);
     stroke-width: 5.5;
     stroke-linecap: round;
   }
@@ -154,7 +157,7 @@ section {
   flex-wrap: wrap;
   width: 100%;
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
-  background: var(--c-navbar);
+  background: var(--c-secondary);
   border-radius: 2rem;
   transform: translateY(-102%);
   transition: 0.5s ease all;
@@ -168,14 +171,19 @@ section {
     font-size: var(--fs-p);
     font-weight: 500;
     a {
-      @include mixins.flex(center, center);
-      padding: var(--margin);
+      padding: var(--m-gutter);
+      width: 100%;
       height: 100%;
       white-space: nowrap;
-      color: var(--c-secondary);
+      color: var(--c-text1);
+      @include breakpoints.small {
+        padding: var(--margin);
+        @include mixins.flex(center, center);
+        width: auto;
+      }
       &:hover,
       &.active {
-        color: var(--c-secondary3);
+        color: var(--c-text2);
       }
     }
   }
@@ -201,40 +209,6 @@ section {
   }
 }
 
-#colorMode {
-  @include mixins.flex(flex-start, center);
-  background: var(--c-secondary);
-  width: 4rem;
-  height: 4rem;
-  margin: var(--margin);
-  border-radius: 50%;
-  padding: 0 0.2rem;
-  border-radius: 50%;
-  background-image: var(--sun);
-  background-color: var(--c-primaryBtn);
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-  @include breakpoints.small {
-    margin: 1rem;
-  }
-}
-
-.switchLanguage {
-  width: 4rem;
-  height: 4rem;
-  margin: var(--margin);
-  background: none;
-  cursor: pointer;
-  &__flag {
-    width: 100%;
-    height: 100%;
-  }
-  @include breakpoints.small {
-    margin: 1rem;
-  }
-}
-
 // ------------------- home
 // ------------------- home
 
@@ -253,6 +227,7 @@ section {
   &__img {
     grid-area: home-img;
     img {
+      display: block;
       width: 100%;
       height: 100%;
     }
@@ -270,36 +245,8 @@ section {
   gap: 3rem;
 }
 
-// ------------------- about
-// ------------------- about
-
-.about {
-  padding: 12rem var(--m-m_gutter) 0 var(--m-m_gutter);
-  grid-template-columns: 28vw 1fr;
-  grid-template-rows: auto auto;
-  grid-template-areas:
-    "about-content about-content"
-    "about-img about-img";
-  &__img {
-    grid-area: about-img;
-    img {
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-  }
-  &__content {
-    grid-area: about-content;
-    @include mixins.flex(flex-start, flex-start);
-    flex-direction: column;
-    gap: 2rem;
-  }
-  @include breakpoints.small {
-    grid-template-areas:
-      "about-img about-content"
-      "about-img about-content";
-  }
-}
+// ------------------- skills
+// ------------------- skills
 
 // ------------------- services
 // ------------------- services
@@ -312,22 +259,36 @@ section {
     gap: 4rem;
   }
   &__box {
-    @include mixins.flex(center, flex-start);
+    @include mixins.flex(center, center);
+    flex-direction: column;
     flex: 1 1 30rem;
     flex-wrap: wrap;
     gap: 2rem;
+    background: var(--c-secondary-light);
     padding: 3rem 2rem 4rem;
     border-radius: var(--br-box);
     text-align: center;
-    border: 0.2rem solid var(--c-secondary);
     transition: var(--transition) ease;
+    p {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 3;
+      overflow: hidden;
+    }
     .fa-solid {
-      font-size: 7rem;
-      color: var(--c-secondary);
+      font-size: 5rem;
+      color: var(--c-secondary-light);
     }
     &:hover {
-      transform: scale(1.02);
+      background: var(--c-secondary);
     }
+  }
+  &__icon {
+    @include mixins.flex(center, center);
+    width: 8.5rem;
+    height: 8.5rem;
+    background: var(--c-tertiary);
+    border-radius: 50%;
   }
   .heading {
     text-align: center;
@@ -342,6 +303,7 @@ section {
     display: grid;
     grid-gap: var(--m-gutter);
     grid-template-columns: 1fr;
+    width: 100%;
     @include breakpoints.x-small {
       grid-template-columns: 1fr 1fr;
     }
@@ -365,8 +327,9 @@ section {
     @include mixins.flex(center, flex-start);
     position: relative;
     color: #fff;
+    width: 100%;
+    height: 49rem;
     border-radius: var(--br-box);
-    aspect-ratio: 1;
     overflow: hidden;
     img {
       width: 100%;
@@ -399,20 +362,54 @@ section {
 
 .contact {
   grid-template-rows: auto 1fr;
+  &__content {
+    @include mixins.flex(center, center);
+    flex-direction: column;
+    gap: 2rem;
+    background: var(--c-secondary-light);
+    padding: 4rem 2rem;
+    border-radius: var(--br-box);
+    @include breakpoints.medium {
+      flex-direction: row;
+    }
+  }
+  &__detail {
+    @include mixins.flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: var(--margin);
+    flex: 0 0 100%;
+    @include breakpoints.medium {
+      flex: 1 1 calc(50% - var(--margin));
+    }
+    img {
+      align-self: center;
+    }
+    a {
+      font-size: var(--fs-p);
+      color: var(--c-text1);
+      font-weight: 600;
+    }
+    i {
+      color: var(--c-text2);
+      font-size: 4rem;
+      margin-right: 2rem;
+      vertical-align: middle;
+    }
+  }
 }
 .form {
   @include mixins.flex(center, center);
   flex-wrap: wrap;
   gap: var(--margin);
+  @include breakpoints.medium {
+    flex: 1 1 calc(50% - var(--margin));
+  }
   &__input {
     flex: 1 1 100%;
     position: relative;
-    @include breakpoints.small {
-      flex: 1 1 calc(50% - var(--margin));
-    }
     label {
       font-size: var(--fs-p);
-      color: var(--c-secondary);
+      color: var(--c-text1);
       position: absolute;
       top: 0;
       left: 0;
@@ -426,8 +423,8 @@ section {
     textarea {
       padding: 3rem var(--margin) var(--margin);
       font-size: var(--fs-p);
-      background: var(--c-primary);
-      border: 0.1rem solid var(--c-secondary);
+      background: var(--c-secondary-light);
+      border: 0.1rem solid var(--c-borderInput);
       color: var(--c-secondary);
       border-radius: 0.8rem;
       width: 100%;
@@ -489,35 +486,56 @@ section {
 // ------------------- footer
 
 .footer {
-  padding: var(--m-gutter) var(--m-gutter);
-  background: var(--c-primary3);
-  &__text {
-    font-size: var(--fs-p);
-    color: #fff;
-  }
+  @include mixins.flex(flex-start, center);
+  padding: 0 var(--m-gutter);
+  background: var(--c-secondary-light);
+  height: 6rem;
+  margin-bottom: 5rem;
+  font-size: var(--fs-p);
+  color: var(--c-text1);
   @include breakpoints.medium {
-    padding: var(--m-gutter) var(--m-m_gutter);
+    padding: 0 var(--m-m_gutter);
   }
 }
 
 .arrowTop {
-  @include mixins.flex(center, center);
   visibility: hidden;
   position: fixed;
-  bottom: 2rem;
+  bottom: 6rem;
   right: 2rem;
-  width: 6rem;
-  height: 6rem;
-  background: var(--c-arrowTop);
-  border-radius: 1rem;
   transition: var(--transition) ease;
-  color: #fff;
+  color: var(--c-text1);
   font-size: 4rem;
   z-index: 1;
   &.visible {
     visibility: visible;
   }
-  &:hover {
-    color: var(--c-secondary);
-  }
+}
+
+.subFooter {
+  @include mixins.flex(center, center);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 5rem;
+  background: var(--c-secondary);
+}
+
+#colorMode {
+  @include mixins.flex(flex-start, center);
+  background: var(--c-secondary);
+  width: 4rem;
+  height: 4rem;
+  background-image: var(--sun);
+  background-color: var(--c-primaryBtn);
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.switchLanguage {
+  font-size: 2rem;
+  font-weight: 700;
+  background: none;
+  cursor: pointer;
 }

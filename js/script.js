@@ -43,61 +43,38 @@ window.onscroll = () => {
 
 /* ===================== check form on typing/submit ===================== */
 const form = document.getElementById("form");
-const lastname = document.getElementById("lastname");
-const firstname = document.getElementById("firstname");
+const name = document.getElementById("name");
 const email = document.getElementById("email");
 const phoneNumber = document.getElementById("phoneNumber");
 const yourMessage = document.getElementById("yourMessage");
 
 // check on typing
-lastname.addEventListener("input", validateLastName);
-firstname.addEventListener("input", validateFirstName);
+name.addEventListener("input", validateName);
 email.addEventListener("input", validateEmail);
-phoneNumber.addEventListener("input", validatePhoneNumber);
 yourMessage.addEventListener("input", validateYourMessage);
 
 // check on submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  validateLastName();
-  validateFirstName();
+  validateName();
   validateEmail();
-  validatePhoneNumber();
 });
 
 // conditions nom
-function validateLastName(e) {
-  const lastnameValue = lastname.value.trim();
-  if (lastnameValue === "") {
-    setErrorFor(lastname, "le nom ne peut pas être vide");
-    removeSuccess(lastname);
-    setLabel(lastname, lastnameValue);
-  } else if (!isName(lastnameValue)) {
-    setErrorFor(lastname, "le nom n'est pas valide");
-    removeSuccess(lastname);
-    setLabel(lastname, lastnameValue);
+function validateName(e) {
+  const nameValue = name.value.trim();
+  if (nameValue === "") {
+    setErrorFor(name, "le nom ne peut pas être vide");
+    removeSuccess(name);
+    setLabel(name, nameValue);
+  } else if (!isName(nameValue)) {
+    setErrorFor(name, "le nom n'est pas valide");
+    removeSuccess(name);
+    setLabel(name, nameValue);
   } else {
-    setSuccesFor(lastname);
-    removeError(lastname);
-    setLabel(lastname, lastnameValue);
-  }
-}
-
-// conditions prenom
-function validateFirstName(e) {
-  const firstnameValue = firstname.value.trim();
-  if (firstnameValue === "") {
-    setErrorFor(firstname, "le prénom ne peut pas être vide");
-    removeSuccess(firstname);
-    setLabel(firstname, firstnameValue);
-  } else if (!isName(firstnameValue)) {
-    setErrorFor(firstname, "le prénom n'est pas valide");
-    removeSuccess(firstname);
-    setLabel(firstname, firstnameValue);
-  } else {
-    setSuccesFor(firstname);
-    removeError(firstname);
-    setLabel(firstname, firstnameValue);
+    setSuccesFor(name);
+    removeError(name);
+    setLabel(name, nameValue);
   }
 }
 
@@ -116,24 +93,6 @@ function validateEmail(e) {
     setSuccesFor(email);
     removeError(email);
     setLabel(email, emailValue);
-  }
-}
-
-// conditions phone number
-function validatePhoneNumber(e) {
-  const phoneNumberValue = phoneNumber.value.trim();
-  if (phoneNumberValue === "") {
-    setErrorFor(phoneNumber, "le numéro ne peut pas être vide");
-    removeSuccess(phoneNumber);
-    setLabel(phoneNumber, phoneNumberValue);
-  } else if (!isNumber(phoneNumberValue)) {
-    setErrorFor(phoneNumber, "le numéro doit être en chiffre");
-    removeSuccess(phoneNumber);
-    setLabel(phoneNumber, phoneNumberValue);
-  } else {
-    setSuccesFor(phoneNumber);
-    removeError(phoneNumber);
-    setLabel(phoneNumber, phoneNumberValue);
   }
 }
 

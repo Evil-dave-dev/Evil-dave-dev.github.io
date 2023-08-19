@@ -4,8 +4,8 @@
   align-items: center;
   gap: 2rem;
   font-weight: 600;
-  color: var(--c-secondaryBtn);
-  background: var(--c-primaryBtn);
+  color: var(--c-text3);
+  background: var(--c-tertiary);
   transition: var(--transition);
   border-radius: 1rem;
   font-size: var(--fs-btn);
@@ -14,6 +14,6 @@
     font-size: 3rem;
   }
   &:hover {
-    color: var(--c-secondaryBtnHover);
+    background: #5d4ecb;
   }
 }
