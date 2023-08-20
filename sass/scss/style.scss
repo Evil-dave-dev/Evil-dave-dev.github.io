@@ -38,10 +38,6 @@ body {
 }
 
 section {
-  display: grid;
-  grid-gap: 2rem;
-  justify-items: center;
-  align-items: start;
   margin: var(--margin) 0;
   background: var(--c-primary);
   padding: 12rem var(--m-gutter) 6rem;
@@ -56,24 +52,37 @@ section {
     margin-bottom: 0;
   }
   h1 {
-    font-size: 5.6rem;
+    font-size: 3rem;
     font-weight: 700;
+    @include breakpoints.small {
+      font-size: 5.6rem;
+    }
   }
   h2 {
     font-size: 4rem;
-    @include breakpoints.medium {
+    @include breakpoints.small {
       font-size: 5.2rem;
     }
   }
   h3 {
-    font-size: 3.2rem;
+    font-size: 2rem;
     font-weight: 700;
-  }
-  h4 {
-    font-size: 3rem;
+    @include breakpoints.small {
+      font-size: 3.2rem;
+    }
   }
   p {
-    font-size: var(--fs-p);
+    font-size: var(--fs-p_small);
+    @include breakpoints.small {
+      font-size: var(--fs-p_large);
+    }
+  }
+}
+
+.heading {
+  font-family: "Khand", sans-serif;
+  & > span {
+    font-family: "Khand", sans-serif;
   }
 }
 
@@ -168,7 +177,7 @@ section {
   &__box {
     @include mixins.flex(flex-start, center);
     flex: 1 1 100%;
-    font-size: var(--fs-p);
+    font-size: var(--fs-p_large);
     font-weight: 500;
     a {
       padding: var(--m-gutter);
@@ -213,6 +222,10 @@ section {
 // ------------------- home
 
 .home {
+  display: grid;
+  grid-gap: 2rem;
+  justify-items: center;
+  align-items: start;
   grid-template-columns: 1fr 35vw;
   grid-template-rows: auto auto;
   grid-template-areas:
@@ -290,9 +303,6 @@ section {
     background: var(--c-tertiary);
     border-radius: 50%;
   }
-  .heading {
-    text-align: center;
-  }
 }
 
 // ------------------- portfolio
@@ -366,6 +376,7 @@ section {
     @include mixins.flex(center, center);
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
     background: var(--c-secondary-light);
     padding: 4rem 2rem;
     border-radius: var(--br-box);
@@ -383,9 +394,10 @@ section {
     }
     img {
       align-self: center;
+      width: 100%;
     }
     a {
-      font-size: var(--fs-p);
+      font-size: var(--fs-p_large);
       color: var(--c-text1);
       font-weight: 600;
     }
@@ -397,6 +409,7 @@ section {
     }
   }
 }
+
 .form {
   @include mixins.flex(center, center);
   flex-wrap: wrap;
@@ -408,7 +421,7 @@ section {
     flex: 1 1 100%;
     position: relative;
     label {
-      font-size: var(--fs-p);
+      font-size: var(--fs-p_large);
       color: var(--c-text1);
       position: absolute;
       top: 0;
@@ -422,7 +435,7 @@ section {
     input:not(.btn),
     textarea {
       padding: 3rem var(--margin) var(--margin);
-      font-size: var(--fs-p);
+      font-size: var(--fs-p_large);
       background: var(--c-secondary-light);
       border: 0.1rem solid var(--c-borderInput);
       color: var(--c-secondary);
@@ -491,20 +504,28 @@ section {
   background: var(--c-secondary-light);
   height: 6rem;
   margin-bottom: 5rem;
-  font-size: var(--fs-p);
+  font-size: var(--fs-p_small);
   color: var(--c-text1);
+  @include breakpoints.small {
+    font-size: var(--fs-p_large);
+  }
   @include breakpoints.medium {
     padding: 0 var(--m-m_gutter);
   }
 }
 
 .arrowTop {
+  @include mixins.flex(center, center);
   visibility: hidden;
   position: fixed;
-  bottom: 6rem;
+  bottom: 12rem;
   right: 2rem;
+  background: #f7b801;
   transition: var(--transition) ease;
-  color: var(--c-text1);
+  color: #2e3138;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 1rem;
   font-size: 4rem;
   z-index: 1;
   &.visible {
@@ -514,6 +535,7 @@ section {
 
 .subFooter {
   @include mixins.flex(center, center);
+  gap: 2rem;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -522,7 +544,6 @@ section {
 }
 
 #colorMode {
-  @include mixins.flex(flex-start, center);
   background: var(--c-secondary);
   width: 4rem;
   height: 4rem;
@@ -534,6 +555,7 @@ section {
 }
 
 .switchLanguage {
+  color: var(--c-text1);
   font-size: 2rem;
   font-weight: 700;
   background: none;

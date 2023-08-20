@@ -8,12 +8,18 @@
   background: var(--c-tertiary);
   transition: var(--transition);
   border-radius: 1rem;
-  font-size: var(--fs-btn);
-  padding: 1.8rem 4.2rem;
+  font-size: 1.8rem;
+  padding: 1.8rem 3.2rem;
   i {
-    font-size: 3rem;
+    font-size: 2.6rem;
+    @include breakpoints.small {
+      font-size: 3rem;
+    }
   }
   &:hover {
     background: #5d4ecb;
+  }
+  @include breakpoints.small {
+    font-size: 2.2rem;
   }
 }

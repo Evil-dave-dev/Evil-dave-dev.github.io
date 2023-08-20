@@ -1,16 +1,22 @@
 @use "mixins";
+@use "breakpoints";
 
 .social-link {
   @include mixins.flex(center, center);
   position: relative;
-  width: 7rem;
-  height: 7rem;
+  width: 6rem;
+  height: 6rem;
+  font-size: 3.8rem;
   background: var(--c-tertiary);
   border-radius: 50%;
-  font-size: 4.2rem;
   color: var(--c-text3);
   transition: var(--transition) ease;
   &:hover {
     background: #5d4ecb;
+  }
+  @include breakpoints.small {
+    width: 7rem;
+    height: 7rem;
+    font-size: 4.2rem;
   }
 }
