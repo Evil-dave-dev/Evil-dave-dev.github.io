@@ -28,15 +28,11 @@
   --fs-formIcon: 3rem;
   --fs-formError: 1.2rem;
   --fs-a: 2rem;
-  --fs-p_small: 1.2rem;
-  --fs-p_large: 1.6rem;
-  --fs-h1: 5.6rem;
-  --fs-h2: 4.5rem;
-  --fs-h3: 3.2rem;
-  --fs-h4: 3rem;
+  --fs-p_small: 1.6rem;
+  --fs-p_large: 1.8rem;
 
   // color mode
-  --sun: url(../../assets/sun.svg);
+  --moon: url(../../assets/moon.svg);
 }
 
 :root.dark-mode {
@@ -52,5 +48,5 @@
   --c-borderInput: rgba(252, 255, 252, 0.5);
 
   // color mode
-  --moon: url(../../assets/moon.svg);
+  --sun: url(../../assets/sun.svg);
 }

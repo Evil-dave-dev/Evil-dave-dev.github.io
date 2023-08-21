@@ -1,4 +1,3 @@
-// define DOM Elements
 const toggleButton = document.querySelector("#colorMode");
 const root = document.querySelector(":root");
 const storageKey = "color-mode";
@@ -15,7 +14,6 @@ loadColorMode();
 
 // toggle the color mode
 toggleButton.addEventListener("click", () => {
-  // some code functionnality to run
   saveColorMode();
 });
 
@@ -32,12 +30,11 @@ function saveColorMode() {
 }
 
 function updateToggleButton() {
-  // some code functionnality to run
   if (root.classList.contains("dark-mode")) {
-    toggleButton.style.backgroundImage = "var(--moon)";
+    toggleButton.style.backgroundImage = "var(--sun)";
     document.getElementById("contact__img").src = "assets/contact dark.png";
   } else {
-    toggleButton.style.backgroundImage = "var(--sun)";
+    toggleButton.style.backgroundImage = "var(--moon)";
     document.getElementById("contact__img").src = "assets/contact light.png";
   }
 }

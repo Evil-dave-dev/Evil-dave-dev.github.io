@@ -1,14 +1,17 @@
-const switchButton = document.querySelector(".switchLanguage");
-const flag = document.querySelector(".switchLanguage");
+const enBtn = document.getElementById("en");
+const frBtn = document.getElementById("fr");
+const html = document.documentElement;
+const storageKey = "lang";
+const defaultMode = "fr";
 
-// Objet contenant les traductions
+// traductions
 const translations = {
   en: {
     navbar1: "home",
-    navbar2: "about",
+    navbar2: "skills",
     navbar3: "services",
-    navbar5: "portfolio",
-    navbar6: "contact",
+    navbar4: "projects",
+    navbar5: "contact",
     home1: "Hello I'm",
     home2: "and I'm a <span class='highlight-color'>Frontend Developper</span>",
     skills1: 'My <span class="highlight-color">skills</span>',
@@ -22,7 +25,7 @@ const translations = {
     projet3: "Wakeboard",
     projet4: "Skateboard",
     contactTitle: 'Contact <span class="highlight-color">Me!</span>',
-    name: "Name*",
+    name: "Full Name*",
     email: "Email*",
     yourMessage: "Your message",
     submit: "submit",
@@ -30,10 +33,10 @@ const translations = {
   },
   fr: {
     navbar1: "accueil",
-    navbar2: "à propos",
+    navbar2: "compétences",
     navbar3: "services",
-    navbar5: "portfolio",
-    navbar6: "contact",
+    navbar4: "projets",
+    navbar5: "contact",
     home1: "Salut je suis",
     home2:
       "et je suis <span class='highlight-color'> développeur Frontend</span>",
@@ -48,7 +51,7 @@ const translations = {
     projet3: "Wakeboard",
     projet4: "Skateboard",
     contactTitle: 'Contactez <span class="highlight-color">moi !</span>',
-    name: "Nom*",
+    name: "Nom entier*",
     email: "Email*",
     yourMessage: "Votre message",
     submit: "envoyez",
@@ -57,35 +60,46 @@ const translations = {
   },
 };
 
-// Fonction pour afficher le contenu en fonction de la langue sélectionnée
-function switchLanguage(lang) {
-  const elements = document.querySelectorAll("[data-translate]");
+// load the saved language in the local storage
+function loadLanguage() {
+  const currentLanguage = localStorage.getItem(storageKey);
+  html.setAttribute(storageKey, currentLanguage || defaultMode);
+  updateLanguage(currentLanguage || defaultMode);
+}
 
+loadLanguage();
+
+// click on the buttons
+enBtn.addEventListener("click", (btn) => {
+  saveLanguage(btn);
+});
+frBtn.addEventListener("click", (btn) => {
+  saveLanguage(btn);
+});
+
+// save the language in the local storage
+function saveLanguage(btn) {
+  html.setAttribute("lang", btn.target.id);
+  localStorage.setItem(storageKey, btn.target.id);
+  updateLanguage(btn.target.id);
+}
+
+// update the chosen language
+function updateLanguage(lang) {
+  const allId = [enBtn, frBtn];
+  allId.forEach(function (el) {
+    el.classList.remove("active");
+  });
+  const btn = document.getElementById(lang);
+  const elements = document.querySelectorAll("[data-translate]");
   elements.forEach((element) => {
     const key = element.getAttribute("data-translate");
     if (translations[lang] && translations[lang][key]) {
       element.innerHTML = translations[lang][key];
+      btn.classList.add("active");
     } else {
-      // Si la traduction pour la clé spécifiée n'existe pas dans la langue sélectionnée, utilisez la langue par défaut (par exemple, l'anglais).
-      element.innerHTML = translations["en"][key];
+      element.innerHTML = translations["fr"][key];
+      btn.classList.add("active");
     }
   });
 }
-
-// Fonction pour gérer le clic sur le bouton de switch de langue
-function handleSwitchButtonClick() {
-  // Vous pouvez détecter la langue actuelle de l'utilisateur ici.
-  let currentLanguage = document.documentElement; // français par défaut
-
-  if (currentLanguage.lang === "fr") {
-    switchLanguage("en");
-    currentLanguage.setAttribute("lang", "en");
-    flag.innerHTML = "FR";
-  } else {
-    switchLanguage("fr");
-    currentLanguage.setAttribute("lang", "fr");
-    flag.innerHTML = "EN";
-  }
-}
-
-switchButton.addEventListener("click", handleSwitchButtonClick);

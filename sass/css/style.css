@@ -19,13 +19,9 @@
   --fs-formIcon: 3rem;
   --fs-formError: 1.2rem;
   --fs-a: 2rem;
-  --fs-p_small: 1.2rem;
-  --fs-p_large: 1.6rem;
-  --fs-h1: 5.6rem;
-  --fs-h2: 4.5rem;
-  --fs-h3: 3.2rem;
-  --fs-h4: 3rem;
-  --sun: url(../../assets/sun.svg);
+  --fs-p_small: 1.6rem;
+  --fs-p_large: 1.8rem;
+  --moon: url(../../assets/moon.svg);
 }
 
 :root.dark-mode {
@@ -37,7 +33,7 @@
   --c-text2: #c2e812;
   --c-text3: #312d2e;
   --c-borderInput: rgba(252, 255, 252, 0.5);
-  --moon: url(../../assets/moon.svg);
+  --sun: url(../../assets/sun.svg);
 }
 
 .lightbox {
@@ -204,18 +200,20 @@ section:last-of-type {
   margin-bottom: 0;
 }
 section h1 {
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: 700;
+  line-height: 4rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   section h1 {
     font-size: 5.6rem;
+    line-height: 6rem;
   }
 }
 section h2 {
   font-size: 4rem;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   section h2 {
     font-size: 5.2rem;
   }
@@ -224,7 +222,7 @@ section h3 {
   font-size: 2rem;
   font-weight: 700;
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   section h3 {
     font-size: 3.2rem;
   }
@@ -232,7 +230,7 @@ section h3 {
 section p {
   font-size: var(--fs-p_small);
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) {
   section p {
     font-size: var(--fs-p_large);
   }
@@ -543,17 +541,12 @@ section p {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 2rem;
   width: 100%;
   background: var(--c-secondary-light);
   padding: 4rem 2rem;
   border-radius: var(--br-box);
-}
-@media screen and (min-width: 992px) {
-  .contact__content {
-    flex-direction: row;
-  }
 }
 .contact__detail {
   display: flex;
@@ -561,7 +554,7 @@ section p {
   align-items: flex-start;
   flex-direction: column;
   gap: var(--margin);
-  flex: 0 0 100%;
+  flex: 1 1 100%;
 }
 @media screen and (min-width: 992px) {
   .contact__detail {
@@ -571,17 +564,28 @@ section p {
 .contact__detail img {
   align-self: center;
   width: 100%;
+  max-width: 35rem;
 }
 .contact__detail a {
-  font-size: var(--fs-p_large);
+  font-size: 1.4rem;
   color: var(--c-text1);
   font-weight: 600;
 }
+@media screen and (min-width: 768px) {
+  .contact__detail a {
+    font-size: 1.8rem;
+  }
+}
 .contact__detail i {
   color: var(--c-text2);
-  font-size: 4rem;
+  font-size: 3rem;
   margin-right: 2rem;
   vertical-align: middle;
+}
+@media screen and (min-width: 768px) {
+  .contact__detail i {
+    font-size: 4rem;
+  }
 }
 
 .form {
@@ -590,6 +594,8 @@ section p {
   align-items: center;
   flex-wrap: wrap;
   gap: var(--margin);
+  flex-grow: 0;
+  flex-basis: 100%;
 }
 @media screen and (min-width: 992px) {
   .form {
@@ -619,7 +625,7 @@ section p {
   font-size: var(--fs-p_large);
   background: var(--c-secondary-light);
   border: 0.1rem solid var(--c-borderInput);
-  color: var(--c-secondary);
+  color: var(--c-text1);
   border-radius: 0.8rem;
   width: 100%;
   resize: none;
@@ -633,7 +639,7 @@ section p {
 .form__textarea textarea:-webkit-autofill ~ label,
 .form__input .fill,
 .form__textarea .fill {
-  opacity: 0.4;
+  opacity: 0.6;
   transform: scale(0.85) translateY(-1.5rem);
 }
 .form__input i, .form__textarea i {
@@ -729,7 +735,7 @@ section p {
 }
 
 #colorMode {
-  background: var(--c-secondary);
+  background: none;
   width: 4rem;
   height: 4rem;
   background-image: var(--sun);
@@ -739,12 +745,18 @@ section p {
   cursor: pointer;
 }
 
-.switchLanguage {
+#en,
+#fr {
   color: var(--c-text1);
   font-size: 2rem;
   font-weight: 700;
   background: none;
+  opacity: 0.5;
   cursor: pointer;
+}
+#en.active,
+#fr.active {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -52,28 +52,30 @@ section {
     margin-bottom: 0;
   }
   h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 700;
-    @include breakpoints.small {
+    line-height: 4rem;
+    @include breakpoints.x-small {
       font-size: 5.6rem;
+      line-height: 6rem;
     }
   }
   h2 {
     font-size: 4rem;
-    @include breakpoints.small {
+    @include breakpoints.x-small {
       font-size: 5.2rem;
     }
   }
   h3 {
     font-size: 2rem;
     font-weight: 700;
-    @include breakpoints.small {
+    @include breakpoints.x-small {
       font-size: 3.2rem;
     }
   }
   p {
     font-size: var(--fs-p_small);
-    @include breakpoints.small {
+    @include breakpoints.x-small {
       font-size: var(--fs-p_large);
     }
   }
@@ -374,38 +376,42 @@ section {
   grid-template-rows: auto 1fr;
   &__content {
     @include mixins.flex(center, center);
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 2rem;
     width: 100%;
     background: var(--c-secondary-light);
     padding: 4rem 2rem;
     border-radius: var(--br-box);
-    @include breakpoints.medium {
-      flex-direction: row;
-    }
   }
   &__detail {
     @include mixins.flex(flex-start, flex-start);
     flex-direction: column;
     gap: var(--margin);
-    flex: 0 0 100%;
+    flex: 1 1 100%;
     @include breakpoints.medium {
       flex: 1 1 calc(50% - var(--margin));
     }
     img {
       align-self: center;
       width: 100%;
+      max-width: 35rem;
     }
     a {
-      font-size: var(--fs-p_large);
+      font-size: 1.4rem;
       color: var(--c-text1);
       font-weight: 600;
+      @include breakpoints.small {
+        font-size: 1.8rem;
+      }
     }
     i {
       color: var(--c-text2);
-      font-size: 4rem;
+      font-size: 3rem;
       margin-right: 2rem;
       vertical-align: middle;
+      @include breakpoints.small {
+        font-size: 4rem;
+      }
     }
   }
 }
@@ -414,6 +420,8 @@ section {
   @include mixins.flex(center, center);
   flex-wrap: wrap;
   gap: var(--margin);
+  flex-grow: 0;
+  flex-basis: 100%;
   @include breakpoints.medium {
     flex: 1 1 calc(50% - var(--margin));
   }
@@ -438,7 +446,7 @@ section {
       font-size: var(--fs-p_large);
       background: var(--c-secondary-light);
       border: 0.1rem solid var(--c-borderInput);
-      color: var(--c-secondary);
+      color: var(--c-text1);
       border-radius: 0.8rem;
       width: 100%;
       resize: none;
@@ -448,7 +456,7 @@ section {
     input:not(.btn):-webkit-autofill ~ label,
     textarea:-webkit-autofill ~ label,
     .fill {
-      opacity: 0.4;
+      opacity: 0.6;
       transform: scale(0.85) translateY(-1.5rem);
     }
     i {
@@ -544,7 +552,7 @@ section {
 }
 
 #colorMode {
-  background: var(--c-secondary);
+  background: none;
   width: 4rem;
   height: 4rem;
   background-image: var(--sun);
@@ -554,10 +562,15 @@ section {
   cursor: pointer;
 }
 
-.switchLanguage {
+#en,
+#fr {
   color: var(--c-text1);
   font-size: 2rem;
   font-weight: 700;
   background: none;
+  opacity: 0.5;
   cursor: pointer;
+  &.active {
+    opacity: 1;
+  }
 }
