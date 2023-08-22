@@ -79,9 +79,9 @@ section {
     }
   }
   p {
-    font-size: var(--fs-p_small);
+    font-size: var(--fs-p);
     @include breakpoints.x-small {
-      font-size: var(--fs-p_large);
+      font-size: var(--fs-p);
     }
   }
 }
@@ -100,13 +100,13 @@ section {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 25rem;
+    width: var(--s-bannerSmall);
     height: 100%;
     background: rgba(46, 49, 56, 0.3);
     user-select: none;
   }
   @include breakpoints.large {
-    width: 35rem;
+    width: var(--s-bannerMedium);
   }
   span {
     writing-mode: vertical-lr;
@@ -217,7 +217,7 @@ section {
   &__box {
     @include mixins.flex(flex-start, center);
     flex: 1 1 100%;
-    font-size: var(--fs-p_large);
+    font-size: var(--fs-p);
     font-weight: 500;
     a {
       padding: var(--m-gutter);
@@ -310,6 +310,12 @@ section {
     @include mixins.flex(flex-start, flex-start);
     flex-wrap: wrap;
     gap: 4rem;
+    @include breakpoints.small {
+      width: calc(100% - var(--s-bannerSmall));
+    }
+    @include breakpoints.large {
+      width: calc(100% - var(--s-bannerMedium));
+    }
   }
   &__box {
     @include mixins.flex(center, center);
@@ -358,8 +364,14 @@ section {
     @include breakpoints.x-small {
       grid-template-columns: 1fr 1fr;
     }
+    @include breakpoints.small {
+      width: calc(100% - var(--s-bannerSmall));
+    }
     @include breakpoints.large {
-      grid-template-columns: repeat(3, 1fr);
+      width: calc(100% - var(--s-bannerMedium));
+    }
+    @include breakpoints.x-large {
+      grid-template-columns: repeat(4, 1fr);
     }
   }
   &__text {
@@ -422,6 +434,12 @@ section {
     background: var(--c-secondary-light);
     padding: 4rem 2rem;
     border-radius: var(--br-box);
+    @include breakpoints.small {
+      width: calc(100% - var(--s-bannerSmall));
+    }
+    @include breakpoints.large {
+      width: calc(100% - var(--s-bannerMedium));
+    }
   }
   &__detail {
     @include mixins.flex(flex-start, flex-start);
@@ -469,7 +487,7 @@ section {
     flex: 1 1 100%;
     position: relative;
     label {
-      font-size: var(--fs-p_large);
+      font-size: var(--fs-p);
       color: var(--c-text1);
       position: absolute;
       top: 0;
@@ -483,7 +501,7 @@ section {
     input:not(.btn),
     textarea {
       padding: 3rem var(--margin) var(--margin);
-      font-size: var(--fs-p_large);
+      font-size: var(--fs-p);
       background: var(--c-secondary-light);
       border: 0.1rem solid var(--c-borderInput);
       color: var(--c-text1);
@@ -552,10 +570,10 @@ section {
   background: var(--c-secondary-light);
   height: 6rem;
   margin-bottom: 5rem;
-  font-size: var(--fs-p_small);
+  font-size: var(--fs-p);
   color: var(--c-text1);
   @include breakpoints.small {
-    font-size: var(--fs-p_large);
+    font-size: var(--fs-p);
   }
   @include breakpoints.medium {
     padding: 0 var(--m-m_gutter);

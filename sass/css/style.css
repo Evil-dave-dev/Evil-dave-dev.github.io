@@ -19,8 +19,9 @@
   --fs-formIcon: 3rem;
   --fs-formError: 1.2rem;
   --fs-a: 2rem;
-  --fs-p_small: 1.6rem;
-  --fs-p_large: 1.8rem;
+  --fs-p: 1.6rem;
+  --s-bannerSmall: 25rem;
+  --s-bannerMedium: 35rem;
   --moon: url(../../assets/moon.svg);
 }
 
@@ -233,11 +234,11 @@ section h3 {
   }
 }
 section p {
-  font-size: var(--fs-p_small);
+  font-size: var(--fs-p);
 }
 @media screen and (min-width: 576px) {
   section p {
-    font-size: var(--fs-p_large);
+    font-size: var(--fs-p);
   }
 }
 
@@ -257,7 +258,7 @@ section p {
     position: absolute;
     right: 0;
     bottom: 0;
-    width: 25rem;
+    width: var(--s-bannerSmall);
     height: 100%;
     background: rgba(46, 49, 56, 0.3);
     user-select: none;
@@ -265,7 +266,7 @@ section p {
 }
 @media screen and (min-width: 1200px) {
   .banner {
-    width: 35rem;
+    width: var(--s-bannerMedium);
   }
 }
 .banner span {
@@ -388,7 +389,7 @@ section p {
   justify-content: flex-start;
   align-items: center;
   flex: 1 1 100%;
-  font-size: var(--fs-p_large);
+  font-size: var(--fs-p);
   font-weight: 500;
 }
 .navbar__box a {
@@ -482,6 +483,16 @@ section p {
   flex-wrap: wrap;
   gap: 4rem;
 }
+@media screen and (min-width: 768px) {
+  .services__content {
+    width: calc(100% - var(--s-bannerSmall));
+  }
+}
+@media screen and (min-width: 1200px) {
+  .services__content {
+    width: calc(100% - var(--s-bannerMedium));
+  }
+}
 .services__box {
   display: flex;
   justify-content: center;
@@ -531,9 +542,19 @@ section p {
     grid-template-columns: 1fr 1fr;
   }
 }
+@media screen and (min-width: 768px) {
+  .portfolio__content {
+    width: calc(100% - var(--s-bannerSmall));
+  }
+}
 @media screen and (min-width: 1200px) {
   .portfolio__content {
-    grid-template-columns: repeat(3, 1fr);
+    width: calc(100% - var(--s-bannerMedium));
+  }
+}
+@media screen and (min-width: 1400px) {
+  .portfolio__content {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 .portfolio__text {
@@ -594,6 +615,16 @@ section p {
   padding: 4rem 2rem;
   border-radius: var(--br-box);
 }
+@media screen and (min-width: 768px) {
+  .contact__content {
+    width: calc(100% - var(--s-bannerSmall));
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contact__content {
+    width: calc(100% - var(--s-bannerMedium));
+  }
+}
 .contact__detail {
   display: flex;
   justify-content: flex-start;
@@ -653,7 +684,7 @@ section p {
   position: relative;
 }
 .form__input label, .form__textarea label {
-  font-size: var(--fs-p_large);
+  font-size: var(--fs-p);
   color: var(--c-text1);
   position: absolute;
   top: 0;
@@ -668,7 +699,7 @@ section p {
 .form__input textarea,
 .form__textarea textarea {
   padding: 3rem var(--margin) var(--margin);
-  font-size: var(--fs-p_large);
+  font-size: var(--fs-p);
   background: var(--c-secondary-light);
   border: 0.1rem solid var(--c-borderInput);
   color: var(--c-text1);
@@ -733,12 +764,12 @@ section p {
   background: var(--c-secondary-light);
   height: 6rem;
   margin-bottom: 5rem;
-  font-size: var(--fs-p_small);
+  font-size: var(--fs-p);
   color: var(--c-text1);
 }
 @media screen and (min-width: 768px) {
   .footer {
-    font-size: var(--fs-p_large);
+    font-size: var(--fs-p);
   }
 }
 @media screen and (min-width: 992px) {
