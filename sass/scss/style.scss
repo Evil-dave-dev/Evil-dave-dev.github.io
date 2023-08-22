@@ -38,9 +38,11 @@ body {
 }
 
 section {
+  position: relative;
   margin: var(--margin) 0;
   background: var(--c-primary);
   padding: 12rem var(--m-gutter) 6rem;
+  overflow: hidden;
   @include breakpoints.medium {
     padding: 12rem var(--m-m_gutter) 6rem;
   }
@@ -50,6 +52,9 @@ section {
   }
   &:last-of-type {
     margin-bottom: 0;
+  }
+  div:not(.banner) {
+    z-index: 1;
   }
   h1 {
     font-size: 4rem;
@@ -85,6 +90,39 @@ section {
   font-family: "Khand", sans-serif;
   & > span {
     font-family: "Khand", sans-serif;
+  }
+}
+
+.banner {
+  display: none;
+  @include breakpoints.small {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25rem;
+    height: 100%;
+    background: rgba(46, 49, 56, 0.3);
+    user-select: none;
+  }
+  @include breakpoints.large {
+    width: 35rem;
+  }
+  span {
+    writing-mode: vertical-lr;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    height: 100%;
+    display: block;
+    font-family: "Khand", sans-serif;
+    font-weight: 600;
+    font-size: 24rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.2);
+    @include breakpoints.large {
+      line-height: 56rem;
+    }
   }
 }
 
@@ -312,6 +350,7 @@ section {
 
 .portfolio {
   &__content {
+    position: relative;
     display: grid;
     grid-gap: var(--m-gutter);
     grid-template-columns: 1fr;
@@ -375,6 +414,7 @@ section {
 .contact {
   grid-template-rows: auto 1fr;
   &__content {
+    position: relative;
     @include mixins.flex(center, center);
     flex-wrap: wrap;
     gap: 2rem;
@@ -535,7 +575,7 @@ section {
   height: 6rem;
   border-radius: 1rem;
   font-size: 4rem;
-  z-index: 1;
+  z-index: 2;
   &.visible {
     visibility: visible;
   }
@@ -549,6 +589,7 @@ section {
   width: 100%;
   height: 5rem;
   background: var(--c-secondary);
+  z-index: 2;
 }
 
 #colorMode {

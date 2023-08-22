@@ -183,9 +183,11 @@ body {
 }
 
 section {
+  position: relative;
   margin: var(--margin) 0;
   background: var(--c-primary);
   padding: 12rem var(--m-gutter) 6rem;
+  overflow: hidden;
 }
 @media screen and (min-width: 992px) {
   section {
@@ -198,6 +200,9 @@ section:first-of-type {
 }
 section:last-of-type {
   margin-bottom: 0;
+}
+section div:not(.banner) {
+  z-index: 1;
 }
 section h1 {
   font-size: 4rem;
@@ -241,6 +246,45 @@ section p {
 }
 .heading > span {
   font-family: "Khand", sans-serif;
+}
+
+.banner {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .banner {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 25rem;
+    height: 100%;
+    background: rgba(46, 49, 56, 0.3);
+    user-select: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .banner {
+    width: 35rem;
+  }
+}
+.banner span {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  height: 100%;
+  display: block;
+  font-family: "Khand", sans-serif;
+  font-weight: 600;
+  font-size: 24rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.2);
+}
+@media screen and (min-width: 1200px) {
+  .banner span {
+    line-height: 56rem;
+  }
 }
 
 .highlight-color {
@@ -476,6 +520,7 @@ section p {
 }
 
 .portfolio__content {
+  position: relative;
   display: grid;
   grid-gap: var(--m-gutter);
   grid-template-columns: 1fr;
@@ -538,6 +583,7 @@ section p {
   grid-template-rows: auto 1fr;
 }
 .contact__content {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -716,7 +762,7 @@ section p {
   height: 6rem;
   border-radius: 1rem;
   font-size: 4rem;
-  z-index: 1;
+  z-index: 2;
 }
 .arrowTop.visible {
   visibility: visible;
@@ -732,6 +778,7 @@ section p {
   width: 100%;
   height: 5rem;
   background: var(--c-secondary);
+  z-index: 2;
 }
 
 #colorMode {
