@@ -17,7 +17,7 @@
     }
   }
   &:hover {
-    background: #5d4ecb;
+    background: var(--c-hover);
   }
   @include breakpoints.small {
     font-size: 2.2rem;

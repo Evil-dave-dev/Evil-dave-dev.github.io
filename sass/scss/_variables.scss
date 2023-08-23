@@ -7,6 +7,7 @@
   --c-text1: #2e3138;
   --c-text2: #7d6bed;
   --c-text3: #e7e7e7;
+  --c-hover: #5d4ecb;
 
   --c-borderInput: rgba(49, 45, 46, 0.5);
   --c-success: #62ad24;
@@ -39,12 +40,13 @@
 :root.dark-mode {
   // couleurs
   --c-primary: #181717;
-  --c-secondary: #2a2c26;
+  --c-secondary: #242323;
   --c-secondary-light: #312d2e;
   --c-tertiary: #c2e812;
   --c-text1: #fcfffc;
   --c-text2: #c2e812;
   --c-text3: #312d2e;
+  --c-hover: #85a709;
 
   --c-borderInput: rgba(252, 255, 252, 0.5);
 

@@ -37,6 +37,37 @@ body {
   background: var(--c-secondary);
 }
 
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 6rem;
+  @include breakpoints.large {
+    font-size: 7.8rem;
+    line-height: 7.8rem;
+  }
+}
+h2 {
+  font-size: 4rem;
+  @include breakpoints.large {
+    font-size: 5.2rem;
+  }
+}
+h3 {
+  font-size: 4rem;
+  font-weight: 700;
+  @include breakpoints.large {
+    font-size: 4.6rem;
+  }
+}
+h4 {
+  font-size: 4rem;
+  font-family: "Khand", sans-serif;
+}
+p,
+strong {
+  font-size: var(--fs-p);
+}
+
 section {
   position: relative;
   margin: var(--margin) 0;
@@ -56,38 +87,11 @@ section {
   div:not(.banner) {
     z-index: 1;
   }
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 4rem;
-    @include breakpoints.x-small {
-      font-size: 5.6rem;
-      line-height: 6rem;
-    }
-  }
-  h2 {
-    font-size: 4rem;
-    @include breakpoints.x-small {
-      font-size: 5.2rem;
-    }
-  }
-  h3 {
-    font-size: 2rem;
-    font-weight: 700;
-    @include breakpoints.x-small {
-      font-size: 3.2rem;
-    }
-  }
-  p {
-    font-size: var(--fs-p);
-    @include breakpoints.x-small {
-      font-size: var(--fs-p);
-    }
-  }
 }
 
 .heading {
   font-family: "Khand", sans-serif;
+  margin-bottom: var(--margin);
   & > span {
     font-family: "Khand", sans-serif;
   }
@@ -285,6 +289,12 @@ section {
       height: 100%;
     }
   }
+  strong > i {
+    font-size: 3rem;
+    color: var(--c-text2);
+    width: 5rem;
+    vertical-align: sub;
+  }
   @include breakpoints.small {
     align-items: center;
     grid-template-areas:
@@ -371,16 +381,16 @@ section {
       width: calc(100% - var(--s-bannerMedium));
     }
     @include breakpoints.x-large {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
   &__text {
-    @include mixins.flex(flex-start, flex-start);
+    @include mixins.flex(flex-end, flex-start);
     flex-direction: column;
     gap: var(--m-gutter);
     padding: var(--m-gutter);
     position: absolute;
-    inset: 50% 0 0 0;
+    inset: 0 0 0 0;
     transform: translate(0, 100%);
     object-fit: contain;
     transition: 0.4s ease;
@@ -395,18 +405,15 @@ section {
     border-radius: var(--br-box);
     overflow: hidden;
     img {
-      width: 100%;
+      width: 130%;
+      object-fit: contain;
       transition: transform 0.8s ease;
     }
     &::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.6) 0%,
-        rgba(0, 0, 0, 0) 100%
-      );
+      border-radius: var(--br-box);
       z-index: 0;
     }
     &:hover {
@@ -418,6 +425,18 @@ section {
       }
     }
   }
+  [data-background="1"]::after {
+    background: rgba(134, 23, 23, 0.8);
+  }
+  [data-background="2"]::after {
+    background: rgba(23, 134, 51, 0.8);
+  }
+  [data-background="3"]::after {
+    background: rgba(23, 62, 134, 0.8);
+  }
+  [data-background="4"]::after {
+    background: rgba(134, 23, 128, 0.8);
+  }
 }
 
 // ------------------- contact
@@ -426,10 +445,10 @@ section {
 .contact {
   grid-template-rows: auto 1fr;
   &__content {
-    position: relative;
-    @include mixins.flex(center, center);
+    @include mixins.flex(center, flex-start);
     flex-wrap: wrap;
     gap: 2rem;
+    position: relative;
     width: 100%;
     background: var(--c-secondary-light);
     padding: 4rem 2rem;
@@ -445,17 +464,13 @@ section {
     @include mixins.flex(flex-start, flex-start);
     flex-direction: column;
     gap: var(--margin);
-    flex: 1 1 100%;
-    @include breakpoints.medium {
-      flex: 1 1 calc(50% - var(--margin));
-    }
+    flex: 0 1 45rem;
     img {
       align-self: center;
       width: 100%;
-      max-width: 35rem;
     }
     a {
-      font-size: 1.4rem;
+      font-size: var(--fs-p);
       color: var(--c-text1);
       font-weight: 600;
       @include breakpoints.small {

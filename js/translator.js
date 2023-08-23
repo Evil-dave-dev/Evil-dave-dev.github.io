@@ -14,6 +14,8 @@ const translations = {
     navbar5: "contact",
     home1: "Hello I'm",
     home2: "and I'm a <span class='highlight-color'>Frontend Developper</span>",
+    adress: '<i class="fa-solid fa-house"></i>live in: <strong>Lille</strong>',
+    age: '<i class="fa-solid fa-cake-candles"></i>age: 39 years',
     skills1: 'My <span class="highlight-color">skills</span>',
     readMore: "Read more",
     servicesTitle: 'Our <span class="highlight-color">services</span>',
@@ -40,6 +42,8 @@ const translations = {
     home1: "Salut je suis",
     home2:
       "et je suis <span class='highlight-color'> développeur Frontend</span>",
+    adress: '<i class="fa-solid fa-house"></i>habite à: <strong>Lille</strong>',
+    age: '<i class="fa-solid fa-cake-candles"></i>age: 39 ans',
     skills1: 'Mes <span class="highlight-color">compétences</span>',
     readMore: "Lire plus",
     servicesTitle: 'Mes <span class="highlight-color">services</span>',

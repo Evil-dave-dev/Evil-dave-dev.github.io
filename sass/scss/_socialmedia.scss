@@ -12,7 +12,7 @@
   color: var(--c-text3);
   transition: var(--transition) ease;
   &:hover {
-    background: #5d4ecb;
+    background: var(--c-hover);
   }
   @include breakpoints.small {
     width: 7rem;

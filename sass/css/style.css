@@ -7,6 +7,7 @@
   --c-text1: #2e3138;
   --c-text2: #7d6bed;
   --c-text3: #e7e7e7;
+  --c-hover: #5d4ecb;
   --c-borderInput: rgba(49, 45, 46, 0.5);
   --c-success: #62ad24;
   --c-error: #ff3a47;
@@ -27,12 +28,13 @@
 
 :root.dark-mode {
   --c-primary: #181717;
-  --c-secondary: #2a2c26;
+  --c-secondary: #242323;
   --c-secondary-light: #312d2e;
   --c-tertiary: #c2e812;
   --c-text1: #fcfffc;
   --c-text2: #c2e812;
   --c-text3: #312d2e;
+  --c-hover: #85a709;
   --c-borderInput: rgba(252, 255, 252, 0.5);
   --sun: url(../../assets/sun.svg);
 }
@@ -116,7 +118,7 @@
   transition: var(--transition) ease;
 }
 .social-link:hover {
-  background: #5d4ecb;
+  background: var(--c-hover);
 }
 @media screen and (min-width: 768px) {
   .social-link {
@@ -148,7 +150,7 @@
   }
 }
 .btn:hover {
-  background: #5d4ecb;
+  background: var(--c-hover);
 }
 @media screen and (min-width: 768px) {
   .btn {
@@ -183,6 +185,47 @@ body {
   background: var(--c-secondary);
 }
 
+h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 6rem;
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 7.8rem;
+    line-height: 7.8rem;
+  }
+}
+
+h2 {
+  font-size: 4rem;
+}
+@media screen and (min-width: 1200px) {
+  h2 {
+    font-size: 5.2rem;
+  }
+}
+
+h3 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 1200px) {
+  h3 {
+    font-size: 4.6rem;
+  }
+}
+
+h4 {
+  font-size: 4rem;
+  font-family: "Khand", sans-serif;
+}
+
+p,
+strong {
+  font-size: var(--fs-p);
+}
+
 section {
   position: relative;
   margin: var(--margin) 0;
@@ -205,45 +248,10 @@ section:last-of-type {
 section div:not(.banner) {
   z-index: 1;
 }
-section h1 {
-  font-size: 4rem;
-  font-weight: 700;
-  line-height: 4rem;
-}
-@media screen and (min-width: 576px) {
-  section h1 {
-    font-size: 5.6rem;
-    line-height: 6rem;
-  }
-}
-section h2 {
-  font-size: 4rem;
-}
-@media screen and (min-width: 576px) {
-  section h2 {
-    font-size: 5.2rem;
-  }
-}
-section h3 {
-  font-size: 2rem;
-  font-weight: 700;
-}
-@media screen and (min-width: 576px) {
-  section h3 {
-    font-size: 3.2rem;
-  }
-}
-section p {
-  font-size: var(--fs-p);
-}
-@media screen and (min-width: 576px) {
-  section p {
-    font-size: var(--fs-p);
-  }
-}
 
 .heading {
   font-family: "Khand", sans-serif;
+  margin-bottom: var(--margin);
 }
 .heading > span {
   font-family: "Khand", sans-serif;
@@ -459,6 +467,12 @@ section p {
   width: 100%;
   height: 100%;
 }
+.home strong > i {
+  font-size: 3rem;
+  color: var(--c-text2);
+  width: 5rem;
+  vertical-align: sub;
+}
 @media screen and (min-width: 768px) {
   .home {
     align-items: center;
@@ -554,18 +568,18 @@ section p {
 }
 @media screen and (min-width: 1400px) {
   .portfolio__content {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 .portfolio__text {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   align-items: flex-start;
   flex-direction: column;
   gap: var(--m-gutter);
   padding: var(--m-gutter);
   position: absolute;
-  inset: 50% 0 0 0;
+  inset: 0 0 0 0;
   transform: translate(0, 100%);
   object-fit: contain;
   transition: 0.4s ease;
@@ -583,14 +597,15 @@ section p {
   overflow: hidden;
 }
 .portfolio__box img {
-  width: 100%;
+  width: 130%;
+  object-fit: contain;
   transition: transform 0.8s ease;
 }
 .portfolio__box::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+  border-radius: var(--br-box);
   z-index: 0;
 }
 .portfolio__box:hover .portfolio__text {
@@ -599,17 +614,29 @@ section p {
 .portfolio__box:hover img {
   transform: translate(0, -10%);
 }
+.portfolio [data-background="1"]::after {
+  background: rgba(134, 23, 23, 0.8);
+}
+.portfolio [data-background="2"]::after {
+  background: rgba(23, 134, 51, 0.8);
+}
+.portfolio [data-background="3"]::after {
+  background: rgba(23, 62, 134, 0.8);
+}
+.portfolio [data-background="4"]::after {
+  background: rgba(134, 23, 128, 0.8);
+}
 
 .contact {
   grid-template-rows: auto 1fr;
 }
 .contact__content {
-  position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+  position: relative;
   width: 100%;
   background: var(--c-secondary-light);
   padding: 4rem 2rem;
@@ -631,20 +658,14 @@ section p {
   align-items: flex-start;
   flex-direction: column;
   gap: var(--margin);
-  flex: 1 1 100%;
-}
-@media screen and (min-width: 992px) {
-  .contact__detail {
-    flex: 1 1 calc(50% - var(--margin));
-  }
+  flex: 0 1 45rem;
 }
 .contact__detail img {
   align-self: center;
   width: 100%;
-  max-width: 35rem;
 }
 .contact__detail a {
-  font-size: 1.4rem;
+  font-size: var(--fs-p);
   color: var(--c-text1);
   font-weight: 600;
 }
