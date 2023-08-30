@@ -3,6 +3,7 @@
   --c-primary: #f8f7ff;
   --c-secondary: #b7c1f6;
   --c-secondary-light: #efedff;
+  --c-secondary-light2: rgba(183, 193, 246, 0.8);
   --c-tertiary: #7d6bed;
   --c-text1: #2e3138;
   --c-text2: #7d6bed;
@@ -30,6 +31,7 @@
   --c-primary: #181717;
   --c-secondary: #242323;
   --c-secondary-light: #312d2e;
+  --c-secondary-light2: rgba(36, 35, 35, 0.8);
   --c-tertiary: #c2e812;
   --c-text1: #fcfffc;
   --c-text2: #c2e812;
@@ -133,12 +135,12 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  font-size: 1.8rem;
   font-weight: 600;
   color: var(--c-text3);
   background: var(--c-tertiary);
   transition: var(--transition);
   border-radius: 1rem;
-  font-size: 1.8rem;
   padding: 1.8rem 3.2rem;
 }
 .btn i {
@@ -186,33 +188,36 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
+  font-family: "Khand", sans-serif;
+  font-size: 4.5rem;
+  line-height: 4.8rem;
   font-weight: 700;
-  line-height: 6rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   h1 {
     font-size: 7.8rem;
-    line-height: 7.8rem;
+    line-height: 8.2rem;
   }
 }
 
 h2 {
   font-size: 4rem;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   h2 {
     font-size: 5.2rem;
   }
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 2.6rem;
+  line-height: 3.8rem;
   font-weight: 700;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 992px) {
   h3 {
     font-size: 4.6rem;
+    line-height: 5.6rem;
   }
 }
 
@@ -580,10 +585,14 @@ section div:not(.banner) {
   padding: var(--m-gutter);
   position: absolute;
   inset: 0 0 0 0;
-  transform: translate(0, 100%);
   object-fit: contain;
   transition: 0.4s ease;
   z-index: 1;
+}
+@media screen and (min-width: 768px) {
+  .portfolio__text {
+    transform: translate(0, 100%);
+  }
 }
 .portfolio__box {
   display: flex;
@@ -605,6 +614,7 @@ section div:not(.banner) {
   content: "";
   position: absolute;
   inset: 0;
+  background: var(--c-secondary-light2);
   border-radius: var(--br-box);
   z-index: 0;
 }
@@ -613,18 +623,6 @@ section div:not(.banner) {
 }
 .portfolio__box:hover img {
   transform: translate(0, -10%);
-}
-.portfolio [data-background="1"]::after {
-  background: rgba(134, 23, 23, 0.8);
-}
-.portfolio [data-background="2"]::after {
-  background: rgba(23, 134, 51, 0.8);
-}
-.portfolio [data-background="3"]::after {
-  background: rgba(23, 62, 134, 0.8);
-}
-.portfolio [data-background="4"]::after {
-  background: rgba(134, 23, 128, 0.8);
 }
 
 .contact {

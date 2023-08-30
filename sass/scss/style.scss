@@ -38,25 +38,28 @@ body {
 }
 
 h1 {
-  font-size: 6rem;
+  font-family: "Khand", sans-serif;
+  font-size: 4.5rem;
+  line-height: 4.8rem;
   font-weight: 700;
-  line-height: 6rem;
-  @include breakpoints.large {
+  @include breakpoints.medium {
     font-size: 7.8rem;
-    line-height: 7.8rem;
+    line-height: 8.2rem;
   }
 }
 h2 {
   font-size: 4rem;
-  @include breakpoints.large {
+  @include breakpoints.medium {
     font-size: 5.2rem;
   }
 }
 h3 {
-  font-size: 4rem;
+  font-size: 2.6rem;
+  line-height: 3.8rem;
   font-weight: 700;
-  @include breakpoints.large {
+  @include breakpoints.medium {
     font-size: 4.6rem;
+    line-height: 5.6rem;
   }
 }
 h4 {
@@ -391,10 +394,12 @@ section {
     padding: var(--m-gutter);
     position: absolute;
     inset: 0 0 0 0;
-    transform: translate(0, 100%);
     object-fit: contain;
     transition: 0.4s ease;
     z-index: 1;
+    @include breakpoints.small {
+      transform: translate(0, 100%);
+    }
   }
   &__box {
     @include mixins.flex(center, flex-start);
@@ -413,6 +418,7 @@ section {
       content: "";
       position: absolute;
       inset: 0;
+      background: var(--c-secondary-light2);
       border-radius: var(--br-box);
       z-index: 0;
     }
@@ -424,18 +430,6 @@ section {
         transform: translate(0, -10%);
       }
     }
-  }
-  [data-background="1"]::after {
-    background: rgba(134, 23, 23, 0.8);
-  }
-  [data-background="2"]::after {
-    background: rgba(23, 134, 51, 0.8);
-  }
-  [data-background="3"]::after {
-    background: rgba(23, 62, 134, 0.8);
-  }
-  [data-background="4"]::after {
-    background: rgba(134, 23, 128, 0.8);
   }
 }
 
