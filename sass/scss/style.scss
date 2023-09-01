@@ -160,9 +160,11 @@ section {
     height: 100%;
     gap: 2rem;
     background: var(--c-secondary);
+    font-family: "Khand", sans-serif;
+    text-transform: uppercase;
     font-weight: 600;
     color: var(--c-text1);
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 0 var(--m-gutter);
     @include breakpoints.medium {
       padding: 0 var(--m-m_gutter);
@@ -257,7 +259,7 @@ section {
 }
 
 .logo {
-  flex: 0 1 4.6rem;
+  flex: 0 1 3.6rem;
   display: flex;
   align-items: center;
   img {
@@ -489,8 +491,8 @@ section {
   gap: var(--margin);
   flex-grow: 0;
   flex-basis: 100%;
-  @include breakpoints.medium {
-    flex: 1 1 calc(50% - var(--margin));
+  @include breakpoints.small {
+    flex: 1 1 calc(50% - 45rem);
   }
   &__input {
     flex: 1 1 100%;

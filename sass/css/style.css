@@ -332,9 +332,11 @@ section div:not(.banner) {
   height: 100%;
   gap: 2rem;
   background: var(--c-secondary);
+  font-family: "Khand", sans-serif;
+  text-transform: uppercase;
   font-weight: 600;
   color: var(--c-text1);
-  font-size: 3rem;
+  font-size: 4rem;
   padding: 0 var(--m-gutter);
 }
 @media screen and (min-width: 992px) {
@@ -439,7 +441,7 @@ section div:not(.banner) {
 }
 
 .logo {
-  flex: 0 1 4.6rem;
+  flex: 0 1 3.6rem;
   display: flex;
   align-items: center;
 }
@@ -693,9 +695,9 @@ section div:not(.banner) {
   flex-grow: 0;
   flex-basis: 100%;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 768px) {
   .form {
-    flex: 1 1 calc(50% - var(--margin));
+    flex: 1 1 calc(50% - 45rem);
   }
 }
 .form__input, .form__textarea {
