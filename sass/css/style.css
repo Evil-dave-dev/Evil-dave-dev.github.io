@@ -230,6 +230,7 @@ p,
 a,
 strong {
   font-size: var(--fs-p);
+  color: var(--c-text1);
 }
 
 section {
