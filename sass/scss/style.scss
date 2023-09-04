@@ -67,6 +67,7 @@ h4 {
   font-family: "Khand", sans-serif;
 }
 p,
+a,
 strong {
   font-size: var(--fs-p);
 }
@@ -294,11 +295,16 @@ section {
       height: 100%;
     }
   }
-  strong > i {
-    font-size: 3rem;
-    color: var(--c-text2);
-    width: 5rem;
-    vertical-align: sub;
+  &__info {
+    @include mixins.flex(flex-start, center);
+    gap: 1rem;
+    border-radius: 1rem;
+    background: var(--c-secondary-light);
+    padding: 1rem 2rem;
+    > i {
+      font-size: 2.4rem;
+      color: var(--c-text2);
+    }
   }
   @include breakpoints.small {
     align-items: center;
