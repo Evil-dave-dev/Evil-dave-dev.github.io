@@ -45,7 +45,6 @@ window.onscroll = () => {
 const form = document.getElementById("form");
 const name = document.getElementById("name");
 const email = document.getElementById("email");
-const phoneNumber = document.getElementById("phoneNumber");
 const yourMessage = document.getElementById("yourMessage");
 
 // check on typing

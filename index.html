@@ -123,10 +123,116 @@
 
     <!-- skills section design -->
     <section class="skills" id="skills">
+      <div class="separation"></div>
+      <h2 class="heading" data-translate="skills1">
+        Mes <span class="highlight-color">compétences</span>
+      </h2>
       <div class="skills__content">
-        <h2 class="heading" data-translate="skills1">
-          Mes <span class="highlight-color">compétences</span>
-        </h2>
+        <div
+          class="skills__box"
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.3"
+        >
+          <h4>HTML</h4>
+          <div class="skills__level">
+            <svg
+              class="skills__percentage"
+              viewbox="0 0 100 100"
+              width="200"
+              height="200"
+              data-language="html"
+            >
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>85%</span>
+          </div>
+          <span>HTML5</span>
+        </div>
+        <div
+          class="skills__box"
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.3"
+        >
+          <h4>CSS</h4>
+          <div class="skills__level">
+            <svg
+              class="skills__percentage"
+              viewbox="0 0 100 100"
+              width="200"
+              height="200"
+              data-language="css"
+            >
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>90%</span>
+          </div>
+          <span>CSS3</span>
+        </div>
+        <div
+          class="skills__box"
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.3"
+        >
+          <h4>SASS</h4>
+          <div class="skills__level">
+            <svg
+              class="skills__percentage"
+              viewbox="0 0 100 100"
+              width="200"
+              height="200"
+              data-language="sass"
+            >
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>90%</span>
+          </div>
+          <span>SASS</span>
+        </div>
+        <div
+          class="skills__box"
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.3"
+        >
+          <h4>JS</h4>
+          <div class="skills__level">
+            <svg
+              class="skills__percentage"
+              viewbox="0 0 100 100"
+              width="200"
+              height="200"
+              data-language="js"
+            >
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>55%</span>
+          </div>
+          <span>Javascript</span>
+        </div>
+        <div
+          class="skills__box"
+          data-tilt
+          data-tilt-glare
+          data-tilt-max-glare="0.3"
+        >
+          <h4>React</h4>
+          <div class="skills__level">
+            <svg
+              class="skills__percentage"
+              viewbox="0 0 100 100"
+              width="200"
+              height="200"
+              data-language="react"
+            >
+              <circle cx="50" cy="50" r="40" />
+            </svg>
+            <span>30%</span>
+          </div>
+          <span>React</span>
+        </div>
       </div>
       <div class="banner">
         <span>compétences</span>
@@ -135,6 +241,7 @@
 
     <!-- services section design -->
     <section class="services" id="services">
+      <div class="separation"></div>
       <h2 class="heading" data-translate="servicesTitle">
         Mes <span class="highlight-color">Services</span>
       </h2>
@@ -173,6 +280,7 @@
 
     <!-- portfolio section design -->
     <section class="portfolio" id="portfolio">
+      <div class="separation"></div>
       <h2 class="heading" data-translate="portfolioTitle">
         Derniers <span class="highlight-color">projets</span>
       </h2>
@@ -242,6 +350,7 @@
 
     <!-- contact section design -->
     <section class="contact" id="contact">
+      <div class="separation"></div>
       <h2 class="heading" data-translate="contactTitle">
         Contactez <span class="highlight-color">moi !</span>
       </h2>
@@ -315,5 +424,16 @@
       <button id="en">EN</button>
       <a href="#home" class="arrowTop"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
+
+    <script type="text/javascript" src="/js/vanilla-tilt.js"></script>
+    <script type="text/javascript">
+      VanillaTilt.init(document.querySelector(".your-element"), {
+        max: 25,
+        speed: 400,
+      });
+
+      //It also supports NodeList
+      VanillaTilt.init(document.querySelectorAll(".your-element"));
+    </script>
   </body>
 </html>

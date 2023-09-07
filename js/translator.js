@@ -3,6 +3,18 @@ const frBtn = document.getElementById("fr");
 const html = document.documentElement;
 const storageKey = "lang";
 const defaultMode = "fr";
+// calcul de l'age
+const birthDate = new Date("1984-06-02");
+const currentDate = new Date();
+const age = currentDate.getFullYear() - birthDate.getFullYear();
+
+if (
+  currentDate.getMonth() < birthDate.getMonth() ||
+  (currentDate.getMonth() === birthDate.getMonth() &&
+    currentDate.getDate() < birthDate.getDate())
+) {
+  age--;
+}
 
 // traductions
 const translations = {
@@ -15,7 +27,7 @@ const translations = {
     home1: "Hello I'm",
     home2: "and I'm a <span class='highlight-color'>Frontend Developper</span>",
     adress: "live in:Lille",
-    age: "age:39 years",
+    age: "age:" + age + " years",
     skills1: 'My <span class="highlight-color">skills</span>',
     readMore: "Read more",
     servicesTitle: 'Our <span class="highlight-color">services</span>',
@@ -43,7 +55,7 @@ const translations = {
     home2:
       "et je suis <span class='highlight-color'> développeur Frontend</span>",
     adress: "vit à: Lille",
-    age: "âge: 39 ans",
+    age: "âge: " + age + " ans",
     skills1: 'Mes <span class="highlight-color">compétences</span>',
     readMore: "Lire plus",
     servicesTitle: 'Mes <span class="highlight-color">services</span>',

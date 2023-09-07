@@ -8,3 +8,9 @@
   grid-gap: 2rem;
   grid-template-columns: $column 1fr;
 }
+@mixin verticalText {
+  writing-mode: vertical-lr;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  user-select: none;
+}
