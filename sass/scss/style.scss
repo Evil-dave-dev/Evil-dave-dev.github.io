@@ -278,7 +278,7 @@ section {
   grid-template-areas:
     "home-content home-content"
     "home-img home-img";
-  padding-bottom: 0;
+  padding: 9rem var(--m-m_gutter) 0;
   &__content {
     grid-area: home-content;
     @include mixins.flex(center, flex-start);

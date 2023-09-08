@@ -458,7 +458,7 @@ section div:not(.banner) {
   grid-template-columns: 1fr 35vw;
   grid-template-rows: auto auto;
   grid-template-areas: "home-content home-content" "home-img home-img";
-  padding-bottom: 0;
+  padding: 9rem var(--m-m_gutter) 0;
 }
 .home__content {
   grid-area: home-content;
