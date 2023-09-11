@@ -458,7 +458,7 @@ section div:not(.banner) {
   grid-template-columns: 1fr 35vw;
   grid-template-rows: auto auto;
   grid-template-areas: "home-content home-content" "home-img home-img";
-  padding: 9rem var(--m-m_gutter) 0;
+  padding: 9rem var(--m-gutter) 0;
 }
 .home__content {
   grid-area: home-content;
@@ -493,6 +493,11 @@ section div:not(.banner) {
   .home {
     align-items: center;
     grid-template-areas: "home-content home-img" "home-content home-img";
+  }
+}
+@media screen and (min-width: 992px) {
+  .home {
+    padding: 9rem var(--m-m_gutter) 0;
   }
 }
 
