@@ -293,6 +293,9 @@ section {
       height: 100%;
     }
   }
+  &__text p {
+    margin: 1rem 0;
+  }
   &__info {
     @include mixins.flex(flex-start, center);
     gap: 1rem;
