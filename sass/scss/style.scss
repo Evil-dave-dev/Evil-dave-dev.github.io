@@ -701,7 +701,7 @@ section {
   }
 }
 
-.subFooter {
+.options {
   @include mixins.flex(center, center);
   gap: 2rem;
   position: fixed;

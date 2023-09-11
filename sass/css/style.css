@@ -928,7 +928,7 @@ section div:not(.banner) {
   visibility: visible;
 }
 
-.subFooter {
+.options {
   display: flex;
   justify-content: center;
   align-items: center;
