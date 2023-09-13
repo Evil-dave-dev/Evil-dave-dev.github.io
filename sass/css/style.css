@@ -827,7 +827,7 @@ section div:not(.banner) {
 .form__input input:not(.btn), .form__textarea input:not(.btn),
 .form__input textarea,
 .form__textarea textarea {
-  padding: 3rem var(--margin) var(--margin);
+  padding: 3rem var(--margin);
   font-size: var(--fs-p);
   background: var(--c-secondary-light);
   border: 0.1rem solid var(--c-borderInput);
@@ -850,8 +850,8 @@ section div:not(.banner) {
 }
 .form__input i, .form__textarea i {
   position: absolute;
-  top: 2.1rem;
-  right: 2.1rem;
+  top: 2.7rem;
+  right: 2.7rem;
   visibility: hidden;
   font-size: var(--fs-formIcon);
 }

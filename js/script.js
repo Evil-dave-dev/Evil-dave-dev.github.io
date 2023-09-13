@@ -32,11 +32,11 @@ window.onscroll = () => {
     }
   });
 
-  /* ===================== sticky arrowTop ===================== */
+  // sticky arrowTop
   let arrowTop = document.querySelector(".arrowTop");
   arrowTop.classList.toggle("visible", window.scrollY > 743);
 
-  /* ===================== remove toggle icon and navbar when click navbar link ===================== */
+  // remove toggle icon and navbar when click navbar link
   menuIcon.classList.remove("active");
   navbar.classList.remove("active");
 };
@@ -55,12 +55,13 @@ yourMessage.addEventListener("input", validateYourMessage);
 // check on submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  validateName();
-  validateEmail();
+  removeSuccess(name);
+  removeSuccess(email);
+  sendMail();
 });
 
 // conditions nom
-function validateName(e) {
+function validateName() {
   const nameValue = name.value.trim();
   if (nameValue === "") {
     setErrorFor(name, "le nom ne peut pas être vide");
@@ -78,7 +79,7 @@ function validateName(e) {
 }
 
 // conditions email
-function validateEmail(e) {
+function validateEmail() {
   const emailValue = email.value.trim();
   if (emailValue === "") {
     setErrorFor(email, "l'email ne peut pas être vide");
@@ -96,7 +97,7 @@ function validateEmail(e) {
 }
 
 // conditions your message
-function validateYourMessage(e) {
+function validateYourMessage() {
   const yourMessageValue = yourMessage.value.trim();
   if (yourMessageValue === "") {
     setLabel(yourMessage, yourMessageValue);
@@ -155,9 +156,28 @@ function isName(name) {
   return /^([^0-9]*)$/.test(name);
 }
 
-// restristion numéro
-function isNumber(number) {
-  return /^((\+)33|0|0033)[1-9](\d{2}){4}$/.test(number);
+// send email
+(function () {
+  emailjs.init("F6aRZTfGgZtK7Sen5");
+})();
+
+function sendMail() {
+  const params = {
+    name: name.value,
+    email: email.value,
+    yourMessage: yourMessage.value,
+  };
+  const serviceID = "service_qndthjf";
+  const templateID = "template_04qfk2t";
+
+  emailjs
+    .send(serviceID, templateID, params)
+    .then(() => {
+      name.value = "";
+      email.value = "";
+      yourMessage.value = "";
+    })
+    .catch((err) => console.log(err));
 }
 
 /* ===================== lightbox ===================== */
