@@ -55,8 +55,9 @@ yourMessage.addEventListener("input", validateYourMessage);
 // check on submit
 form.addEventListener("submit", (e) => {
   e.preventDefault();
-  removeSuccess(name);
-  removeSuccess(email);
+  validateName();
+  validateEmail();
+  validateYourMessage();
   sendMail();
 });
 
@@ -99,9 +100,14 @@ function validateEmail() {
 // conditions your message
 function validateYourMessage() {
   const yourMessageValue = yourMessage.value.trim();
+  console.log(yourMessageValue);
   if (yourMessageValue === "") {
+    setErrorFor(yourMessage, "votre message ne peut pas être vide");
+    removeSuccess(yourMessage);
     setLabel(yourMessage, yourMessageValue);
   } else {
+    setSuccesFor(yourMessage);
+    removeError(yourMessage);
     setLabel(yourMessage, yourMessageValue);
   }
 }
@@ -170,14 +176,19 @@ function sendMail() {
   const serviceID = "service_qndthjf";
   const templateID = "template_04qfk2t";
 
-  emailjs
-    .send(serviceID, templateID, params)
-    .then(() => {
-      name.value = "";
-      email.value = "";
-      yourMessage.value = "";
-    })
-    .catch((err) => console.log(err));
+  if (name.value != "" && email.value != "" && yourMessage.value != "") {
+    emailjs
+      .send(serviceID, templateID, params)
+      .then(() => {
+        name.value = "";
+        email.value = "";
+        yourMessage.value = "";
+        removeSuccess(name);
+        removeSuccess(email);
+        removeSuccess(yourMessage);
+      })
+      .catch((err) => console.log(err));
+  }
 }
 
 /* ===================== lightbox ===================== */

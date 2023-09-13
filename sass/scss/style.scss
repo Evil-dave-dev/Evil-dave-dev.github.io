@@ -660,6 +660,16 @@ section {
   &__textarea {
     @extend .form__input;
     flex: 1 1 100%;
+    &.success {
+      textarea {
+        border: 0.1rem solid var(--c-success);
+      }
+    }
+    &.error {
+      textarea {
+        border: 0.1rem solid var(--c-error);
+      }
+    }
   }
 }
 

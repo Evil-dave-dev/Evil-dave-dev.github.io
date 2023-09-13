@@ -884,6 +884,12 @@ section div:not(.banner) {
 .form__textarea {
   flex: 1 1 100%;
 }
+.form__textarea.success textarea {
+  border: 0.1rem solid var(--c-success);
+}
+.form__textarea.error textarea {
+  border: 0.1rem solid var(--c-error);
+}
 
 .footer {
   display: flex;
