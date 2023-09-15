@@ -1,14 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 :root {
   --c-primary: #f8f7ff;
-  --c-secondary: #b7c1f6;
-  --c-secondary-light: #efedff;
-  --c-secondary-light2: rgba(183, 193, 246, 0.8);
-  --c-tertiary: #7d6bed;
+  --c-secondary: #d5eba4;
+  --c-secondary-light: #e8eedd;
+  --c-secondary-light2: rgba(213, 235, 164, 0.8);
+  --c-tertiary: #7ddf64;
   --c-text1: #2e3138;
-  --c-text2: #7d6bed;
+  --c-text2: #58bf49;
   --c-text3: #e7e7e7;
-  --c-hover: #5d4ecb;
+  --c-hover: #58bf49;
   --c-borderInput: rgba(49, 45, 46, 0.5);
   --c-success: #62ad24;
   --c-error: #ff3a47;
@@ -18,7 +18,7 @@
   --br-box: 2rem;
   --transition: 0.5s;
   --fs-icon: 4rem;
-  --fs-formIcon: 3rem;
+  --fs-formIcon: 2rem;
   --fs-formError: 1.2rem;
   --fs-a: 2rem;
   --fs-p: 1.6rem;
@@ -192,7 +192,7 @@ h1 {
   line-height: 4.8rem;
   font-weight: 700;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
   h1 {
     font-size: 7.8rem;
     line-height: 8.2rem;
@@ -202,7 +202,7 @@ h1 {
 h2 {
   font-size: 4rem;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
   h2 {
     font-size: 5.2rem;
   }
@@ -213,7 +213,7 @@ h3 {
   line-height: 3.8rem;
   font-weight: 700;
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 576px) {
   h3 {
     font-size: 4.6rem;
     line-height: 5.6rem;
@@ -463,13 +463,15 @@ section div:not(.banner) {
 .home__content {
   grid-area: home-content;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 .home__img {
   grid-area: home-img;
+  align-self: end;
 }
 .home__img img {
   display: block;
@@ -494,7 +496,7 @@ section div:not(.banner) {
 }
 @media screen and (min-width: 768px) {
   .home {
-    align-items: center;
+    align-items: start;
     grid-template-areas: "home-content home-img" "home-content home-img";
   }
 }
@@ -827,7 +829,7 @@ section div:not(.banner) {
 .form__input input:not(.btn), .form__textarea input:not(.btn),
 .form__input textarea,
 .form__textarea textarea {
-  padding: 3rem var(--margin);
+  padding: 3rem 4rem 3rem var(--margin);
   font-size: var(--fs-p);
   background: var(--c-secondary-light);
   border: 0.1rem solid var(--c-borderInput);
@@ -850,8 +852,8 @@ section div:not(.banner) {
 }
 .form__input i, .form__textarea i {
   position: absolute;
-  top: 2.7rem;
-  right: 2.7rem;
+  top: 3.2rem;
+  right: 2rem;
   visibility: hidden;
   font-size: var(--fs-formIcon);
 }

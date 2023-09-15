@@ -28,8 +28,8 @@ const translations = {
     home2: "and I'm a <span class='highlight-color'>Frontend Developper</span>",
     home3:
       "<p>I grew up in Dunkerque, in the north. My school career ended at university (STAPS&nbsp;license).</br>Afterwards, I lived for a few years doing odd jobs (lifeguard,paramedic, ...).</p><p>But I want to live from my passion so in 2017 I did a professional retraining in a <strong>Web&nbsp;Designer</strong> training at <strong>M2I&nbsp;formation</strong> in Villeneuve d'Ascq.</p><p>After obtaining my qualification, I became a <strong>Web Integrator</strong> at <strong>KIMPLE</strong> in Roubaix. Afterwards, I worked as a <strong>Front-end Developer</strong> at <strong>REEZOCAR</strong> in Wasquehal.</p><p>Today, I continue to evolve as a front-end developer. And I'm also looking to improve myself on javascript frameworks.</p>",
-    adress: "live in:Lille",
-    age: "age:" + age + " years",
+    adress: "Lives in: Lille",
+    age: "Age: " + age + " years",
     skills1: 'My <span class="highlight-color">skills</span>',
     readMore: "Read more",
     servicesTitle: 'Our <span class="highlight-color">services</span>',
@@ -58,8 +58,8 @@ const translations = {
       "et je suis <span class='highlight-color'> développeur Frontend</span>",
     home3:
       "<p>J'ai grandi à Dunkerque, dans le Nord. Mon parcours scolaire s'est terminé à la fac (licence&nbsp;STAPS).</br>Suite à cela, j'ai vécu pendant quelques années de petits boulots (maître-nageur, ambulancier, ...).</p><p>Mais je voulais me retrouver dans un secteur qui me passionne alors en 2017 j'ai effectué une reconversion professionnelle dans une formation <strong>Web&nbsp;Designer</strong> chez <strong>M2I formation</strong> à Villeneuve d'Ascq.</p><p>Diplôme en poche, je suis devenu <strong>intégrateur&nbsp;Web</strong> chez <strong>KIMPLE</strong> à Roubaix. Suite à ça, j'ai travaillé en tant que <strong>développeur&nbsp;front-end</strong> chez <strong>REEZOCAR</strong> à Wasquehal.</p><p>Aujourd'hui, je continue à évoluer en tant que développeur front-end. Et je cherche également à me perfectionner sur les frameworks de javascript.</p>",
-    adress: "vit à : Lille",
-    age: "âge : " + age + " ans",
+    adress: "Vit à : Lille",
+    age: "Âge : " + age + " ans",
     skills1: 'Mes <span class="highlight-color">compétences</span>',
     readMore: "Lire plus",
     servicesTitle: 'Mes <span class="highlight-color">services</span>',

@@ -100,7 +100,6 @@ function validateEmail() {
 // conditions your message
 function validateYourMessage() {
   const yourMessageValue = yourMessage.value.trim();
-  console.log(yourMessageValue);
   if (yourMessageValue === "") {
     setErrorFor(yourMessage, "votre message ne peut pas être vide");
     removeSuccess(yourMessage);
