@@ -1,15 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 :root {
-  --c-primary: #f8f7ff;
-  --c-secondary: #d5eba4;
-  --c-secondary-light: #e8eedd;
-  --c-secondary-light2: rgba(213, 235, 164, 0.8);
-  --c-tertiary: #7ddf64;
-  --c-text1: #2e3138;
-  --c-text2: #58bf49;
-  --c-text3: #e7e7e7;
-  --c-hover: #58bf49;
-  --c-borderInput: rgba(49, 45, 46, 0.5);
+  --c-primary: #ffffff;
+  --c-secondary: #bbd446;
+  --c-tertiary500: #6b7fd7;
+  --c-tertiary200: #c3d4ff;
+  --c-tertiary100: #e9eeff;
+  --c-text1: #222222;
+  --c-text2: var(--c-secondary);
+  --c-text3: #f7fbfa;
+  --c-active: #222222;
+  --c-hover: #9cb633;
+  --c-borderInput: rgba(34, 34, 34, 0.5);
+  --c-navbar: #4e5fb8;
   --c-success: #62ad24;
   --c-error: #ff3a47;
   --m-gutter: 3.5rem;
@@ -29,15 +31,17 @@
 
 :root.dark-mode {
   --c-primary: #181717;
-  --c-secondary: #242323;
-  --c-secondary-light: #312d2e;
-  --c-secondary-light2: rgba(36, 35, 35, 0.8);
-  --c-tertiary: #c2e812;
+  --c-secondary: #c2e812;
+  --c-tertiary500: #312d2e;
+  --c-tertiary200: #202020;
+  --c-tertiary100: #3a3a3a;
   --c-text1: #fcfffc;
   --c-text2: #c2e812;
-  --c-text3: #312d2e;
+  --c-text3: #fcfffc;
+  --c-active: #000000;
   --c-hover: #85a709;
   --c-borderInput: rgba(252, 255, 252, 0.5);
+  --c-navbar: #837b7c;
   --sun: url(../../assets/sun.svg);
 }
 
@@ -114,9 +118,9 @@
   width: 6rem;
   height: 6rem;
   font-size: 3.8rem;
-  background: var(--c-tertiary);
+  background: var(--c-secondary);
   border-radius: 50%;
-  color: var(--c-text3);
+  color: #222222;
   transition: var(--transition) ease;
 }
 .social-link:hover {
@@ -137,8 +141,8 @@
   gap: 2rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--c-text3);
-  background: var(--c-tertiary);
+  color: #222222;
+  background: var(--c-secondary);
   transition: var(--transition);
   border-radius: 1rem;
   padding: 1.8rem 3.2rem;
@@ -273,7 +277,7 @@ section div:not(.banner) {
     bottom: 0;
     width: var(--s-bannerSmall);
     height: 100%;
-    background: rgba(46, 49, 56, 0.3);
+    background: var(--c-tertiary200);
     user-select: none;
   }
 }
@@ -314,7 +318,7 @@ section div:not(.banner) {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background: var(--c-tertiary);
+  background: var(--c-tertiary500);
   z-index: 2;
 }
 @media screen and (min-width: 992px) {
@@ -332,11 +336,11 @@ section div:not(.banner) {
   width: 100%;
   height: 100%;
   gap: 2rem;
-  background: var(--c-secondary);
+  background: var(--c-tertiary500);
   font-family: "Khand", sans-serif;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--c-text1);
+  color: var(--c-text3);
   font-size: 4rem;
   padding: 0 var(--m-gutter);
 }
@@ -358,7 +362,7 @@ section div:not(.banner) {
   fill: none;
   transform-origin: top left;
   transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-  stroke: var(--c-text1);
+  stroke: var(--c-text3);
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -391,7 +395,7 @@ section div:not(.banner) {
   flex-wrap: wrap;
   width: 100%;
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
-  background: var(--c-secondary);
+  background: var(--c-navbar);
   border-radius: 2rem;
   transform: translateY(-102%);
   transition: 0.5s ease all;
@@ -413,7 +417,7 @@ section div:not(.banner) {
   width: 100%;
   height: 100%;
   white-space: nowrap;
-  color: var(--c-text1);
+  color: var(--c-text3);
 }
 @media screen and (min-width: 768px) {
   .navbar__box a {
@@ -425,7 +429,7 @@ section div:not(.banner) {
   }
 }
 .navbar__box a:hover, .navbar__box a.active {
-  color: var(--c-text2);
+  color: var(--c-active);
 }
 @media screen and (min-width: 768px) {
   .navbar {
@@ -487,12 +491,11 @@ section div:not(.banner) {
   align-items: center;
   gap: 1rem;
   border-radius: 1rem;
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   padding: 1rem 2rem;
 }
 .home__info > i {
   font-size: 2.4rem;
-  color: var(--c-text2);
 }
 @media screen and (min-width: 768px) {
   .home {
@@ -535,7 +538,7 @@ section div:not(.banner) {
 }
 .skills__box {
   position: relative;
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   border-radius: var(--br-box);
   padding: var(--margin);
   overflow: hidden;
@@ -628,7 +631,7 @@ section div:not(.banner) {
   flex: 1 1 30rem;
   flex-wrap: wrap;
   gap: 2rem;
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   padding: 3rem 2rem 4rem;
   border-radius: var(--br-box);
   text-align: center;
@@ -642,10 +645,7 @@ section div:not(.banner) {
 }
 .services__box .fa-solid {
   font-size: 5rem;
-  color: var(--c-secondary-light);
-}
-.services__box:hover {
-  background: var(--c-secondary);
+  color: #f7fbfa;
 }
 .services__icon {
   display: flex;
@@ -653,7 +653,7 @@ section div:not(.banner) {
   align-items: center;
   width: 8.5rem;
   height: 8.5rem;
-  background: var(--c-tertiary);
+  background: var(--c-tertiary500);
   border-radius: 50%;
 }
 
@@ -714,20 +714,13 @@ section div:not(.banner) {
   width: 100%;
   height: 49rem;
   border-radius: var(--br-box);
+  box-shadow: inset 10px 10px rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
 .portfolio__box img {
   width: 130%;
   object-fit: contain;
   transition: transform 0.8s ease;
-}
-.portfolio__box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--c-secondary-light2);
-  border-radius: var(--br-box);
-  z-index: 0;
 }
 .portfolio__box:hover .portfolio__text {
   transform: translate(0, 0);
@@ -748,7 +741,7 @@ section div:not(.banner) {
   gap: 2rem;
   position: relative;
   width: 100%;
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   padding: 4rem 2rem;
   border-radius: var(--br-box);
 }
@@ -831,7 +824,7 @@ section div:not(.banner) {
 .form__textarea textarea {
   padding: 3rem 4rem 3rem var(--margin);
   font-size: var(--fs-p);
-  background: var(--c-secondary-light);
+  background: var(--c-secondary200);
   border: 0.1rem solid var(--c-borderInput);
   color: var(--c-text1);
   border-radius: 0.8rem;
@@ -898,7 +891,7 @@ section div:not(.banner) {
   justify-content: flex-start;
   align-items: center;
   padding: 0 var(--m-gutter);
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   height: 6rem;
   margin-bottom: 5rem;
   font-size: var(--fs-p);
@@ -945,7 +938,7 @@ section div:not(.banner) {
   bottom: 0;
   width: 100%;
   height: 5rem;
-  background: var(--c-secondary);
+  background: var(--c-tertiary500);
   z-index: 2;
 }
 
@@ -954,7 +947,6 @@ section div:not(.banner) {
   width: 4rem;
   height: 4rem;
   background-image: var(--sun);
-  background-color: var(--c-primaryBtn);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -962,7 +954,7 @@ section div:not(.banner) {
 
 #en,
 #fr {
-  color: var(--c-text1);
+  color: var(--c-text3);
   font-size: 2rem;
   font-weight: 700;
   background: none;

@@ -109,7 +109,7 @@ section {
     bottom: 0;
     width: var(--s-bannerSmall);
     height: 100%;
-    background: rgba(46, 49, 56, 0.3);
+    background: var(--c-tertiary200);
     user-select: none;
   }
   @include breakpoints.large {
@@ -144,7 +144,7 @@ section {
   width: 100%;
   height: 7.4rem;
   padding: 0 var(--m-gutter);
-  background: var(--c-tertiary);
+  background: var(--c-tertiary500);
   z-index: 2;
   @include breakpoints.medium {
     padding: 0 var(--m-m_gutter);
@@ -157,11 +157,11 @@ section {
     width: 100%;
     height: 100%;
     gap: 2rem;
-    background: var(--c-secondary);
+    background: var(--c-tertiary500);
     font-family: "Khand", sans-serif;
     text-transform: uppercase;
     font-weight: 600;
-    color: var(--c-text1);
+    color: var(--c-text3);
     font-size: 4rem;
     padding: 0 var(--m-gutter);
     @include breakpoints.medium {
@@ -181,7 +181,7 @@ section {
     fill: none;
     transform-origin: top left;
     transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
-    stroke: var(--c-text1);
+    stroke: var(--c-text3);
     stroke-width: 5.5;
     stroke-linecap: round;
   }
@@ -213,7 +213,7 @@ section {
   flex-wrap: wrap;
   width: 100%;
   box-shadow: 0px 2px 8px 3px rgba(0, 0, 0, 0.23);
-  background: var(--c-secondary);
+  background: var(--c-navbar);
   border-radius: 2rem;
   transform: translateY(-102%);
   transition: 0.5s ease all;
@@ -231,7 +231,7 @@ section {
       width: 100%;
       height: 100%;
       white-space: nowrap;
-      color: var(--c-text1);
+      color: var(--c-text3);
       @include breakpoints.small {
         padding: var(--margin);
         @include mixins.flex(center, center);
@@ -239,7 +239,7 @@ section {
       }
       &:hover,
       &.active {
-        color: var(--c-text2);
+        color: var(--c-active);
       }
     }
   }
@@ -302,11 +302,10 @@ section {
     @include mixins.flex(flex-start, center);
     gap: 1rem;
     border-radius: 1rem;
-    background: var(--c-secondary-light);
+    background: var(--c-tertiary100);
     padding: 1rem 2rem;
     > i {
       font-size: 2.4rem;
-      color: var(--c-text2);
     }
   }
   @include breakpoints.small {
@@ -347,7 +346,7 @@ section {
   }
   &__box {
     position: relative;
-    background: var(--c-secondary-light);
+    background: var(--c-tertiary100);
     border-radius: var(--br-box);
     padding: var(--margin);
     overflow: hidden;
@@ -427,7 +426,7 @@ section {
     flex: 1 1 30rem;
     flex-wrap: wrap;
     gap: 2rem;
-    background: var(--c-secondary-light);
+    background: var(--c-tertiary100);
     padding: 3rem 2rem 4rem;
     border-radius: var(--br-box);
     text-align: center;
@@ -440,17 +439,14 @@ section {
     }
     .fa-solid {
       font-size: 5rem;
-      color: var(--c-secondary-light);
-    }
-    &:hover {
-      background: var(--c-secondary);
+      color: #f7fbfa;
     }
   }
   &__icon {
     @include mixins.flex(center, center);
     width: 8.5rem;
     height: 8.5rem;
-    background: var(--c-tertiary);
+    background: var(--c-tertiary500);
     border-radius: 50%;
   }
 }
@@ -502,19 +498,12 @@ section {
     width: 100%;
     height: 49rem;
     border-radius: var(--br-box);
+    box-shadow: inset 10px 10px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     img {
       width: 130%;
       object-fit: contain;
       transition: transform 0.8s ease;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--c-secondary-light2);
-      border-radius: var(--br-box);
-      z-index: 0;
     }
     &:hover {
       .portfolio__text {
@@ -539,7 +528,7 @@ section {
     gap: 2rem;
     position: relative;
     width: 100%;
-    background: var(--c-secondary-light);
+    background: var(--c-tertiary100);
     padding: 4rem 2rem;
     border-radius: var(--br-box);
     @include breakpoints.small {
@@ -606,7 +595,7 @@ section {
     textarea {
       padding: 3rem 4rem 3rem var(--margin);
       font-size: var(--fs-p);
-      background: var(--c-secondary-light);
+      background: var(--c-secondary200);
       border: 0.1rem solid var(--c-borderInput);
       color: var(--c-text1);
       border-radius: 0.8rem;
@@ -681,7 +670,7 @@ section {
 .footer {
   @include mixins.flex(flex-start, center);
   padding: 0 var(--m-gutter);
-  background: var(--c-secondary-light);
+  background: var(--c-tertiary100);
   height: 6rem;
   margin-bottom: 5rem;
   font-size: var(--fs-p);
@@ -720,7 +709,7 @@ section {
   bottom: 0;
   width: 100%;
   height: 5rem;
-  background: var(--c-secondary);
+  background: var(--c-tertiary500);
   z-index: 2;
 }
 
@@ -729,7 +718,6 @@ section {
   width: 4rem;
   height: 4rem;
   background-image: var(--sun);
-  background-color: var(--c-primaryBtn);
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -737,7 +725,7 @@ section {
 
 #en,
 #fr {
-  color: var(--c-text1);
+  color: var(--c-text3);
   font-size: 2rem;
   font-weight: 700;
   background: none;
